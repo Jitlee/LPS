@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50602
 File Encoding         : 65001
 
-Date: 2013-08-29 19:59:00
+Date: 2013-08-30 05:01:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -130,7 +130,8 @@ CREATE TABLE `t_base_parameter` (
   `PARAM_CODE` varchar(50) NOT NULL COMMENT '参数编码',
   `PARAM_NAME` varchar(50) NOT NULL COMMENT '参数名称',
   `PARAM_VALUE` varchar(200) DEFAULT NULL COMMENT '参数值',
-  `PARAM_DESC` varchar(100) DEFAULT NULL COMMENT '参数描述'
+  `PARAM_DESC` varchar(100) DEFAULT NULL COMMENT '参数描述',
+  PRIMARY KEY (`PARAM_CODE`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统参数表';
 
 -- ----------------------------
@@ -175,7 +176,7 @@ CREATE TABLE `t_sys_function` (
   `FUNC_DESC` varchar(100) DEFAULT '模块描述',
   `FUNC_IS_ENABLED` char(1) NOT NULL DEFAULT 'Y' COMMENT '是否可用(Y:可用,N:不可用)',
   PRIMARY KEY (`FUNC_CODE`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='系统功能表';
 
 -- ----------------------------
 -- Records of t_sys_function
