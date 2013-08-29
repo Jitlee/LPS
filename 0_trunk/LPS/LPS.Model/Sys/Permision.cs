@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Sys
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_sys_permision)实体类
 	/// 权限表
@@ -164,33 +164,33 @@ namespace LPS.Model.Sys
 		/// 权限表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Permision(DataRow dr)
+		public Permision(IDataReader dr)
 		{
-			if (null != dr["PERM_CODE"])
+			if (DBNull.Value != dr["PERM_CODE"])
 			{
 				_permCode = dr["PERM_CODE"].ToString();
 			}
-			if (null != dr["FUNC_CODE"])
+			if (DBNull.Value != dr["FUNC_CODE"])
 			{
 				_funcCode = dr["FUNC_CODE"].ToString();
 			}
-			if (null != dr["PERM_NAME"])
+			if (DBNull.Value != dr["PERM_NAME"])
 			{
 				_permName = dr["PERM_NAME"].ToString();
 			}
-			if (null != dr["PERM_DESC"])
+			if (DBNull.Value != dr["PERM_DESC"])
 			{
 				_permDesc = dr["PERM_DESC"].ToString();
 			}
-			if (null != dr["PERM_SORT"])
+			if (DBNull.Value != dr["PERM_SORT"])
 			{
 				_permSort = Convert.ToInt32(dr["PERM_SORT"]);
 			}
-			if (null != dr["PERM_IS_ENABLED"])
+			if (DBNull.Value != dr["PERM_IS_ENABLED"])
 			{
 				_permIsEnabled = dr["PERM_IS_ENABLED"].ToString();
 			}
-			if (null != dr["PERM_IS_DEFAULT"])
+			if (DBNull.Value != dr["PERM_IS_DEFAULT"])
 			{
 				_permIsDefault = dr["PERM_IS_DEFAULT"].ToString();
 			}

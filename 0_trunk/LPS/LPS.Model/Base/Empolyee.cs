@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Base
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_base_empolyee)实体类
 	/// 员工表
@@ -384,77 +384,77 @@ namespace LPS.Model.Base
 		/// 员工表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Empolyee(DataRow dr)
+		public Empolyee(IDataReader dr)
 		{
-			if (null != dr["EMPOLYEE_ID"])
+			if (DBNull.Value != dr["EMPOLYEE_ID"])
 			{
 				_empolyeeId = dr["EMPOLYEE_ID"].ToString();
 			}
-			if (null != dr["EMPOLYEE_CODE"])
+			if (DBNull.Value != dr["EMPOLYEE_CODE"])
 			{
 				_empolyeeCode = dr["EMPOLYEE_CODE"].ToString();
 			}
-			if (null != dr["EMPOLYEE_RFID"])
+			if (DBNull.Value != dr["EMPOLYEE_RFID"])
 			{
 				_empolyeeRfid = dr["EMPOLYEE_RFID"].ToString();
 			}
-			if (null != dr["EMPOLYEE_NAME"])
+			if (DBNull.Value != dr["EMPOLYEE_NAME"])
 			{
 				_empolyeeName = dr["EMPOLYEE_NAME"].ToString();
 			}
-			if (null != dr["EMPOLYEE_PY"])
+			if (DBNull.Value != dr["EMPOLYEE_PY"])
 			{
 				_empolyeePy = dr["EMPOLYEE_PY"].ToString();
 			}
-			if (null != dr["EMPOLYEE_SEX"])
+			if (DBNull.Value != dr["EMPOLYEE_SEX"])
 			{
 				_empolyeeSex = dr["EMPOLYEE_SEX"].ToString();
 			}
-			if (null != dr["EMPOLYEE_BIRTH"])
+			if (DBNull.Value != dr["EMPOLYEE_BIRTH"])
 			{
 				_empolyeeBirth = Convert.ToDateTime(dr["EMPOLYEE_BIRTH"]);
 			}
-			if (null != dr["EMPOLYEE_ENTRY_DATE"])
+			if (DBNull.Value != dr["EMPOLYEE_ENTRY_DATE"])
 			{
 				_empolyeeEntryDate = Convert.ToDateTime(dr["EMPOLYEE_ENTRY_DATE"]);
 			}
-			if (null != dr["EMPOLYEE_PHONE"])
+			if (DBNull.Value != dr["EMPOLYEE_PHONE"])
 			{
 				_empolyeePhone = dr["EMPOLYEE_PHONE"].ToString();
 			}
-			if (null != dr["EMPOLYEE_EMAIL"])
+			if (DBNull.Value != dr["EMPOLYEE_EMAIL"])
 			{
 				_empolyeeEmail = dr["EMPOLYEE_EMAIL"].ToString();
 			}
-			if (null != dr["EMPOLYEE_ADDRESS"])
+			if (DBNull.Value != dr["EMPOLYEE_ADDRESS"])
 			{
 				_empolyeeAddress = dr["EMPOLYEE_ADDRESS"].ToString();
 			}
-			if (null != dr["EMPOLYEE_HOMETOWN"])
+			if (DBNull.Value != dr["EMPOLYEE_HOMETOWN"])
 			{
 				_empolyeeHometown = dr["EMPOLYEE_HOMETOWN"].ToString();
 			}
-			if (null != dr["EMPOLYEE_CARD_ID"])
+			if (DBNull.Value != dr["EMPOLYEE_CARD_ID"])
 			{
 				_empolyeeCardId = dr["EMPOLYEE_CARD_ID"].ToString();
 			}
-			if (null != dr["USER_ID"])
+			if (DBNull.Value != dr["USER_ID"])
 			{
 				_userId = dr["USER_ID"].ToString();
 			}
-			if (null != dr["USER_PWD"])
+			if (DBNull.Value != dr["USER_PWD"])
 			{
 				_userPwd = dr["USER_PWD"].ToString();
 			}
-			if (null != dr["EMPOLYEE_CREATE_DATE"])
+			if (DBNull.Value != dr["EMPOLYEE_CREATE_DATE"])
 			{
 				_empolyeeCreateDate = Convert.ToDateTime(dr["EMPOLYEE_CREATE_DATE"]);
 			}
-			if (null != dr["EMPOLYEE_IS_DELETED"])
+			if (DBNull.Value != dr["EMPOLYEE_IS_DELETED"])
 			{
 				_empolyeeIsDeleted = dr["EMPOLYEE_IS_DELETED"].ToString();
 			}
-			if (null != dr["EMPOLYEE_DELETED_DATE"])
+			if (DBNull.Value != dr["EMPOLYEE_DELETED_DATE"])
 			{
 				_empolyeeDeletedDate = Convert.ToDateTime(dr["EMPOLYEE_DELETED_DATE"]);
 			}

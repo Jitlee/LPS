@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Base
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_base_dictronary_type)实体类
 	/// 数据字典类型表
@@ -84,17 +84,17 @@ namespace LPS.Model.Base
 		/// 数据字典类型表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public DictronaryType(DataRow dr)
+		public DictronaryType(IDataReader dr)
 		{
-			if (null != dr["DICT_TYPE"])
+			if (DBNull.Value != dr["DICT_TYPE"])
 			{
 				_dictType = dr["DICT_TYPE"].ToString();
 			}
-			if (null != dr["DICT_TYPE_NAME"])
+			if (DBNull.Value != dr["DICT_TYPE_NAME"])
 			{
 				_dictTypeName = dr["DICT_TYPE_NAME"].ToString();
 			}
-			if (null != dr["DICT_TYPE_DESC"])
+			if (DBNull.Value != dr["DICT_TYPE_DESC"])
 			{
 				_dictTypeDesc = dr["DICT_TYPE_DESC"].ToString();
 			}

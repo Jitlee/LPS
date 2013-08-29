@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Pur
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_pur_leaf)实体类
 	/// 烟农和烟叶框的电子标签对应表，此表为流水线表
@@ -284,57 +284,57 @@ namespace LPS.Model.Pur
 		/// 烟农和烟叶框的电子标签对应表，此表为流水线表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Leaf(DataRow dr)
+		public Leaf(IDataReader dr)
 		{
-			if (null != dr["LEAF_ID"])
+			if (DBNull.Value != dr["LEAF_ID"])
 			{
 				_leafId = dr["LEAF_ID"].ToString();
 			}
-			if (null != dr["LEAF_RFID"])
+			if (DBNull.Value != dr["LEAF_RFID"])
 			{
 				_leafRfid = dr["LEAF_RFID"].ToString();
 			}
-			if (null != dr["FARMER_ID"])
+			if (DBNull.Value != dr["FARMER_ID"])
 			{
 				_farmerId = dr["FARMER_ID"].ToString();
 			}
-			if (null != dr["LEAF_DATE"])
+			if (DBNull.Value != dr["LEAF_DATE"])
 			{
 				_leafDate = Convert.ToDateTime(dr["LEAF_DATE"]);
 			}
-			if (null != dr["LEAF_LEVEL"])
+			if (DBNull.Value != dr["LEAF_LEVEL"])
 			{
 				_leafLevel = dr["LEAF_LEVEL"].ToString();
 			}
-			if (null != dr["LEAF_LEVEL_DATE"])
+			if (DBNull.Value != dr["LEAF_LEVEL_DATE"])
 			{
 				_leafLevelDate = Convert.ToDateTime(dr["LEAF_LEVEL_DATE"]);
 			}
-			if (null != dr["LEAF_LEVEL_EMPOLYEE"])
+			if (DBNull.Value != dr["LEAF_LEVEL_EMPOLYEE"])
 			{
 				_leafLevelEmpolyee = dr["LEAF_LEVEL_EMPOLYEE"].ToString();
 			}
-			if (null != dr["LEAF_WEIGHT"])
+			if (DBNull.Value != dr["LEAF_WEIGHT"])
 			{
 				_leafWeight = Convert.ToDouble(dr["LEAF_WEIGHT"]);
 			}
-			if (null != dr["LEAF_WEIGHT_DATE"])
+			if (DBNull.Value != dr["LEAF_WEIGHT_DATE"])
 			{
 				_leafWeightDate = Convert.ToDateTime(dr["LEAF_WEIGHT_DATE"]);
 			}
-			if (null != dr["LEAF_WEIGHT_EMPOLYEE"])
+			if (DBNull.Value != dr["LEAF_WEIGHT_EMPOLYEE"])
 			{
 				_leafWeightEmpolyee = dr["LEAF_WEIGHT_EMPOLYEE"].ToString();
 			}
-			if (null != dr["LEAF_STATE"])
+			if (DBNull.Value != dr["LEAF_STATE"])
 			{
 				_leafState = Convert.ToInt32(dr["LEAF_STATE"]);
 			}
-			if (null != dr["LEAF_IS_DELETED"])
+			if (DBNull.Value != dr["LEAF_IS_DELETED"])
 			{
 				_leafIsDeleted = dr["LEAF_IS_DELETED"].ToString();
 			}
-			if (null != dr["LEAF_DELETED_DATE"])
+			if (DBNull.Value != dr["LEAF_DELETED_DATE"])
 			{
 				_leafDeletedDate = Convert.ToDateTime(dr["LEAF_DELETED_DATE"]);
 			}

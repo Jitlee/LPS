@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Sys
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_sys_role)实体类
 	/// 用户角色表
@@ -84,17 +84,17 @@ namespace LPS.Model.Sys
 		/// 用户角色表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Role(DataRow dr)
+		public Role(IDataReader dr)
 		{
-			if (null != dr["ROLE_ID"])
+			if (DBNull.Value != dr["ROLE_ID"])
 			{
 				_roleId = dr["ROLE_ID"].ToString();
 			}
-			if (null != dr["ROLE_NAME"])
+			if (DBNull.Value != dr["ROLE_NAME"])
 			{
 				_roleName = dr["ROLE_NAME"].ToString();
 			}
-			if (null != dr["ROLE_DESC"])
+			if (DBNull.Value != dr["ROLE_DESC"])
 			{
 				_roleDesc = dr["ROLE_DESC"].ToString();
 			}

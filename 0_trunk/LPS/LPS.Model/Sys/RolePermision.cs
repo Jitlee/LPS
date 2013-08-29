@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Sys
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_sys_role_permision)实体类
 	/// 角色权限表
@@ -64,13 +64,13 @@ namespace LPS.Model.Sys
 		/// 角色权限表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public RolePermision(DataRow dr)
+		public RolePermision(IDataReader dr)
 		{
-			if (null != dr["ROLE_ID"])
+			if (DBNull.Value != dr["ROLE_ID"])
 			{
 				_roleId = dr["ROLE_ID"].ToString();
 			}
-			if (null != dr["PERM_CODE"])
+			if (DBNull.Value != dr["PERM_CODE"])
 			{
 				_permCode = dr["PERM_CODE"].ToString();
 			}

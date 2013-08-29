@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Base
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_base_parameter)实体类
 	/// 系统参数表
@@ -104,21 +104,21 @@ namespace LPS.Model.Base
 		/// 系统参数表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Parameter(DataRow dr)
+		public Parameter(IDataReader dr)
 		{
-			if (null != dr["PARAM_CODE"])
+			if (DBNull.Value != dr["PARAM_CODE"])
 			{
 				_paramCode = dr["PARAM_CODE"].ToString();
 			}
-			if (null != dr["PARAM_NAME"])
+			if (DBNull.Value != dr["PARAM_NAME"])
 			{
 				_paramName = dr["PARAM_NAME"].ToString();
 			}
-			if (null != dr["PARAM_VALUE"])
+			if (DBNull.Value != dr["PARAM_VALUE"])
 			{
 				_paramValue = dr["PARAM_VALUE"].ToString();
 			}
-			if (null != dr["PARAM_DESC"])
+			if (DBNull.Value != dr["PARAM_DESC"])
 			{
 				_paramDesc = dr["PARAM_DESC"].ToString();
 			}

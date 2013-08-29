@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Base
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_base_farmer)实体类
 	/// 烟农表
@@ -324,65 +324,65 @@ namespace LPS.Model.Base
 		/// 烟农表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Farmer(DataRow dr)
+		public Farmer(IDataReader dr)
 		{
-			if (null != dr["FARMER_ID"])
+			if (DBNull.Value != dr["FARMER_ID"])
 			{
 				_farmerId = dr["FARMER_ID"].ToString();
 			}
-			if (null != dr["FARMAR_CODE"])
+			if (DBNull.Value != dr["FARMAR_CODE"])
 			{
 				_farmarCode = dr["FARMAR_CODE"].ToString();
 			}
-			if (null != dr["FARMER_RFID"])
+			if (DBNull.Value != dr["FARMER_RFID"])
 			{
 				_farmerRfid = dr["FARMER_RFID"].ToString();
 			}
-			if (null != dr["FARMER_NAME"])
+			if (DBNull.Value != dr["FARMER_NAME"])
 			{
 				_farmerName = dr["FARMER_NAME"].ToString();
 			}
-			if (null != dr["FARMER_PY"])
+			if (DBNull.Value != dr["FARMER_PY"])
 			{
 				_farmerPy = dr["FARMER_PY"].ToString();
 			}
-			if (null != dr["FARMER_PHONE"])
+			if (DBNull.Value != dr["FARMER_PHONE"])
 			{
 				_farmerPhone = dr["FARMER_PHONE"].ToString();
 			}
-			if (null != dr["FARMER_EMAIL"])
+			if (DBNull.Value != dr["FARMER_EMAIL"])
 			{
 				_farmerEmail = dr["FARMER_EMAIL"].ToString();
 			}
-			if (null != dr["FARMER_ADDRESS"])
+			if (DBNull.Value != dr["FARMER_ADDRESS"])
 			{
 				_farmerAddress = dr["FARMER_ADDRESS"].ToString();
 			}
-			if (null != dr["FARMER_RMARK"])
+			if (DBNull.Value != dr["FARMER_RMARK"])
 			{
 				_farmerRmark = dr["FARMER_RMARK"].ToString();
 			}
-			if (null != dr["FARMER_SEX"])
+			if (DBNull.Value != dr["FARMER_SEX"])
 			{
 				_farmerSex = dr["FARMER_SEX"].ToString();
 			}
-			if (null != dr["FARMER_BIRTH"])
+			if (DBNull.Value != dr["FARMER_BIRTH"])
 			{
 				_farmerBirth = Convert.ToDateTime(dr["FARMER_BIRTH"]);
 			}
-			if (null != dr["FARMER_CARD_ID"])
+			if (DBNull.Value != dr["FARMER_CARD_ID"])
 			{
 				_farmerCardId = dr["FARMER_CARD_ID"].ToString();
 			}
-			if (null != dr["FARMER_CREATE_DATE"])
+			if (DBNull.Value != dr["FARMER_CREATE_DATE"])
 			{
 				_farmerCreateDate = Convert.ToDateTime(dr["FARMER_CREATE_DATE"]);
 			}
-			if (null != dr["FARMER_IS_DELETED"])
+			if (DBNull.Value != dr["FARMER_IS_DELETED"])
 			{
 				_farmerIsDeleted = dr["FARMER_IS_DELETED"].ToString();
 			}
-			if (null != dr["FARMER_DELETED_DATE"])
+			if (DBNull.Value != dr["FARMER_DELETED_DATE"])
 			{
 				_farmerDeletedDate = Convert.ToDateTime(dr["FARMER_DELETED_DATE"]);
 			}

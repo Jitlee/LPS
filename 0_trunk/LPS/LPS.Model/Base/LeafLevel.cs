@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Base
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_base_leaf_level)实体类
 	/// 烟叶等级表
@@ -164,33 +164,33 @@ namespace LPS.Model.Base
 		/// 烟叶等级表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public LeafLevel(DataRow dr)
+		public LeafLevel(IDataReader dr)
 		{
-			if (null != dr["LEAF_LEVEL"])
+			if (DBNull.Value != dr["LEAF_LEVEL"])
 			{
 				_leafLevel = dr["LEAF_LEVEL"].ToString();
 			}
-			if (null != dr["LEAF_LEVEL_NAME"])
+			if (DBNull.Value != dr["LEAF_LEVEL_NAME"])
 			{
 				_leafLevelName = dr["LEAF_LEVEL_NAME"].ToString();
 			}
-			if (null != dr["LEAF_LEVEL_DESC"])
+			if (DBNull.Value != dr["LEAF_LEVEL_DESC"])
 			{
 				_leafLevelDesc = dr["LEAF_LEVEL_DESC"].ToString();
 			}
-			if (null != dr["LEAF_LEVEL_PRICE"])
+			if (DBNull.Value != dr["LEAF_LEVEL_PRICE"])
 			{
 				_leafLevelPrice = Convert.ToDouble(dr["LEAF_LEVEL_PRICE"]);
 			}
-			if (null != dr["LEAF_LEVEL_SORT"])
+			if (DBNull.Value != dr["LEAF_LEVEL_SORT"])
 			{
 				_leafLevelSort = Convert.ToInt32(dr["LEAF_LEVEL_SORT"]);
 			}
-			if (null != dr["LEAF_LEVEL_IS_DELETED"])
+			if (DBNull.Value != dr["LEAF_LEVEL_IS_DELETED"])
 			{
 				_leafLevelIsDeleted = dr["LEAF_LEVEL_IS_DELETED"].ToString();
 			}
-			if (null != dr["LEAF_LEVEL_DELETED_DATE"])
+			if (DBNull.Value != dr["LEAF_LEVEL_DELETED_DATE"])
 			{
 				_leafLevelDeletedDate = Convert.ToDateTime(dr["LEAF_LEVEL_DELETED_DATE"]);
 			}

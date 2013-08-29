@@ -3,9 +3,10 @@ using System.Data;
 
 namespace LPS.Model.Sys
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_sys_function)实体类
+	/// 系统功能表
 	/// </summary>
 	public class Function : EntityObject
 	{
@@ -153,43 +154,43 @@ namespace LPS.Model.Sys
 		#region 构造函数
 
 		/// <summary>
-		/// 构造函数
+		/// 系统功能表构造函数
 		/// </summary>
 		public Function()
 		{
 		}
 
 		/// <summary>
-		/// 构造函数
+		/// 系统功能表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Function(DataRow dr)
+		public Function(IDataReader dr)
 		{
-			if (null != dr["FUNC_CODE"])
+			if (DBNull.Value != dr["FUNC_CODE"])
 			{
 				_funcCode = dr["FUNC_CODE"].ToString();
 			}
-			if (null != dr["FUNC_NAME"])
+			if (DBNull.Value != dr["FUNC_NAME"])
 			{
 				_funcName = dr["FUNC_NAME"].ToString();
 			}
-			if (null != dr["FUNC_PARENT_CODE"])
+			if (DBNull.Value != dr["FUNC_PARENT_CODE"])
 			{
 				_funcParentCode = dr["FUNC_PARENT_CODE"].ToString();
 			}
-			if (null != dr["FUNC_SORT"])
+			if (DBNull.Value != dr["FUNC_SORT"])
 			{
 				_funcSort = Convert.ToInt32(dr["FUNC_SORT"]);
 			}
-			if (null != dr["FUNC_LEVEL"])
+			if (DBNull.Value != dr["FUNC_LEVEL"])
 			{
 				_funcLevel = Convert.ToInt32(dr["FUNC_LEVEL"]);
 			}
-			if (null != dr["FUNC_DESC"])
+			if (DBNull.Value != dr["FUNC_DESC"])
 			{
 				_funcDesc = dr["FUNC_DESC"].ToString();
 			}
-			if (null != dr["FUNC_IS_ENABLED"])
+			if (DBNull.Value != dr["FUNC_IS_ENABLED"])
 			{
 				_funcIsEnabled = dr["FUNC_IS_ENABLED"].ToString();
 			}

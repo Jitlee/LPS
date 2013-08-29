@@ -3,7 +3,7 @@ using System.Data;
 
 namespace LPS.Model.Base
 {
-	// 添加 Jitlee 2013-08-29
+	// 添加 Jitlee 2013-08-30
 	/// <summary>
 	/// (t_base_dictronary)实体类
 	/// 数据字典表
@@ -124,25 +124,25 @@ namespace LPS.Model.Base
 		/// 数据字典表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Dictronary(DataRow dr)
+		public Dictronary(IDataReader dr)
 		{
-			if (null != dr["DICT_TYPE"])
+			if (DBNull.Value != dr["DICT_TYPE"])
 			{
 				_dictType = dr["DICT_TYPE"].ToString();
 			}
-			if (null != dr["DICT_CODE"])
+			if (DBNull.Value != dr["DICT_CODE"])
 			{
 				_dictCode = dr["DICT_CODE"].ToString();
 			}
-			if (null != dr["DICT_NAME"])
+			if (DBNull.Value != dr["DICT_NAME"])
 			{
 				_dictName = dr["DICT_NAME"].ToString();
 			}
-			if (null != dr["DICT_VALUE"])
+			if (DBNull.Value != dr["DICT_VALUE"])
 			{
 				_dictValue = dr["DICT_VALUE"].ToString();
 			}
-			if (null != dr["DICT_DESC"])
+			if (DBNull.Value != dr["DICT_DESC"])
 			{
 				_dictDesc = dr["DICT_DESC"].ToString();
 			}
