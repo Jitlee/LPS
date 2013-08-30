@@ -1,0 +1,75 @@
+﻿#page_Top {
+	background-image:url(../images/tab/tab_05.gif);
+	height:30px;
+	width:100%;
+}
+
+#page_Top_Left {
+	width:12px;
+	background-image:url(../images/tab/tab_03.gif);
+}
+
+#page_Top_Right {
+	width:16px;
+	background-image:url(../images/tab/tab_07.gif);
+}
+
+#page_Middle 
+{
+	width:100%;
+}
+
+#page_Top_Middle {
+	height:30px;
+}
+
+#page_Middle_Left {
+	width:8px;
+	background-image:url(../images/tab/tab_12.gif);
+}
+
+#page_Middle_Right {
+	width:8px;
+	background-image:url(../images/tab/tab_15.gif);
+}
+
+#page_Middle_Middle {
+	 vertical-align:top;
+}
+
+#nav1 {
+	background-image:url(../images/tab/tb.gif);
+	background-repeat:no-repeat;
+	padding-left:20px;
+	text-align:left;
+}
+
+#page_Bottom 
+{
+	text-align:center;
+	width:100%;
+	background-image:url(../images/tab/tab_19.gif);
+	height:35px;
+}
+
+#page_Bottom_Left {
+	width:12px;
+	background-image:url(../images/tab/tab_18.gif);
+}
+
+#page_Bottom_Middle {
+	height:35px;
+}
+
+#page_Bottom_Right {
+	width:16px;
+	background-image:url(../images/tab/tab_20.gif);
+}
+
+#page { text-align:center; overflow:auto; }
+
+.div_search{text-align:right;
+	 padding-bottom:4px;
+	 background-color:#FFFFFF;
+	 border:1px solid #CCCCCC;
+}

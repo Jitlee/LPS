@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
+	<siteMapNode url="Main/Default.aspx"  title="主页"  description="烟草管理系统">
+		<siteMapNode url="SysAdmin/BankList.aspx?id=admin" title="系统管理"  description="系统管理">
+			<siteMapNode url="SysAdmin/UserList.aspx" title="管理员管理"  description="管理员管理">
+				<siteMapNode url="SysAdmin/UserEdit.aspx" title="编辑" description="编辑"  />
+				<siteMapNode url="SysAdmin/UserList.aspx?Delete" title="删除" description="删除" isFunction="true" />
+			</siteMapNode>
+			<siteMapNode url="Role/RoleList.aspx" title="角色列表" description="角色列表"  imagePath="group.gif">
+				<siteMapNode url="Role/RoleSet.aspx" title="权限设置" description="权限设置" />
+				<siteMapNode url="Role/RoleEdit.aspx" title="编辑" description="添加、修改角色" isFunction="true" />
+				<siteMapNode url="Role/RoleList.aspx?Delete" title="删除" description="删除" />
+			</siteMapNode>
+			<siteMapNode url="Role/UserAuthList.aspx" title="用户授权"  description="给用户授予角色">
+				<siteMapNode url="Role/UserAuthEdit.aspx" title="授权" description="授权授权" />
+			</siteMapNode>
+		</siteMapNode>
+	</siteMapNode>
+</siteMap>

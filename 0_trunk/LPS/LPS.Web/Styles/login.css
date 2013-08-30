@@ -1,0 +1,45 @@
+﻿@charset "utf-8";
+/*****全局样式*********/
+* {margin:0;padding:0;}
+body {font-size:12px;font-family:Arial, Helvetica, sans-serif;margin-left:auto;margin-right:auto;
+text-align:center;height:100%;background-color:#016AA9;}
+td {font-size:12px;line-height:24px;margin:0;}
+a:link,a:visited{text-decoration:none;color:#333333;}
+a:hover,a:active{color:#F30;text-decoration:underline;}
+
+/*****login*********/
+#login{
+	width:962px;
+	height:501px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:52px;
+	background-image: url(../images/login/login_03.jpg);
+	border:solid 1px #016AA9;
+	background-repeat: no-repeat;
+}
+#logintb{
+	height: 105px;
+	width: 250px;
+	margin-top:220px;
+	margin-left:auto;
+	margin-right:auto;
+}
+#logintb li{
+    line-height:25px; 
+	text-align:left;
+}
+.tbxSty{width:140px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff;}
+.vv{width:70px; height:17px; background-color:#292929; border:solid 1px #7dbad7; font-size:12px; color:#6cd0ff;}
+
+.STYLE1 {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.STYLE2 {font-size: 9px}
+.STYLE3 {
+	color: #033d61;
+	font-size: 12px;}
+.navPoint { 
+COLOR: white; CURSOR: hand; FONT-FAMILY: Webdings; FONT-SIZE: 9pt 
+} 

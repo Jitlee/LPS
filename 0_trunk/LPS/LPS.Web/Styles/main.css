@@ -1,0 +1,65 @@
+html,body {margin:0px;padding:0px;height:100%;}
+body {font-size:12px;font-family:arial, helvetica, sans-serif;margin-left:auto;margin-right:auto;
+height:100%;background-color:#ddf3ff;}
+a:link,a:visited{text-decoration:none;color:#333333;}
+a:hover,a:active{color:#f30;text-decoration:underline;}
+.style1 { font-size: 12px;color: #ffffff }
+.style2 {font-size: 9px }
+.style3 { color: #033d61;font-size: 12px; }
+.navpoint { color: white; cursor: hand; font-family: webdings; font-size: 9pt }
+hr{height:1px;border-width:0;color:gray;background-color:gray; }
+.tableOneline { background-color:#b5d6e6; width:100%; border:solid 1px #b5d6e6; _border:0px; 
+border-top:1px solid #E4EEF8;border-left:1px solid #E4EEF8; }
+.tableOneline td {	height:25px; background-color:#FFFFFF; text-align:center; }
+.tableOneline .tdRight {text-align:right; }
+.tableOneline .tdLeft {text-align:left; padding-left:3px; }
+.tableOneline .tdWRight {text-align:right; width:15% }
+.tableOneline .tdWLeft {text-align:left; padding-left:3px; width:35% }
+.tableOneline .EidtConifgTitle{ height: 28px;
+            background-color: #eaeff3;
+            font-weight: bold;
+            font-size: 14px;
+            border-right: 1px solid #cdced0;
+            border-bottom: 1px solid #cdced0;
+            text-align: left;
+            padding: 0px 5px;
+}
+.textbox_skin {	border-top:0px; border-bottom:solid 1px black; border-left:0px; border-right:0px; background-color:Transparent }
+.linkbutton_skin { margin:0px 5px;  }
+.linkbutton_skin * { vertical-align:middle; }
+.linkbutton_skin img { border:none;	margin-right:8px; width:14px;height:14px;}
+
+.float * { width:auto; float:left;}
+.float { width :auto; float:left; }
+.hidden { display:none; }
+input.hidden { display:none;width:1px; }
+
+.NoShow{display:none;}
+img{	border:none;}
+
+.normal a.selected{ background-color:#CCCCCC; color:#003333; }
+.selectstart { -moz-user-select:none; }
+.tdTitle{ text-align:left; font-size:14px; font-weight:bold; padding-left:3px;}
+/***********²éÑ¯ÑùÊ½******/
+.searchtable{width:100%;border:1px solid #78c5ec;background-color:#d9f4fd;margin-bottom:1px; border-collapse: collapse;}
+.searchtable td{padding:3px; border:solid 1px #b5d6e6;}
+.searchtable .tdLeft{ text-align:left;}
+
+.ObjSelectItem,.ObjSelectItem a:link
+{
+    background-color:#d9f4fd;
+    color:#0066ff;
+}
+
+.btn_bg 
+{
+    background:url(../images/common/btn_bg.gif) repeat-x;
+    color:White;
+    border:1px solid #4a99be;
+    height:23px;
+    line-height:23px;
+    cursor:pointer;
+    text-align:center;
+    margin-bottom:2px;
+    padding:0px 4px;
+}
