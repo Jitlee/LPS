@@ -66,6 +66,7 @@
     <Compile Include="Sys\RolePermisionDALBase.cs" />
     <Compile Include="Sys\UserPermisionDAL.cs" />
     <Compile Include="Sys\UserPermisionDALBase.cs" />
+    <Compile Include="Sys\UsersDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPS.DataAccess\LPS.DataAccess.csproj">

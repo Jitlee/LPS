@@ -77,5 +77,10 @@ namespace LPS.DAL.Sys
 			return db.ExecuteNoQuery("DELETE FROM T_SYS_FUNCTION WHERE FUNC_CODE = @FUNC_CODE", 
 				db.GetDataParameter("@FUNC_CODE", funcCode));
 		}
+
+		public int DeleteALL(string funcCode)
+		{
+			return db.ExecuteNoQuery("DELETE FROM T_SYS_FUNCTION");
+		}
 	}
 }

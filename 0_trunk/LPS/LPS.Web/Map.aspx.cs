@@ -4,13 +4,14 @@ using System.IO;
 using System.Xml;
 using System.Web.Script.Serialization;
 using System.Data;
+using LPS.DataAccess;
 
 
 namespace LPS.Web
 {
     public partial class Map : System.Web.UI.Page
     {
-        private const string DELETE_MODES_SQL = "DELETE T_SYS_Function";
+		private const string DELETE_MODES_SQL = "DELETE from T_SYS_Function";
 
         private const string INSERT_MODES_SQL = "INSERT INTO T_SYS_Function(MOD_URL ,MOD_NAME ,PARENT_URL ,SORT ,MOD_LEVEL, MOD_DESC, ENABLED, IMAGE_PATH, isFunction) VALUES ('{0}','{1}','{2}','{3}','{4}','{5}','Y','{6}', '{7}')";
 
@@ -65,6 +66,9 @@ namespace LPS.Web
                 InsertNode(xnRoot, "root", 0, 0);
                 //SqlHelper dal = new SqlHelper();
                 //dal.ExecuteNoQueryTran(sqls);
+
+				MySQLDbHepler dal = new MySQLDbHepler(System.Configuration.ConfigurationManager.ConnectionStrings["lps"].ConnectionString);
+				dal.ExecuteNoQuery(sqls);
             }
         }
 

@@ -31,7 +31,7 @@ namespace CreateModelTools
                 "t_sys_permision",
                 "t_sys_role",
             };
-            string connectionString = "server=localhost;port=3306;Database=lps;Uid=lps;Pwd=admin;allow zero datetime=true";
+			string connectionString = "SERVER=localhost;DATABASE=queueclient;UserId=root;Password=;";
             {
                 MySQLModelCreater helper = new MySQLModelCreater();
                 helper.ConnectionString = connectionString;

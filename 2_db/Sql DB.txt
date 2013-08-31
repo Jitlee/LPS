@@ -1,0 +1,14 @@
+CREATE TABLE T_SYS_Function(
+	MOD_URL varchar(512) NOT NULL,
+	MOD_NAME nvarchar(64) NOT NULL,
+	PARENT_URL varchar(512) NOT NULL,
+	SORT int NOT NULL,
+	MOD_LEVEL int NOT NULL,
+	MOD_DESC nvarchar(256) NULL,
+	ENABLED char(1) NOT NULL,
+	IMAGE_PATH varchar(256) NULL,
+	IsFunction char(1) NOT NULL
+)
+
+
+

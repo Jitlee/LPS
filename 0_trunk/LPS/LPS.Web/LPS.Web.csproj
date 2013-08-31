@@ -252,6 +252,20 @@
     <None Include="images\Thumbs.db" />
     <Content Include="Web.sitemap" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\LPS.DAL\LPS.DAL.csproj">
+      <Project>{2F8E05FA-2794-4D29-83F9-06E37CCB0505}</Project>
+      <Name>LPS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPS.DataAccess\LPS.DataAccess.csproj">
+      <Project>{2BF0C877-1154-4319-867B-6393D54311A3}</Project>
+      <Name>LPS.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPS.Model\LPS.Model.csproj">
+      <Project>{1804F31F-521A-4E3A-A7F1-80FF7E21690D}</Project>
+      <Name>LPS.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>

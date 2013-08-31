@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using System.Data;
+using System.Collections.Generic;
 
 namespace LPS.DataAccess
 {
@@ -179,6 +180,21 @@ namespace LPS.DataAccess
                 return result;
             });
         }
+
+		public int ExecuteNoQuery(List<string> cmdTexts)
+		{
+			
+				int result = 0;
+				foreach (string str in cmdTexts)
+				{
+					result = ExecuteNoQuery(str, CommandType.Text);
+					//cmd.CommandText = str;
+					//cmd.CommandType = CommandType.Text;
+					//result += cmd.ExecuteNonQuery();
+				}
+				return result;
+			
+		}
 
         /// <summary>
         /// 执行多条 SQL 语句，并返回受影响的行数

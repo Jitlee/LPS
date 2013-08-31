@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Web;
 using System.Web.UI;
+using LPS.Model.Sys;
+using LPS.DAL.Sys;
 namespace LPS.Web
 {
     public partial class Login : System.Web.UI.Page
@@ -13,35 +15,35 @@ namespace LPS.Web
 
         protected void btn_Click(object sender, ImageClickEventArgs e)
         {
-            //UsersOR user;
-            //try
-            //{
-            //    user = new UsersDA().sp_UserLogin(tbxUserCode.Text, tbxPassword.Text);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Alert(ex.Message.Replace("'", "").Replace("\r\n", ""));
-            //    return;
-            //}
-            //Session["CurrentUser"] = user;
-            //HttpCookie cookieGuid = new HttpCookie("CurrentUser");
-            //cookieGuid.Expires = DateTime.Now.AddHours(9);
+			UsersOR user;
+			try
+			{
+				user = new UsersDA().sp_UserLogin(tbxUserCode.Text, tbxPassword.Text);
+			}
+			catch (Exception ex)
+			{
+				Alert(ex.Message.Replace("'", "").Replace("\r\n", ""));
+				return;
+			}
+			Session["CurrentUser"] = user;
+			HttpCookie cookieGuid = new HttpCookie("CurrentUser");
+			cookieGuid.Expires = DateTime.Now.AddHours(9);
 
-            //cookieGuid.Values.Add("UserID", user.Guid);
-            //cookieGuid.Values.Add("LoginName", user.LogonName);
-            //cookieGuid.Values.Add("UserName", user.DisplayName);
-            //cookieGuid.Values.Add("Password", user.UserPwd);
-            //cookieGuid.Path = "/";
-            //Response.AppendCookie(cookieGuid);
+			cookieGuid.Values.Add("UserID", user.Guid);
+			cookieGuid.Values.Add("LoginName", user.LogonName);
+			cookieGuid.Values.Add("UserName", user.DisplayName);
+			cookieGuid.Values.Add("Password", user.UserPwd);
+			cookieGuid.Path = "/";
+			Response.AppendCookie(cookieGuid);
 
-            //List<VHC_USER_PERMISSIONS> _Permissions = new UserPermissionsDA().GetListByUserID(user.Guid);
-            //if (_Permissions.Count == 0)
-            //{
-            //    Alert("未授权，无法访问该系统。");
-            //    return;
-            //}
-            //Session["UserPermissions"] = _Permissions;
-            //Response.Redirect("~/Main/Default.aspx");
+			//List<VHC_USER_PERMISSIONS> _Permissions = new UserPermissionsDA().GetListByUserID(user.Guid);
+			//if (_Permissions.Count == 0)
+			//{
+			//    Alert("未授权，无法访问该系统。");
+			//    return;
+			//}
+			//Session["UserPermissions"] = _Permissions;
+			Response.Redirect("~/Main/Default.aspx");
 
         }
 
