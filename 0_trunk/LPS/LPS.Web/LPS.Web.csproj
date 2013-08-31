@@ -176,6 +176,7 @@
     <Content Include="images\unselected.gif" />
     <Content Include="images\unselected80.gif" />
     <Content Include="Login.aspx" />
+    <Content Include="Main\Default.aspx" />
     <Content Include="Map.aspx" />
     <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\cookies.js" />
@@ -215,6 +216,9 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\PageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -224,6 +228,20 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Main\MasterPage.master.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\MasterPage.master.designer.cs">
+      <DependentUpon>MasterPage.master</DependentUpon>
     </Compile>
     <Compile Include="Map.aspx.cs">
       <DependentUpon>Map.aspx</DependentUpon>
@@ -251,6 +269,7 @@
     <None Include="images\tab\Thumbs.db" />
     <None Include="images\Thumbs.db" />
     <Content Include="Web.sitemap" />
+    <Content Include="Main\MasterPage.master" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPS.DAL\LPS.DAL.csproj">

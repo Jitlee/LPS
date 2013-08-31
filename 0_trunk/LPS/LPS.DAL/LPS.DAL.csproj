@@ -44,8 +44,6 @@
     <Compile Include="Base\DictronaryDALBase.cs" />
     <Compile Include="Base\DictronaryTypeDAL.cs" />
     <Compile Include="Base\DictronaryTypeDALBase.cs" />
-    <Compile Include="Base\EmpolyeeDAL.cs" />
-    <Compile Include="Base\EmpolyeeDALBase.cs" />
     <Compile Include="Base\FarmerDAL.cs" />
     <Compile Include="Base\FarmerDALBase.cs" />
     <Compile Include="Base\LeafLevelDAL.cs" />
@@ -58,15 +56,8 @@
     <Compile Include="Pur\LeafDALBase.cs" />
     <Compile Include="Sys\FunctionDAL.cs" />
     <Compile Include="Sys\FunctionDALBase.cs" />
-    <Compile Include="Sys\PermisionDAL.cs" />
-    <Compile Include="Sys\PermisionDALBase.cs" />
-    <Compile Include="Sys\RoleDAL.cs" />
-    <Compile Include="Sys\RoleDALBase.cs" />
-    <Compile Include="Sys\RolePermisionDAL.cs" />
-    <Compile Include="Sys\RolePermisionDALBase.cs" />
-    <Compile Include="Sys\UserPermisionDAL.cs" />
-    <Compile Include="Sys\UserPermisionDALBase.cs" />
-    <Compile Include="Sys\UsersDA.cs" />
+    <Compile Include="Sys\UserPermissionsDA.cs" />
+    <Compile Include="Sys\EmpolyeeDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPS.DataAccess\LPS.DataAccess.csproj">

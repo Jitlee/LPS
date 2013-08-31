@@ -8,172 +8,188 @@ namespace LPS.Model.Sys
 {
     public class UsersOR
     {
-
-        private string _Guid;
+        private string _EmpolyeeId;
         /// <summary>
-        /// 用户身份标志ID
+        /// 
         /// </summary>
-        public string Guid
+        public string EmpolyeeId
         {
-            get { return _Guid; }
-            set { _Guid = value; }
-        }
-        
-        private string _DisplayName;
-        /// <summary>
-        /// 用户的显示名称
-        /// </summary>
-        public string DisplayName
-        {
-            get { return _DisplayName; }
-            set { _DisplayName = value; }
+            get { return _EmpolyeeId; }
+            set { _EmpolyeeId = value; }
         }
 
-        private string _AllPathName;
+        private string _EmpolyeeCode;
         /// <summary>
-        /// 用户在系统中的全程文字表述（例如：全国海关\海关总署\信息中心\应用开发二处\朱佳炜）
+        /// 员工编号
         /// </summary>
-        public string AllPathName
+        public string EmpolyeeCode
         {
-            get { return _AllPathName; }
-            set { _AllPathName = value; }
+            get { return _EmpolyeeCode; }
+            set { _EmpolyeeCode = value; }
         }
 
-        private int _Status;
+        private string _EmpolyeeRfid;
         /// <summary>
-        /// 状态（1、正常使用；2、直接逻辑删除；4、机构级联逻辑删除；8、人员级联逻辑删除；）掩码方式实现
+        /// 员工RFID
         /// </summary>
-        public int Status
+        public string EmpolyeeRfid
         {
-            get { return _Status; }
-            set { _Status = value; }
+            get { return _EmpolyeeRfid; }
+            set { _EmpolyeeRfid = value; }
         }
-        
-        
-        /// <summary>
-        /// 用户的附加描述信息
-        /// </summary>
-        public string Description { get; set; }
-        
 
-        
+        private string _EmpolyeeName;
         /// <summary>
-        /// 关系启用时间
+        /// 员工名称
         /// </summary>
-        public string StartTime { get; set; }
-        
+        public string EmpolyeeName
+        {
+            get { return _EmpolyeeName; }
+            set { _EmpolyeeName = value; }
+        }
 
-        
+        private string _EmpolyeePy;
         /// <summary>
-        /// 关系结束时间
+        /// 员工拼音缩写
         /// </summary>
-        public string EndTime { get; set; }
-        
+        public string EmpolyeePy
+        {
+            get { return _EmpolyeePy; }
+            set { _EmpolyeePy = value; }
+        }
 
-        
+        private string _EmpolyeeSex;
         /// <summary>
-        /// 用户的登录名称
+        /// 员工性别(‘男’,’女’)
         /// </summary>
-        public string LogonName { get; set; }
-        
+        public string EmpolyeeSex
+        {
+            get { return _EmpolyeeSex; }
+            set { _EmpolyeeSex = value; }
+        }
 
-        
+        private DateTime _EmpolyeeBirth;
         /// <summary>
-        /// 用户的IC卡号
+        /// 员工出生日期
         /// </summary>
-        public string IcCard { get; set; }
-        
+        public DateTime EmpolyeeBirth
+        {
+            get { return _EmpolyeeBirth; }
+            set { _EmpolyeeBirth = value; }
+        }
 
-        
+        private DateTime _EmpolyeeEntryDate;
         /// <summary>
-        /// 使用密码的加密算法
+        /// 员工入职日期
         /// </summary>
-        public string PwdTypeGuid { get; set; }
-        
+        public DateTime EmpolyeeEntryDate
+        {
+            get { return _EmpolyeeEntryDate; }
+            set { _EmpolyeeEntryDate = value; }
+        }
+
+        private string _EmpolyeePhone;
+        /// <summary>
+        /// 员工手机号
+        /// </summary>
+        public string EmpolyeePhone
+        {
+            get { return _EmpolyeePhone; }
+            set { _EmpolyeePhone = value; }
+        }
+
+        private string _EmpolyeeEmail;
+        /// <summary>
+        /// 员工电子邮箱
+        /// </summary>
+        public string EmpolyeeEmail
+        {
+            get { return _EmpolyeeEmail; }
+            set { _EmpolyeeEmail = value; }
+        }
+
+        private string _EmpolyeeAddress;
+        /// <summary>
+        /// 员工联系地址
+        /// </summary>
+        public string EmpolyeeAddress
+        {
+            get { return _EmpolyeeAddress; }
+            set { _EmpolyeeAddress = value; }
+        }
+
+        private string _EmpolyeeHometown;
+        /// <summary>
+        /// 员工籍贯
+        /// </summary>
+        public string EmpolyeeHometown
+        {
+            get { return _EmpolyeeHometown; }
+            set { _EmpolyeeHometown = value; }
+        }
+
+        private string _EmpolyeeCardId;
+        /// <summary>
+        /// 员工身份证号
+        /// </summary>
+        public string EmpolyeeCardId
+        {
+            get { return _EmpolyeeCardId; }
+            set { _EmpolyeeCardId = value; }
+        }
+
+        private string _UserId;
+        /// <summary>
+        /// 用户ID
+        /// </summary>
+        public string UserId
+        {
+            get { return _UserId; }
+            set { _UserId = value; }
+        }
 
         private string _UserPwd;
         /// <summary>
-        /// 用户所使用的密码（加密存储）
+        /// 用户密码
         /// </summary>
         public string UserPwd
         {
             get { return _UserPwd; }
             set { _UserPwd = value; }
         }
-              
 
-        private string _EMail;
+        private DateTime _EmpolyeeCreateDate;
         /// <summary>
-        /// 用户默认使用的EMAIL
+        /// 员工创建日期
         /// </summary>
-        public string EMail
+        public DateTime EmpolyeeCreateDate
         {
-            get { return _EMail; }
-            set { _EMail = value; }
+            get { return _EmpolyeeCreateDate; }
+            set { _EmpolyeeCreateDate = value; }
         }
 
-        private int _Postural;
+        private string _EmpolyeeIsDeleted;
         /// <summary>
-        /// 用户的在系统中的状态（1、禁用状态；2、要求下次登录修改密码；4、正常使用；）掩码方式实现
+        /// N 表示已删除 
         /// </summary>
-        public int Postural
+        public string EmpolyeeIsDeleted
         {
-            get { return _Postural; }
-            set { _Postural = value; }
+            get { return _EmpolyeeIsDeleted; }
+            set { _EmpolyeeIsDeleted = value; }
         }
 
-        private string _CreateTime;
+        private DateTime _EmpolyeeDeletedDate;
         /// <summary>
-        /// 创建时间
+        /// 员工删除日期
         /// </summary>
-        public string CreateTime
+        public DateTime EmpolyeeDeletedDate
         {
-            get { return _CreateTime; }
-            set { _CreateTime = value; }
+            get { return _EmpolyeeDeletedDate; }
+            set { _EmpolyeeDeletedDate = value; }
         }
 
-        private string _ModifyTime;
         /// <summary>
-        /// 最近修改时间
-        /// </summary>
-        public string ModifyTime
-        {
-            get { return _ModifyTime; }
-            set { _ModifyTime = value; }
-        }
-
-        private int _AdCount;
-        /// <summary>
-        /// 是否在AD中建立对应的账号
-        /// </summary>
-        public int AdCount
-        {
-            get { return _AdCount; }
-            set { _AdCount = value; }
-        }
-
-        private string _PersonId;
-        /// <summary>
-        /// 海关人员编码
-        /// </summary>
-        public string PersonId
-        {
-            get { return _PersonId; }
-            set { _PersonId = value; }
-        }
-        
-        /// <summary>
-        /// 数据范围
-        /// </summary>
-        public string DataArea { get; set; }
-        /// <summary>
-        /// 机构编号
-        /// </summary>
-        public string OrgNo { get; set; }
-        
-
-        /// <summary>
-        /// Users构造函数
+        /// baseempolyee构造函数
         /// </summary>
         public UsersOR()
         {
@@ -181,55 +197,58 @@ namespace LPS.Model.Sys
         }
 
         /// <summary>
-        /// Users构造函数
+        /// baseempolyee构造函数
         /// </summary>
-		public UsersOR(IDataReader row)
+        public UsersOR(IDataReader row)
         {
-            // 用户身份标志ID
-            _Guid = row["GUID"].ToString().Trim();
-            
-            // 用户的显示名称
-            _DisplayName = row["DISPLAY_NAME"].ToString().Trim();
-            
-            // 用户在系统中的全程文字表述（例如：全国海关\海关总署\信息中心\应用开发二处\朱佳炜）
-            _AllPathName = row["ALL_PATH_NAME"].ToString().Trim();
-            // 状态（1、正常使用；2、直接逻辑删除；4、机构级联逻辑删除；8、人员级联逻辑删除；）掩码方式实现
-            _Status = Convert.ToInt32(row["STATUS"]);
-            
-            // 用户的附加描述信息
-            Description = row["DESCRIPTION"].ToString().Trim();
-            // 关系启用时间
-            StartTime = row["START_TIME"].ToString().Trim();
-            // 关系结束时间
-            EndTime = row["END_TIME"].ToString().Trim();
-            // 用户的登录名称
-            LogonName = row["LOGON_NAME"].ToString().Trim();
-            // 用户的IC卡号
-            IcCard = row["IC_CARD"].ToString().Trim();
-            
-            // 用户所使用的密码（加密存储）
+            // 
+            _EmpolyeeId = row["EMPOLYEE_ID"].ToString().Trim();
+            // 员工编号
+            _EmpolyeeCode = row["EMPOLYEE_CODE"].ToString().Trim();
+            // 员工RFID
+            _EmpolyeeRfid = row["EMPOLYEE_RFID"].ToString().Trim();
+            // 员工名称
+            _EmpolyeeName = row["EMPOLYEE_NAME"].ToString().Trim();
+            // 员工拼音缩写
+            _EmpolyeePy = row["EMPOLYEE_PY"].ToString().Trim();
+            // 员工性别(‘男’,’女’)
+            _EmpolyeeSex = row["EMPOLYEE_SEX"].ToString().Trim();
+            // 员工出生日期
+            if (DBNull.Value != row["EMPOLYEE_BIRTH"])
+            {
+                _EmpolyeeBirth = Convert.ToDateTime(row["EMPOLYEE_BIRTH"]);
+            }
+            // 员工入职日期
+            if (DBNull.Value != row["EMPOLYEE_ENTRY_DATE"])
+            {
+                _EmpolyeeEntryDate = Convert.ToDateTime(row["EMPOLYEE_ENTRY_DATE"]);
+            }
+            // 员工手机号
+            _EmpolyeePhone = row["EMPOLYEE_PHONE"].ToString().Trim();
+            // 员工电子邮箱
+            _EmpolyeeEmail = row["EMPOLYEE_EMAIL"].ToString().Trim();
+            // 员工联系地址
+            _EmpolyeeAddress = row["EMPOLYEE_ADDRESS"].ToString().Trim();
+            // 员工籍贯
+            _EmpolyeeHometown = row["EMPOLYEE_HOMETOWN"].ToString().Trim();
+            // 员工身份证号
+            _EmpolyeeCardId = row["EMPOLYEE_CARD_ID"].ToString().Trim();
+            // 用户ID
+            _UserId = row["USER_ID"].ToString().Trim();
+            // 用户密码
             _UserPwd = row["USER_PWD"].ToString().Trim();
-            
-            // 用户默认使用的EMAIL
-            _EMail = row["E_MAIL"].ToString().Trim();
-            // 用户的在系统中的状态（1、禁用状态；2、要求下次登录修改密码；4、正常使用；）掩码方式实现
-            if (row["POSTURAL"] != DBNull.Value)
-                _Postural = Convert.ToInt32(row["POSTURAL"]);
-            // 创建时间
-            _CreateTime = row["CREATE_TIME"].ToString().Trim();
-            // 最近修改时间
-            _ModifyTime = row["MODIFY_TIME"].ToString().Trim();
-            // 是否在AD中建立对应的账号
-            if (row["AD_COUNT"] != DBNull.Value)
-                _AdCount = Convert.ToInt32(row["AD_COUNT"]);
-            // 海关人员编码
-            _PersonId = row["PERSON_ID"].ToString().Trim();
-
-            DataArea = row["DataArea"].ToString().Trim();
-            OrgNo = row["OrgNo"].ToString().Trim();
-            
+            // 员工创建日期
+            if (DBNull.Value != row["EMPOLYEE_CREATE_DATE"])
+            {
+                _EmpolyeeCreateDate = Convert.ToDateTime(row["EMPOLYEE_CREATE_DATE"]);
+            }
+            // N 表示已删除 
+            _EmpolyeeIsDeleted = row["EMPOLYEE_IS_DELETED"].ToString().Trim();
+            // 员工删除日期
+            if (DBNull.Value != row["EMPOLYEE_DELETED_DATE"])
+            {
+                _EmpolyeeDeletedDate = Convert.ToDateTime(row["EMPOLYEE_DELETED_DATE"]);
+            }
         }
-
     }
-
 }

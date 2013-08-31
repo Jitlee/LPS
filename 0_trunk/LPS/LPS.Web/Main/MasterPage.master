@@ -1,0 +1,162 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.master.cs"
+    Inherits="QM.Web.Main.MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title>排队机监控管理平台</title>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/page.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/Master.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Dialog.js"></script>
+    <script type="text/javascript" src="../Scripts/coolCalendar.js"></script>
+    <script type="text/javascript" src="../Scripts/cookies.js"></script>
+    <script type="text/javascript" src="../Scripts/Master.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
+    <script type="text/javascript" src="../Scripts/My97DatePicker/WdatePicker.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="divTop">
+        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; background-image: url(../images/master/main_05.gif);">
+            <tr>
+                <td style="width: 270px; height: 24px; background-image: url(../images/master/main_03.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td style="width: 21px; height: 24px; background-image: url(../images/master/main_07.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 21px; height: 38px; background-image: url(../images/master/main_09.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+                <td>
+                    <table style="height: 38px; width: 100%" class="style1" cellpadding="0" cellspacing="0"
+                        border="0">
+                        <tr>
+                            <td style="width: 50px;">
+                                <a href="../../Main/Default.aspx" title="首页">
+                                    <img src="../images/master/main_12.gif" alt="" /></a>
+                            </td>
+                            <td style="width: 50px;">
+                                <a href="../../Login.aspx" title="退出登录">
+                                    <img src="../images/master/main_20.gif" alt="" /></a>
+                            </td>
+                            <td style="width: 20px;">
+                                <img src="../images/master/main_21.gif" alt="" />
+                            </td>
+                            <td>
+                                &nbsp;
+                            </td>
+                            <td style="text-align: right; white-space: nowrap; overflow: hidden;">
+                                今天是：<span id="spanTime"><script type="text/javascript">                                                            clock();</script></span>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td style="width: 21px; height: 38px; background-image: url(../images/master/main_11.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr style="line-height: 8px; font-size: 8px; height: 8px;">
+                <td style="width: 270px; height: 8px; background-image: url(../images/master/main_29.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+                <td style="height: 8px; background-image: url(../images/master/main_30.gif); background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+                <td style="width: 21px; height: 8px; background-image: url(../images/master/main_31.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+        <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; background-image: url(../images/master/main_36.gif);">
+            <tr>
+                <td style="width: 177px; height: 28px; background-image: url(../images/master/main_32.gif);
+                    background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+                <td style="text-align: left;">
+                    当前用户：
+                    <%=NowUser %>
+                </td>
+                <td style="width: 21px; height: 28px; background-image: url(../images/master/main_37.gif);
+                    background-repeat: no-repeat; text-align: left;">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="divSide">
+        <div id="header">
+            <div>
+                系统菜单</div>
+        </div>
+        <div id="middle">
+            <asp:Repeater ID="rptMenu0" runat="server">
+                <HeaderTemplate>
+                    <ul id="menu1">
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <li>
+                        <div id='itemfirstt' runat="server" title='<%# Eval("MOD_DESC") %>'>
+                            <%# Eval("MOD_NAME")%></div>
+                        <asp:Repeater ID="rptMenu2" runat="server" DataSource='<%# GetMenuList(Eval("MOD_URL")) %>'>
+                            <HeaderTemplate>
+                                <ul style="display: none;">
+                            </HeaderTemplate>
+                            <ItemTemplate>
+                                <li id='itemend' runat="server" title='<%# Eval("MOD_DESC") %>'><a href='../../<%# Eval("MOD_URL") %>'>
+                                    <%# Eval("MOD_NAME")%></a></li></ItemTemplate>
+                            <FooterTemplate>
+                                </ul></FooterTemplate>
+                        </asp:Repeater>
+                    </li>
+                </ItemTemplate>
+                <FooterTemplate>
+                    </ul></FooterTemplate>
+            </asp:Repeater>
+        </div>
+        <div id="footer">
+            版本：2013V1.0
+        </div>
+    </div>
+    <div id="divSpiter" title="展开/关闭">
+    </div>
+    <div id="divMain">
+        <div style="width: 100%">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </div>
+    <div id="divBottom">
+        <table style="width: 100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td style="width: 6px; background-image: url(../images/master/main_59.gif); background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+                <td>
+                    &nbsp;
+                </td>
+                <td style="width: 6px; background-image: url(../images/master/main_62.gif); background-repeat: no-repeat;">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
+</body>
+</html>

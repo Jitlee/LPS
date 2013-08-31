@@ -6,7 +6,7 @@ using System.Data;
 
 namespace LPS.DAL.Sys
 {
-	public class UsersDA : DALBase
+	public class EmpolyeeDAL : DALBase
 	{
 
 		public ObservableCollection<UsersOR> Select(string strFilter)
@@ -33,11 +33,11 @@ namespace LPS.DAL.Sys
 
 		public UsersOR sp_UserLogin(string userID, string UsrPwd)
 		{
-			string sql = "select * from t_base_empolyee WHERE USER_ID='@USER_ID' and USER_PWD='@USER_PWD'";
+            string sql = "select * from t_base_empolyee WHERE EMPOLYEE_CODE=@EMPOLYEE_CODE and USER_PWD=@USER_PWD";
 
 			UsersOR m_User = db.ExecuteGet<UsersOR>(sql, (dr) => { return new UsersOR(dr); }
-					, db.GetDataParameter("@USER_ID", userID)
-					, db.GetDataParameter("@USER_PWD", userID));
+                    , db.GetDataParameter("@EMPOLYEE_CODE", userID)
+                    , db.GetDataParameter("@USER_PWD", UsrPwd));
 			if (m_User == null)
 			{
 				//UsersOR user = this.selectARowDate(userID);
