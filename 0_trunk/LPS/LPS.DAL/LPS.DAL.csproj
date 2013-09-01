@@ -54,10 +54,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pur\LeafDAL.cs" />
     <Compile Include="Pur\LeafDALBase.cs" />
-    <Compile Include="Sys\FunctionDAL.cs" />
-    <Compile Include="Sys\FunctionDALBase.cs" />
+    <Compile Include="Sys\RolesDA.cs" />
     <Compile Include="Sys\UserPermissionsDA.cs" />
     <Compile Include="Sys\EmpolyeeDAL.cs" />
+    <Compile Include="Sys\UserRolesDA.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\LPS.DataAccess\LPS.DataAccess.csproj">

@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.UI;
-using LPS.Web.Common;
 using LPS.Model.Sys;
 
 
-namespace QM.Web.Main
+namespace LPS.Web.Main
 {
     public partial class MasterPage : System.Web.UI.MasterPage
     {

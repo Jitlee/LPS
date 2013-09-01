@@ -16,7 +16,7 @@ namespace LPS.Web
 
         protected void btn_Click(object sender, ImageClickEventArgs e)
         {
-			UsersOR user;
+			EmpolyeeOR user;
 			try
 			{
 				user = new EmpolyeeDAL().sp_UserLogin(tbxUserCode.Text, tbxPassword.Text);

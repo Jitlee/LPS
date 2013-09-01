@@ -6,7 +6,7 @@ using System.Data;
 
 namespace LPS.Model.Sys
 {
-    public class UsersOR
+    public class EmpolyeeOR
     {
         private string _EmpolyeeId;
         /// <summary>
@@ -191,7 +191,7 @@ namespace LPS.Model.Sys
         /// <summary>
         /// baseempolyee构造函数
         /// </summary>
-        public UsersOR()
+        public EmpolyeeOR()
         {
 
         }
@@ -199,7 +199,7 @@ namespace LPS.Model.Sys
         /// <summary>
         /// baseempolyee构造函数
         /// </summary>
-        public UsersOR(IDataReader row)
+        public EmpolyeeOR(IDataReader row)
         {
             // 
             _EmpolyeeId = row["EMPOLYEE_ID"].ToString().Trim();

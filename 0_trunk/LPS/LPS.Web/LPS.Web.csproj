@@ -51,6 +51,7 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Default\Default.css" />
     <Content Include="Global.asax" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\bg2.gif" />
@@ -178,6 +179,11 @@
     <Content Include="Login.aspx" />
     <Content Include="Main\Default.aspx" />
     <Content Include="Map.aspx" />
+    <Content Include="Role\RoleEdit.aspx" />
+    <Content Include="Role\RoleList.aspx" />
+    <Content Include="Role\RoleSet.aspx" />
+    <Content Include="Role\UserAuthEdit.aspx" />
+    <Content Include="Role\UserAuthList.aspx" />
     <Content Include="Scripts\Common.js" />
     <Content Include="Scripts\cookies.js" />
     <Content Include="Scripts\coolCalendar.js" />
@@ -207,6 +213,7 @@
     <Content Include="Styles\Master.css" />
     <Content Include="Styles\page.css" />
     <Content Include="Styles\permission .css" />
+    <Content Include="UI\pagenavigate.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -251,12 +258,55 @@
       <DependentUpon>Map.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Role\RoleEdit.aspx.cs">
+      <DependentUpon>RoleEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\RoleEdit.aspx.designer.cs">
+      <DependentUpon>RoleEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\RoleList.aspx.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\RoleList.aspx.designer.cs">
+      <DependentUpon>RoleList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\RoleSet.aspx.cs">
+      <DependentUpon>RoleSet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\RoleSet.aspx.designer.cs">
+      <DependentUpon>RoleSet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\UserAuthEdit.aspx.cs">
+      <DependentUpon>UserAuthEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\UserAuthEdit.aspx.designer.cs">
+      <DependentUpon>UserAuthEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Role\UserAuthList.aspx.cs">
+      <DependentUpon>UserAuthList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Role\UserAuthList.aspx.designer.cs">
+      <DependentUpon>UserAuthList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\pagenavigate.ascx.cs">
+      <DependentUpon>pagenavigate.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\pagenavigate.ascx.designer.cs">
+      <DependentUpon>pagenavigate.ascx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="images\menu\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\Default\Default.skin" />
     <None Include="images\common\Thumbs.db" />
     <None Include="images\Dialog\Thumbs.db" />
     <None Include="images\gridview\Thumbs.db" />

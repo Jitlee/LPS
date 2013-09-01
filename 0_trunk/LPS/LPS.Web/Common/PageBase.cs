@@ -11,7 +11,7 @@ using LPS.Model.Sys;
 using LPS.DAL.Sys;
 using System.Collections.ObjectModel;
 
-namespace LPS.Web.Common
+namespace LPS.Web
 {
     public partial class PageBase : System.Web.UI.Page
     {
@@ -71,11 +71,11 @@ namespace LPS.Web.Common
             }
         }
 
-        private UsersOR _CurrentUser;
+        private EmpolyeeOR _CurrentUser;
         /// <summary>
         /// 当前用户信息
         /// </summary>
-        public UsersOR CurrentUser
+        public EmpolyeeOR CurrentUser
         {
             get
             {
@@ -104,7 +104,7 @@ namespace LPS.Web.Common
                     }
                     else
                     {
-                        _CurrentUser = (UsersOR)Session["CurrentUser"];
+                        _CurrentUser = (EmpolyeeOR)Session["CurrentUser"];
                     }
                 }
                 return _CurrentUser;

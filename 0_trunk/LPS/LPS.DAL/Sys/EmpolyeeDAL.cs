@@ -9,7 +9,7 @@ namespace LPS.DAL.Sys
 	public class EmpolyeeDAL : DALBase
 	{
 
-		public ObservableCollection<UsersOR> Select(string strFilter)
+		public ObservableCollection<EmpolyeeOR> Select(string strFilter)
 		{
 			if (!string.IsNullOrEmpty(strFilter))
 			{
@@ -18,24 +18,24 @@ namespace LPS.DAL.Sys
 			string sql = @"select * from t_base_empolyee order by USER_ID";
 			sql = string.Format(sql, strFilter);
 
-			return db.ExecuteQuery<UsersOR>(sql, (dr) => { return new UsersOR(dr); });
+			return db.ExecuteQuery<EmpolyeeOR>(sql, (dr) => { return new EmpolyeeOR(dr); });
 		}
 
 
-		public UsersOR selectARowDateByGuid(string m_id)
+		public EmpolyeeOR selectARowDateByGuid(string m_id)
 		{
-			string sql = string.Format(@"select * from t_base_empolyee  where EMPOLYEE_ID=@EMPOLYEE_ID", m_id);
-			return db.ExecuteGet<UsersOR>(sql,(dr) => { return new UsersOR(dr); }
+			string sql = string.Format(@"select * from t_base_empolyee  where EMPOLYEE_ID=@EMPOLYEE_ID");
+			return db.ExecuteGet<EmpolyeeOR>(sql,(dr) => { return new EmpolyeeOR(dr); }
 				, db.GetDataParameter("@EMPOLYEE_ID", m_id));
 		}
 
 
 
-		public UsersOR sp_UserLogin(string userID, string UsrPwd)
+		public EmpolyeeOR sp_UserLogin(string userID, string UsrPwd)
 		{
             string sql = "select * from t_base_empolyee WHERE EMPOLYEE_CODE=@EMPOLYEE_CODE and USER_PWD=@USER_PWD";
 
-			UsersOR m_User = db.ExecuteGet<UsersOR>(sql, (dr) => { return new UsersOR(dr); }
+			EmpolyeeOR m_User = db.ExecuteGet<EmpolyeeOR>(sql, (dr) => { return new EmpolyeeOR(dr); }
                     , db.GetDataParameter("@EMPOLYEE_CODE", userID)
                     , db.GetDataParameter("@USER_PWD", UsrPwd));
 			if (m_User == null)

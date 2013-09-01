@@ -7,7 +7,7 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace QM.Web.Main {
+namespace LPS.Web.Main {
     
     
     public partial class Default {

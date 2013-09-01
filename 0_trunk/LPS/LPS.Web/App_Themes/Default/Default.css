@@ -1,0 +1,40 @@
+﻿.gridview_skin 
+{
+	background-color:#FFFFFF;
+	width:100%;
+	border:solid 1px #b5d6e6;
+	_border:0px;
+}
+
+.gridview_skin_header {
+	height:22px;
+	background-image:url(../../images/bg2.gif);
+	background-color:#FFFFFF;
+	text-align:center;
+}
+
+.gridview_skin tr.old		{ background:#FFF3BF; }
+.gridview_skin tr.highlight	{ background:#EFF0F2; color:Blue; }
+.gridview_skin tr.highlight td{ background:#EFF0F2; color:Blue; }
+.gridview_skin tr.selected	{ background:#DFE8F6; }
+
+.gridview_skin td,th {
+	height:22px;
+	border:solid 1px #b5d6e6;
+	text-align:center;
+}
+
+.linkbutton_skin {	
+	margin:0px 5px;
+}
+
+.linkbutton_skin * {
+	vertical-align:middle;
+}
+
+.linkbutton_skin img {
+	border:none;
+	margin-right:8px;
+	width:14px;
+	height:14px;
+}
