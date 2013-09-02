@@ -52,6 +52,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Themes\Default\Default.css" />
+    <Content Include="Base\DictronaryEdit.aspx" />
+    <Content Include="Base\DictronaryList.aspx" />
+    <Content Include="Base\DictronaryTypeEdit.aspx" />
+    <Content Include="Base\DictronaryTypeList.aspx" />
+    <Content Include="Base\FarmerEdit.aspx" />
+    <Content Include="Base\FarmerList.aspx" />
+    <Content Include="Base\LeafLevelEdit.aspx" />
+    <Content Include="Base\LeafLevelList.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\bg2.gif" />
@@ -213,6 +221,8 @@
     <Content Include="Styles\Master.css" />
     <Content Include="Styles\page.css" />
     <Content Include="Styles\permission .css" />
+    <Content Include="SysAdmin\EmpolyeeEdit.aspx" />
+    <Content Include="SysAdmin\EmpolyeeList.aspx" />
     <Content Include="UI\pagenavigate.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -223,6 +233,62 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Base\DictronaryEdit.aspx.cs">
+      <DependentUpon>DictronaryEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\DictronaryEdit.aspx.designer.cs">
+      <DependentUpon>DictronaryEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\DictronaryList.aspx.cs">
+      <DependentUpon>DictronaryList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\DictronaryList.aspx.designer.cs">
+      <DependentUpon>DictronaryList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\DictronaryTypeEdit.aspx.cs">
+      <DependentUpon>DictronaryTypeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\DictronaryTypeEdit.aspx.designer.cs">
+      <DependentUpon>DictronaryTypeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\DictronaryTypeList.aspx.cs">
+      <DependentUpon>DictronaryTypeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\DictronaryTypeList.aspx.designer.cs">
+      <DependentUpon>DictronaryTypeList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FarmerEdit.aspx.cs">
+      <DependentUpon>FarmerEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\FarmerEdit.aspx.designer.cs">
+      <DependentUpon>FarmerEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\FarmerList.aspx.cs">
+      <DependentUpon>FarmerList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\FarmerList.aspx.designer.cs">
+      <DependentUpon>FarmerList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\LeafLevelEdit.aspx.cs">
+      <DependentUpon>LeafLevelEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\LeafLevelEdit.aspx.designer.cs">
+      <DependentUpon>LeafLevelEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\LeafLevelList.aspx.cs">
+      <DependentUpon>LeafLevelList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\LeafLevelList.aspx.designer.cs">
+      <DependentUpon>LeafLevelList.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Common\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
@@ -292,6 +358,20 @@
     </Compile>
     <Compile Include="Role\UserAuthList.aspx.designer.cs">
       <DependentUpon>UserAuthList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysAdmin\EmpolyeeEdit.aspx.cs">
+      <DependentUpon>EmpolyeeEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\EmpolyeeEdit.aspx.designer.cs">
+      <DependentUpon>EmpolyeeEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SysAdmin\EmpolyeeList.aspx.cs">
+      <DependentUpon>EmpolyeeList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SysAdmin\EmpolyeeList.aspx.designer.cs">
+      <DependentUpon>EmpolyeeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\pagenavigate.ascx.cs">
       <DependentUpon>pagenavigate.ascx</DependentUpon>

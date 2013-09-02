@@ -56,7 +56,7 @@
     <Compile Include="Pur\LeafDALBase.cs" />
     <Compile Include="Sys\RolesDA.cs" />
     <Compile Include="Sys\UserPermissionsDA.cs" />
-    <Compile Include="Sys\EmpolyeeDAL.cs" />
+    <Compile Include="Sys\EmpolyeeDA.cs" />
     <Compile Include="Sys\UserRolesDA.cs" />
   </ItemGroup>
   <ItemGroup>

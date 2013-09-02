@@ -29,6 +29,11 @@ namespace LPS.Model.Sys
             set { _RoleGuid = value; }
         }
 
+		/// <summary>
+		/// 角色名称
+		/// </summary>
+		public string RoleName { get; set; }
+
         /// <summary>
         /// UserRoles构造函数
 
@@ -48,6 +53,8 @@ namespace LPS.Model.Sys
             _UserGuid = row["USER_ID"].ToString().Trim();
             // 角色GUID
             _RoleGuid = row["ROLE_ID"].ToString().Trim();
+			//角色名称
+			RoleName = row["ROLE_NAME"].ToString().Trim();
         }
     }
 }

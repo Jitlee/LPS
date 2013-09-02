@@ -51,7 +51,6 @@
     <Compile Include="Sys\FunctionOR.cs" />
     <Compile Include="Sys\RolePermissionsOR.cs" />
     <Compile Include="Sys\RolesOR.cs" />
-    <Compile Include="Sys\UserPermision.cs" />
     <Compile Include="Sys\UserRolesOR.cs" />
     <Compile Include="Sys\EmpolyeeOR.cs" />
     <Compile Include="Sys\VHC_USER_PERMISSIONS.cs" />

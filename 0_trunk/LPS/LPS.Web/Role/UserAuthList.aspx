@@ -97,13 +97,13 @@
                                             <asp:TemplateField HeaderText="授权" HeaderStyle-Width="60">
                                                 <ItemTemplate>
                                                     <img src="../images/common/roseSetRight.gif" style="border: 0px;" alt="授权" class="imgUserAuth"
-                                                        userid="<%# Server.UrlEncode(Eval("GUID").ToString().Trim()) %>" />
+                                                        userid="<%# Server.UrlEncode(Eval("EmpolyeeId").ToString().Trim()) %>" />
                                                 </ItemTemplate>
                                             </asp:TemplateField>
-                                            <asp:BoundField HeaderText="姓名" DataField="USER_NAME" />
-                                            <asp:BoundField HeaderText="登录名" DataField="LOGON_NAME" />
-                                            <asp:BoundField HeaderText="部门" DataField="deptNmae" />
-                                            <asp:BoundField HeaderText="角色" DataField="roseNameList" />
+                                            <asp:BoundField HeaderText="姓名" DataField="EmpolyeeName" />
+                                            <asp:BoundField HeaderText="登录名" DataField="EmpolyeeCode" />
+                                             
+                                            <asp:BoundField HeaderText="角色" DataField="RoseNameList" />
                                         </Columns>
                                         <EmptyDataTemplate>
                                             <table class="gridview_skin" cellspacing="0" cellpadding="0" rules="all" border="0"
@@ -121,9 +121,7 @@
                                                     <th scope="col">
                                                         登录名
                                                     </th>
-                                                    <th scope="col">
-                                                        部门
-                                                    </th>
+                                                   
                                                     <th scope="col">
                                                         角色
                                                     </th>

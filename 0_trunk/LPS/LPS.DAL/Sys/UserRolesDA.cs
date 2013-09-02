@@ -10,8 +10,6 @@ namespace LPS.DAL.Sys
 {
     public class UserRolesDA : DALBase
     {
-
-
         /// <summary>
         /// 查询用户角色
         /// </summary>
@@ -19,7 +17,8 @@ namespace LPS.DAL.Sys
         /// <returns></returns>
         public ObservableCollection<UserRolesOR> GetUserRoseBuyUserID(string UserGuid)
         {
-            string sql = string.Format("select * from T_SYS_USER_ROLE where USER_ID='{0}'", UserGuid);
+			string sql = string.Format(@"SELECT T_SYS_USER_ROLE.*,T_SYS_ROLE.ROLE_NAME from T_SYS_USER_ROLE
+LEFT JOIN T_SYS_ROLE ON T_SYS_ROLE.ROLE_ID=T_SYS_USER_ROLE.ROLE_ID WHERE USER_ID='{0}'", UserGuid);
 
             return db.ExecuteQuery<UserRolesOR>(sql, (dr) => { return new UserRolesOR(dr); });
         }
@@ -39,25 +38,41 @@ namespace LPS.DAL.Sys
             return true;
 
         }
-        public DataTable GetUserRosetList(int pageCrrent, int pageSize, out int pageCount, string where)
-        {
-            string sql = "select * from V_UserRoseInfo";
-            if (!string.IsNullOrEmpty(where))
-            {
-                sql = string.Format(" {0} where {1}", sql, where);
-            }
-            DataTable dt = null;
-            int returnC = 0; try
-            {
-                //dt = db.ExecuteQuery(sql, pageCrrent, pageSize, out returnC);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            pageCount = returnC;
-            return dt;
-        }
+		public ObservableCollection<EmpolyeeOR> GetUserRosetList(int pageCrrent, int pageSize, out int pageCount, string where)
+		{
+			string sql = "select * from t_base_empolyee";
+			if (!string.IsNullOrEmpty(where))
+			{
+				sql = string.Format(" {0} where {1}", sql, where);
+			}
+
+			ObservableCollection<EmpolyeeOR> EmpolyeeList = db.ExecuteQuery<EmpolyeeOR>(sql, (dr) => { return new EmpolyeeOR(dr); });
+			foreach (EmpolyeeOR emp in EmpolyeeList)
+			{
+				emp.RoseNameList = GetUserRoseNames(emp.EmpolyeeId);
+			}
+			pageCount = 0;
+			return EmpolyeeList;
+		}
+
+		protected string GetUserRoseNames(string UserID)
+		{
+			ObservableCollection<UserRolesOR> Roles = GetUserRoseBuyUserID(UserID);
+			string RoleNames = string.Empty;
+			if (Roles != null && Roles.Count >= 0)
+			{
+				foreach (UserRolesOR obj in Roles)
+				{
+					if (!string.IsNullOrEmpty(RoleNames))
+					{
+						RoleNames += "#";
+					}
+					RoleNames += obj.RoleName;
+				}
+				return RoleNames;
+			}
+			return string.Empty;
+		}
 
 
 

@@ -40,8 +40,6 @@ namespace LPS.DAL.Sys
             string sql = string.Format("select * from T_SYS_ROLES where role_name != '" + rolename + "'");
             return db.ExecuteQuery<RolesOR>(sql, (dr) => { return new RolesOR(dr); });
         }
-
-
         #endregion
 
         #region 插入
@@ -85,21 +83,5 @@ namespace LPS.DAL.Sys
             return db.ExecuteNoQuery(sql) > -1;
         }
         #endregion
-
-        #region 获取角色
-        /// <summary>
-        /// 获取角色
-        /// </summary>
-        /// <param name="guid">角色guid</param>
-        /// <returns>DataTable</returns>
-        //public DataTable GetValueByGuid(string guid)
-        //{
-        //    DataSet ds = db.ExecuteQueryDataSet("select * from T_SYS_ROLES where GUID = '" + guid + "'");
-        //    DataTable dt = ds.Tables[0].DefaultView.Table;
-        //    return dt;
-        //}
-        #endregion
-
-
     }
 }

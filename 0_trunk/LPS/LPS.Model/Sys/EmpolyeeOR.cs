@@ -188,6 +188,8 @@ namespace LPS.Model.Sys
             set { _EmpolyeeDeletedDate = value; }
         }
 
+		public string RoseNameList { get; set; }
+
         /// <summary>
         /// baseempolyee构造函数
         /// </summary>
@@ -195,6 +197,7 @@ namespace LPS.Model.Sys
         {
 
         }
+
 
         /// <summary>
         /// baseempolyee构造函数

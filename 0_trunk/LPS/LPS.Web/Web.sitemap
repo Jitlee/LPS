@@ -2,17 +2,33 @@
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
 	<siteMapNode url="Main/Default.aspx"  title="主页"  description="烟草管理系统">
 		<siteMapNode url="SysAdmin/BankList.aspx?id=admin" title="系统管理"  description="系统管理">
-			<siteMapNode url="SysAdmin/UserList.aspx" title="管理员管理"  description="管理员管理">
-				<siteMapNode url="SysAdmin/UserEdit.aspx" title="编辑" description="编辑"  />
-				<siteMapNode url="SysAdmin/UserList.aspx?Delete" title="删除" description="删除" isFunction="true" />
+			<siteMapNode url="SysAdmin/EmpolyeeList.aspx" title="员工管理"  description="员工管理">
+				<siteMapNode url="SysAdmin/EmpolyeeEdit.aspx" title="编辑" description="编辑"  />
+				<siteMapNode url="SysAdmin/EmpolyeeList.aspx?Delete" title="删除" description="删除" isFunction="true" />
 			</siteMapNode>
 			<siteMapNode url="Role/RoleList.aspx" title="角色列表" description="角色列表"  imagePath="group.gif">
 				<siteMapNode url="Role/RoleSet.aspx" title="权限设置" description="权限设置" />
-				<siteMapNode url="Role/RoleEdit.aspx" title="编辑" description="添加、修改角色" isFunction="true" />
+				<siteMapNode url="Role/RoleEdit.aspx" title="编辑" description="添加、修改角色"/>
 				<siteMapNode url="Role/RoleList.aspx?Delete" title="删除" description="删除" />
 			</siteMapNode>
 			<siteMapNode url="Role/UserAuthList.aspx" title="用户授权"  description="给用户授予角色">
 				<siteMapNode url="Role/UserAuthEdit.aspx" title="授权" description="授权授权" />
+			</siteMapNode>
+			<siteMapNode url="Base/DictronaryTypeList.aspx" title="数据字典类型列表" description="数据字典类型列表"  imagePath="group.gif">
+				<siteMapNode url="Base/DictronaryTypeEdit.aspx" title="编辑" description="编辑"/>
+				<siteMapNode url="Base/DictronaryTypeList.aspx?Delete" title="删除" description="删除" />
+			</siteMapNode>
+			<siteMapNode url="Base/DictronaryList.aspx" title="数据字典列表" description="数据字典列表"  imagePath="group.gif">
+				<siteMapNode url="Base/DictronaryEdit.aspx" title="编辑" description="编辑"/>
+				<siteMapNode url="Base/DictronaryList.aspx?Delete" title="删除" description="删除" />
+			</siteMapNode>
+			<siteMapNode url="Base/FarmerList.aspx" title="烟农列表" description="烟农列表"  imagePath="group.gif">
+				<siteMapNode url="Base/FarmerEdit.aspx" title="编辑" description="编辑"/>
+				<siteMapNode url="Base/FarmerList.aspx?Delete" title="删除" description="删除" />
+			</siteMapNode>
+			<siteMapNode url="Base/LeafLevelList.aspx" title="烟叶等级列表" description="烟叶等级列表"  imagePath="group.gif">
+				<siteMapNode url="Base/LeafLevelEdit.aspx" title="编辑" description="编辑"/>
+				<siteMapNode url="Base/LeafLevelList.aspx?Delete" title="删除" description="删除" />
 			</siteMapNode>
 		</siteMapNode>
 	</siteMapNode>

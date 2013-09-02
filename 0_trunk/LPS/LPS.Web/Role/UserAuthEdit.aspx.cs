@@ -45,7 +45,7 @@ namespace LPS.Web.Role
         {
             if (Request.QueryString["userid"] != null)
             {
-                EmpolyeeOR obj = new EmpolyeeDAL().selectARowDateByGuid(Request.QueryString["userid"]);
+                EmpolyeeOR obj = new EmpolyeeDA().selectARowDateByGuid(Request.QueryString["userid"]);
                 if (obj != null)
                 {
                     this.txt_ShowName.Text = obj.EmpolyeeName;

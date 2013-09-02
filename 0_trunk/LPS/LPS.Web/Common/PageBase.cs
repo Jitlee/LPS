@@ -87,7 +87,7 @@ namespace LPS.Web
                             && null != HttpContext.Current.Request.Cookies["CurrentUser"].Values["UserID"]
                             && (!string.IsNullOrEmpty(HttpContext.Current.Request.Cookies["CurrentUser"].Values["UserID"])))
                         {
-                            _CurrentUser = new EmpolyeeDAL().selectARowDateByGuid(HttpContext.Current.Request.Cookies["CurrentUser"].Values["UserID"]);
+                            _CurrentUser = new EmpolyeeDA().selectARowDateByGuid(HttpContext.Current.Request.Cookies["CurrentUser"].Values["UserID"]);
                             Session["CurrentUser"] = _CurrentUser;
                         }
                         else

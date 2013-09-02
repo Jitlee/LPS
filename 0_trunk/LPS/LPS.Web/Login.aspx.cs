@@ -19,7 +19,7 @@ namespace LPS.Web
 			EmpolyeeOR user;
 			try
 			{
-				user = new EmpolyeeDAL().sp_UserLogin(tbxUserCode.Text, tbxPassword.Text);
+				user = new EmpolyeeDA().sp_UserLogin(tbxUserCode.Text, tbxPassword.Text);
 			}
 			catch (Exception ex)
 			{
@@ -45,7 +45,6 @@ namespace LPS.Web
             }
             Session["UserPermissions"] = _Permissions;
 			Response.Redirect("~/Main/Default.aspx");
-
         }
 
         protected void Alert(string msg)
