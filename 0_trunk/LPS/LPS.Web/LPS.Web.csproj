@@ -221,8 +221,8 @@
     <Content Include="Styles\Master.css" />
     <Content Include="Styles\page.css" />
     <Content Include="Styles\permission .css" />
-    <Content Include="SysAdmin\EmpolyeeEdit.aspx" />
-    <Content Include="SysAdmin\EmpolyeeList.aspx" />
+    <Content Include="Base\EmpolyeeEdit.aspx" />
+    <Content Include="Base\EmpolyeeList.aspx" />
     <Content Include="UI\pagenavigate.ascx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -359,18 +359,18 @@
     <Compile Include="Role\UserAuthList.aspx.designer.cs">
       <DependentUpon>UserAuthList.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SysAdmin\EmpolyeeEdit.aspx.cs">
+    <Compile Include="Base\EmpolyeeEdit.aspx.cs">
       <DependentUpon>EmpolyeeEdit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SysAdmin\EmpolyeeEdit.aspx.designer.cs">
+    <Compile Include="Base\EmpolyeeEdit.aspx.designer.cs">
       <DependentUpon>EmpolyeeEdit.aspx</DependentUpon>
     </Compile>
-    <Compile Include="SysAdmin\EmpolyeeList.aspx.cs">
+    <Compile Include="Base\EmpolyeeList.aspx.cs">
       <DependentUpon>EmpolyeeList.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="SysAdmin\EmpolyeeList.aspx.designer.cs">
+    <Compile Include="Base\EmpolyeeList.aspx.designer.cs">
       <DependentUpon>EmpolyeeList.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\pagenavigate.ascx.cs">

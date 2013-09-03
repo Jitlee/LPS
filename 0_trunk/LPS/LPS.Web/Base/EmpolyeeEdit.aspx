@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DictronaryEdit.aspx.cs"
-	Inherits="LPS.Web.Base.BaseDictronaryEdit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="EmpolyeeEdit.aspx.cs" Inherits="LPS.Web.Base.BaseEmpolyeeEdit" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -56,34 +55,116 @@
 							<table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
 								<tr>
 									<td class="tdRight">
-										类型：
+										员工编号：
 									</td>
 									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtDictType" CssClass="textbox_skin" />
+										<asp:TextBox runat="server" ID="txtEmpolyeeCode" CssClass="textbox_skin" />
 									</td>
 								</tr>
 								<tr>
 									<td class="tdRight">
-										名称：
+										员工RFID：
 									</td>
 									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtDictName" CssClass="textbox_skin" />
+										<asp:TextBox runat="server" ID="txtEmpolyeeRfid" CssClass="textbox_skin" />
 									</td>
 								</tr>
 								<tr>
 									<td class="tdRight">
-										值：
+										员工名称：
 									</td>
 									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtDictValue" CssClass="textbox_skin" />
+										<asp:TextBox runat="server" ID="txtEmpolyeeName" CssClass="textbox_skin" />
 									</td>
 								</tr>
 								<tr>
 									<td class="tdRight">
-										描述：
+										员工拼音缩写：
 									</td>
 									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtDictDesc" CssClass="textbox_skin" />
+										<asp:TextBox runat="server" ID="txtEmpolyeePy" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工性别：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeSex" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工出生日期：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox ID="txtEmpolyeeBirth" CssClass="textbox_skin" onfocus="WdatePicker();"
+											runat="server" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工入职日期：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox ID="txtEmpolyeeEntryDate" CssClass="textbox_skin" onfocus="WdatePicker();"
+											runat="server" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工手机号：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeePhone" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工电子邮箱：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeEmail" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工联系地址：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeAddress" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工籍贯：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeHometown" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										员工身份证号：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeCardId" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										用户ID：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtUserId" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										用户密码：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" TextMode="Password" ID="txtUserPwd" CssClass="textbox_skin" />
 									</td>
 								</tr>
 							</table>

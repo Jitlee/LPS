@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Main/MasterPage.master" AutoEventWireup="true"
-	CodeBehind="FarmerList.aspx.cs" Inherits="LPS.Web.Base.BaseFarmerList" %>
+	CodeBehind="EmpolyeeList.aspx.cs" Inherits="LPS.Web.Base.BaseEmpolyeeList" %>
 
 <%@ Register Src="../UI/pagenavigate.ascx" TagName="pagenavigate" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -7,7 +7,7 @@
 
 		$(document).ready(function () {
 			$(".headerBtnAdd").click(function () {
-				var murl = 'FarmerEdit.aspx';
+				var murl = 'EmpolyeeEdit.aspx';
 				diag = new Dialog("Edit");
 				diag.URL = murl;
 				diag.Title = "添加";
@@ -24,10 +24,10 @@
 			editArr.each(function (i, o) {
 				var obj = $(o);
 				obj.click(function () {
-					var murl = 'FarmerEdit.aspx?opType=alert&id=' + obj.attr("Guid");
+					var murl = 'EmpolyeeEdit.aspx?opType=alert&id=' + obj.attr("Guid");
 					diag = new Dialog("Edit");
 					diag.URL = murl;
-					diag.Title = "修改";
+					diag.Title = "修改用户";
 					diag.Width = 600;
 					diag.Height = 500;
 					diag.ShowButtonRow = false;
@@ -88,7 +88,7 @@
 				<td id="page_Middle_Middle">
 					<div id="page">
 						<div id="pageBody">
-							<asp:GridView ID="gvBaseFarmer" AutoGenerateColumns="false" runat="server">
+							<asp:GridView ID="gvBaseEmpolyee" AutoGenerateColumns="false" runat="server">
 								<Columns>
 									<asp:TemplateField HeaderText="序号">
 										<ItemStyle BackColor="#bdeaff" Width="25" />
@@ -98,78 +98,91 @@
 									</asp:TemplateField>
 									<asp:TemplateField HeaderText="编辑" HeaderStyle-Width="4%">
 										<ItemTemplate>
-											<a guid="<%# Eval("FarmerId") %>" class="gvEdit">
+											<a guid="<%# Eval("EmpolyeeId") %>" class="gvEdit">
 												<img src="../images/Common/edit.gif" style="border: 0px;" alt="编辑" /></a>
 										</ItemTemplate>
 									</asp:TemplateField>
 									<asp:TemplateField HeaderText="删除" HeaderStyle-Width="4%">
 										<ItemTemplate>
 											<asp:ImageButton ID="ibtn_delete" CssClass="deleteTS" CommandName="delete" OnCommand="GView_LinkButton_Click"
-												CommandArgument='<%#Eval("FarmerId") %>' ImageUrl="~/images/Common/delete.gif"
+												CommandArgument='<%#Eval("EmpolyeeId") %>' ImageUrl="~/images/Common/delete.gif"
 												runat="server" />
 										</ItemTemplate>
 									</asp:TemplateField>
-									<asp:BoundField DataField="FarmarCode" HeaderText="烟农编码" />
-									<asp:BoundField DataField="FarmerRfid" HeaderText="烟农RFID标识" />
-									<asp:BoundField DataField="FarmerName" HeaderText="烟农名称" />
-									<asp:BoundField DataField="FarmerPy" HeaderText="烟农拼音缩写" />
-									<asp:BoundField DataField="FarmerPhone" HeaderText="烟农电话" />
-									<asp:BoundField DataField="FarmerEmail" HeaderText="烟农电子邮箱" />
-									<asp:BoundField DataField="FarmerAddress" HeaderText="烟农地址" />
-									<asp:BoundField DataField="FarmerRmark" HeaderText="备注" />
-									<asp:BoundField DataField="FarmerSex" HeaderText="性别" />
-									<asp:BoundField DataField="FarmerBirth" HeaderText="出生日期" />
-									<asp:BoundField DataField="FarmerCardId" HeaderText="身份证" />
-									<asp:BoundField DataField="FarmerIsDeleted" HeaderText="是否删除" />
+									<asp:BoundField DataField="EmpolyeeCode" HeaderText="编号" />
+									<asp:BoundField DataField="EmpolyeeRfid" HeaderText="RFID" />
+									<asp:BoundField DataField="EmpolyeeName" HeaderText="名称" />
+									<asp:BoundField DataField="EmpolyeePy" HeaderText="拼音缩写" />
+									<asp:BoundField DataField="EmpolyeeSex" HeaderText="性别" />
+									<asp:BoundField DataField="EmpolyeeBirth" HeaderText="出生日期" />
+									<asp:BoundField DataField="EmpolyeeEntryDate" HeaderText="入职日期" />
+									<asp:BoundField DataField="EmpolyeePhone" HeaderText="手机号" />
+									<asp:BoundField DataField="EmpolyeeEmail" HeaderText="电子邮箱" />
+									<asp:BoundField DataField="EmpolyeeAddress" HeaderText="联系地址" />
+									<asp:BoundField DataField="EmpolyeeHometown" HeaderText="籍贯" />
+									<asp:BoundField DataField="EmpolyeeCardId" HeaderText="身份证号" />
+									<asp:BoundField DataField="UserId" HeaderText="用户ID" />
+									<asp:BoundField DataField="EmpolyeeCreateDate" HeaderText="创建日期" />
+									<asp:BoundField DataField="EmpolyeeIsDeleted" HeaderText="删除 " />
+									<asp:BoundField DataField="EmpolyeeDeletedDate" HeaderText="删除日期" />
 								</Columns>
 								<EmptyDataTemplate>
 									<table class="empty_gridview" cellspacing="0">
 										<tr>
 											<th>
-												烟农编码
+												员工编号
 											</th>
 											<th>
-												烟农RFID标识
+												员工RFID
 											</th>
 											<th>
-												烟农名称
+												员工名称
 											</th>
 											<th>
-												烟农拼音缩写
+												员工拼音缩写
 											</th>
 											<th>
-												烟农电话
+												员工性别
 											</th>
 											<th>
-												烟农电子邮箱
+												员工出生日期
 											</th>
 											<th>
-												烟农地址
+												员工入职日期
 											</th>
 											<th>
-												备注
+												员工手机号
 											</th>
 											<th>
-												性别
+												员工电子邮箱
 											</th>
 											<th>
-												出生日期
+												员工联系地址
 											</th>
 											<th>
-												身份证
+												员工籍贯
 											</th>
 											<th>
-												创建日期
+												员工身份证号
 											</th>
 											<th>
-												是否删除
+												用户ID
 											</th>
 											<th>
-												删除日期
+												用户密码
+											</th>
+											<th>
+												员工创建日期
+											</th>
+											<th>
+												N 表示已删除
+											</th>
+											<th>
+												员工删除日期
 											</th>
 										</tr>
 										<tr>
-											<td colspan="14">
+											<td colspan="17">
 												没有数据
 											</td>
 										</tr>

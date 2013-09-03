@@ -73,29 +73,5 @@ LEFT JOIN T_SYS_ROLE ON T_SYS_ROLE.ROLE_ID=T_SYS_USER_ROLE.ROLE_ID WHERE USER_ID
 			}
 			return string.Empty;
 		}
-
-
-
-        //public UserRolesOR selectARowDate(string m_id)
-        //{
-        //    string sql = string.Format("select * from T_SYS_USER_ROLE where string strUserGuid='{0}'", m_id);
-        //    DataTable dt = null;
-        //    try
-        //    {
-        //        dt = db.ExecuteQueryDataSet(sql).Tables[0];
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        throw ex;
-        //    }
-        //    if (dt == null)
-        //        return null;
-        //    if (dt.Rows.Count == 0)
-        //        return null;
-        //    DataRow dr = dt.Rows[0];
-        //    UserRolesOR m_User = new UserRolesOR(dr);
-        //    return m_User;
-        //}
-
     }
 }

@@ -24,7 +24,7 @@ namespace LPS.DAL.Sys
             listCommand.Add(sql);
             foreach (RolePermissionsOR ur in list)
             {
-                sql = string.Format("insert into T_SYS_ROLE_PERMISSION (ROLE_GUID, PERMISSION_CODE) values ('{0}', '{1}')", ur.RoleGuid, ur.PermissionCode);
+                sql = string.Format("insert into T_SYS_ROLE_PERMISSION (ROLE_ID, PERM_CODE) values ('{0}', '{1}')", ur.RoleGuid, ur.PermissionCode);
                 listCommand.Add(sql);
             }
             db.ExecuteNoQuery(listCommand);
