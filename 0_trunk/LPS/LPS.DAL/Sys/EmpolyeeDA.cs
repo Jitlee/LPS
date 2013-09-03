@@ -14,7 +14,12 @@ namespace LPS.DAL.Sys
 		/// </summary>
 		public virtual bool Insert(EmpolyeeOR baseEmpolyee)
 		{
-			string sql = "insert into t_Base_Empolyee (EMPOLYEE_ID, EMPOLYEE_CODE, EMPOLYEE_RFID, EMPOLYEE_NAME, EMPOLYEE_PY, EMPOLYEE_SEX, EMPOLYEE_BIRTH, EMPOLYEE_ENTRY_DATE, EMPOLYEE_PHONE, EMPOLYEE_EMAIL, EMPOLYEE_ADDRESS, EMPOLYEE_HOMETOWN, EMPOLYEE_CARD_ID, USER_ID, USER_PWD, EMPOLYEE_CREATE_DATE, EMPOLYEE_IS_DELETED, EMPOLYEE_DELETED_DATE) values (@EMPOLYEE_ID, @EMPOLYEE_CODE, @EMPOLYEE_RFID, @EMPOLYEE_NAME, @EMPOLYEE_PY, @EMPOLYEE_SEX, @EMPOLYEE_BIRTH, @EMPOLYEE_ENTRY_DATE, @EMPOLYEE_PHONE, @EMPOLYEE_EMAIL, @EMPOLYEE_ADDRESS, @EMPOLYEE_HOMETOWN, @EMPOLYEE_CARD_ID, @USER_ID, @USER_PWD, @EMPOLYEE_CREATE_DATE, @EMPOLYEE_IS_DELETED, @EMPOLYEE_DELETED_DATE)";
+			string sql = @"insert into t_Base_Empolyee (EMPOLYEE_ID, EMPOLYEE_CODE, EMPOLYEE_RFID, EMPOLYEE_NAME, EMPOLYEE_PY, EMPOLYEE_SEX,
+EMPOLYEE_BIRTH, EMPOLYEE_ENTRY_DATE, EMPOLYEE_PHONE, EMPOLYEE_EMAIL, EMPOLYEE_ADDRESS, EMPOLYEE_HOMETOWN, EMPOLYEE_CARD_ID, USER_ID, USER_PWD, 
+EMPOLYEE_CREATE_DATE, EMPOLYEE_IS_DELETED) 
+values (@EMPOLYEE_ID, @EMPOLYEE_CODE, @EMPOLYEE_RFID, @EMPOLYEE_NAME, @EMPOLYEE_PY, @EMPOLYEE_SEX, @EMPOLYEE_BIRTH, @EMPOLYEE_ENTRY_DATE, 
+@EMPOLYEE_PHONE, @EMPOLYEE_EMAIL, @EMPOLYEE_ADDRESS, @EMPOLYEE_HOMETOWN, @EMPOLYEE_CARD_ID, @USER_ID, @USER_PWD
+,now(), 'N')";
 			return db.ExecuteNoQuery(sql,
 				db.GetDataParameter("@EMPOLYEE_ID", baseEmpolyee.EmpolyeeId),
 				db.GetDataParameter("@EMPOLYEE_CODE", baseEmpolyee.EmpolyeeCode),
@@ -30,10 +35,10 @@ namespace LPS.DAL.Sys
 				db.GetDataParameter("@EMPOLYEE_HOMETOWN", baseEmpolyee.EmpolyeeHometown),
 				db.GetDataParameter("@EMPOLYEE_CARD_ID", baseEmpolyee.EmpolyeeCardId),
 				db.GetDataParameter("@USER_ID", baseEmpolyee.UserId),
-				db.GetDataParameter("@USER_PWD", baseEmpolyee.UserPwd),
-				db.GetDataParameter("@EMPOLYEE_CREATE_DATE", baseEmpolyee.EmpolyeeCreateDate),
-				db.GetDataParameter("@EMPOLYEE_IS_DELETED", baseEmpolyee.EmpolyeeIsDeleted),
-				db.GetDataParameter("@EMPOLYEE_DELETED_DATE", baseEmpolyee.EmpolyeeDeletedDate)
+				db.GetDataParameter("@USER_PWD", baseEmpolyee.UserPwd)
+                //db.GetDataParameter("@EMPOLYEE_CREATE_DATE", baseEmpolyee.EmpolyeeCreateDate),
+                //db.GetDataParameter("@EMPOLYEE_IS_DELETED", baseEmpolyee.EmpolyeeIsDeleted),
+                //db.GetDataParameter("@EMPOLYEE_DELETED_DATE", baseEmpolyee.EmpolyeeDeletedDate)
 			) > 0;
 
 		}
@@ -45,7 +50,10 @@ namespace LPS.DAL.Sys
 		/// </summary>
 		public virtual bool Update(EmpolyeeOR baseEmpolyee)
 		{
-			string sql = "update t_Base_Empolyee set  EMPOLYEE_CODE = @EMPOLYEE_CODE,  EMPOLYEE_RFID = @EMPOLYEE_RFID,  EMPOLYEE_NAME = @EMPOLYEE_NAME,  EMPOLYEE_PY = @EMPOLYEE_PY,  EMPOLYEE_SEX = @EMPOLYEE_SEX,  EMPOLYEE_BIRTH = @EMPOLYEE_BIRTH,  EMPOLYEE_ENTRY_DATE = @EMPOLYEE_ENTRY_DATE,  EMPOLYEE_PHONE = @EMPOLYEE_PHONE,  EMPOLYEE_EMAIL = @EMPOLYEE_EMAIL,  EMPOLYEE_ADDRESS = @EMPOLYEE_ADDRESS,  EMPOLYEE_HOMETOWN = @EMPOLYEE_HOMETOWN,  EMPOLYEE_CARD_ID = @EMPOLYEE_CARD_ID,  USER_ID = @USER_ID,  USER_PWD = @USER_PWD,  EMPOLYEE_CREATE_DATE = @EMPOLYEE_CREATE_DATE,  EMPOLYEE_IS_DELETED = @EMPOLYEE_IS_DELETED,  EMPOLYEE_DELETED_DATE = @EMPOLYEE_DELETED_DATE where  EMPOLYEE_ID = @EMPOLYEE_ID";
+			string sql = @"update t_Base_Empolyee set  EMPOLYEE_CODE = @EMPOLYEE_CODE,  EMPOLYEE_RFID = @EMPOLYEE_RFID,  EMPOLYEE_NAME = @EMPOLYEE_NAME,  EMPOLYEE_PY = @EMPOLYEE_PY
+,EMPOLYEE_SEX = @EMPOLYEE_SEX,  EMPOLYEE_BIRTH = @EMPOLYEE_BIRTH,  EMPOLYEE_ENTRY_DATE = @EMPOLYEE_ENTRY_DATE,  EMPOLYEE_PHONE = @EMPOLYEE_PHONE,  EMPOLYEE_EMAIL = @EMPOLYEE_EMAIL
+,EMPOLYEE_ADDRESS = @EMPOLYEE_ADDRESS,  EMPOLYEE_HOMETOWN = @EMPOLYEE_HOMETOWN,  EMPOLYEE_CARD_ID = @EMPOLYEE_CARD_ID,  USER_ID = @USER_ID,  USER_PWD = @USER_PWD
+where  EMPOLYEE_ID = @EMPOLYEE_ID";
 			return db.ExecuteNoQuery(sql,
 				db.GetDataParameter("@EMPOLYEE_ID", baseEmpolyee.EmpolyeeId),
 				db.GetDataParameter("@EMPOLYEE_CODE", baseEmpolyee.EmpolyeeCode),
@@ -61,10 +69,10 @@ namespace LPS.DAL.Sys
 				db.GetDataParameter("@EMPOLYEE_HOMETOWN", baseEmpolyee.EmpolyeeHometown),
 				db.GetDataParameter("@EMPOLYEE_CARD_ID", baseEmpolyee.EmpolyeeCardId),
 				db.GetDataParameter("@USER_ID", baseEmpolyee.UserId),
-				db.GetDataParameter("@USER_PWD", baseEmpolyee.UserPwd),
-				db.GetDataParameter("@EMPOLYEE_CREATE_DATE", baseEmpolyee.EmpolyeeCreateDate),
-				db.GetDataParameter("@EMPOLYEE_IS_DELETED", baseEmpolyee.EmpolyeeIsDeleted),
-				db.GetDataParameter("@EMPOLYEE_DELETED_DATE", baseEmpolyee.EmpolyeeDeletedDate)
+				db.GetDataParameter("@USER_PWD", baseEmpolyee.UserPwd)
+                //db.GetDataParameter("@EMPOLYEE_CREATE_DATE", baseEmpolyee.EmpolyeeCreateDate),
+                //db.GetDataParameter("@EMPOLYEE_IS_DELETED", baseEmpolyee.EmpolyeeIsDeleted),
+                //db.GetDataParameter("@EMPOLYEE_DELETED_DATE", baseEmpolyee.EmpolyeeDeletedDate)
 			) > 0;
 		}
 		#endregion
@@ -115,9 +123,8 @@ namespace LPS.DAL.Sys
 		/// </summary>
 		public virtual bool Delete(string strGuid)
 		{
-			return db.ExecuteNoQuery("DELETE FROM t_base_empolyee WHERE EMPOLYEE_ID = @EMPOLYEE_ID",
-				db.GetDataParameter("@EMPOLYEE_ID", strGuid))>0;
-
+            string sql = @"update t_Base_Empolyee set EMPOLYEE_IS_DELETED='Y',EMPOLYEE_DELETED_DATE=now() where  EMPOLYEE_ID = @EMPOLYEE_ID";
+            return db.ExecuteNoQuery(sql,db.GetDataParameter("@EMPOLYEE_ID", strGuid)) > 0;
 		}
 		#endregion
 

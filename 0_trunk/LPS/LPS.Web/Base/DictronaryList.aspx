@@ -92,7 +92,7 @@
 							<asp:GridView ID="gvBaseDictronary" AutoGenerateColumns="false" runat="server">
 								<Columns>
 									<asp:TemplateField HeaderText="序号">
-										<ItemStyle BackColor="#bdeaff" Width="25" />
+										<ItemStyle BackColor="#bdeaff" Width="35" />
 										<ItemTemplate>
 											<%# Container.DataItemIndex+1 %>
 										</ItemTemplate>
@@ -116,8 +116,8 @@
 									<asp:BoundField DataField="DictDesc" HeaderText="描述" />
 								</Columns>
 								<EmptyDataTemplate>
-									<table class="empty_gridview" cellspacing="0">
-										<tr>
+									<table class="gridview_skin" cellspacing="0" cellpadding="0" rules="all"  border="1"  style="border-collapse:collapse;">
+										<tr class="gridview_skin_header">
 											<th>
 												类型
 											</th>

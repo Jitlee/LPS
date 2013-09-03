@@ -30,10 +30,11 @@ namespace LPS.Web.Base
 			try
 			{
 				DictronaryType m_Base = new DictronaryTypeDAL().Get(Request.QueryString["id"]);
+                txtDictType.Enabled = false;
 
+                txtDictType.Text = m_Base.DictType;
 				txtDictTypeName.Text = m_Base.DictTypeName;//
 				txtDictTypeDesc.Text = m_Base.DictTypeDesc;//
-
 			}
 			catch (Exception e)
 			{
@@ -44,6 +45,14 @@ namespace LPS.Web.Base
 		private DictronaryType SetValue()
 		{
 			DictronaryType m_Base = new DictronaryType();
+            if (!string.IsNullOrEmpty(Request.QueryString["id"]))
+            {
+                m_Base.DictType = txtDictType.Text;
+            }
+            else
+            {
+                m_Base.DictType = txtDictType.Text;
+            }
 			m_Base.DictTypeName = txtDictTypeName.Text;//
 			m_Base.DictTypeDesc = txtDictTypeDesc.Text;//
 

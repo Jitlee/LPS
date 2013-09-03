@@ -68,21 +68,21 @@ namespace LPS.Model.Sys
             set { _EmpolyeeSex = value; }
         }
 
-        private DateTime _EmpolyeeBirth;
+        private DateTime? _EmpolyeeBirth;
         /// <summary>
         /// 员工出生日期
         /// </summary>
-        public DateTime EmpolyeeBirth
+        public DateTime? EmpolyeeBirth
         {
             get { return _EmpolyeeBirth; }
             set { _EmpolyeeBirth = value; }
         }
 
-        private DateTime _EmpolyeeEntryDate;
+        private DateTime? _EmpolyeeEntryDate;
         /// <summary>
         /// 员工入职日期
         /// </summary>
-        public DateTime EmpolyeeEntryDate
+        public DateTime? EmpolyeeEntryDate
         {
             get { return _EmpolyeeEntryDate; }
             set { _EmpolyeeEntryDate = value; }
@@ -158,11 +158,11 @@ namespace LPS.Model.Sys
             set { _UserPwd = value; }
         }
 
-        private DateTime _EmpolyeeCreateDate;
+        private DateTime? _EmpolyeeCreateDate;
         /// <summary>
         /// 员工创建日期
         /// </summary>
-        public DateTime EmpolyeeCreateDate
+        public DateTime? EmpolyeeCreateDate
         {
             get { return _EmpolyeeCreateDate; }
             set { _EmpolyeeCreateDate = value; }
@@ -178,11 +178,11 @@ namespace LPS.Model.Sys
             set { _EmpolyeeIsDeleted = value; }
         }
 
-        private DateTime _EmpolyeeDeletedDate;
+        private DateTime? _EmpolyeeDeletedDate;
         /// <summary>
         /// 员工删除日期
         /// </summary>
-        public DateTime EmpolyeeDeletedDate
+        public DateTime? EmpolyeeDeletedDate
         {
             get { return _EmpolyeeDeletedDate; }
             set { _EmpolyeeDeletedDate = value; }
@@ -195,7 +195,7 @@ namespace LPS.Model.Sys
         /// </summary>
         public EmpolyeeOR()
         {
-
+            EmpolyeeId = Guid.NewGuid().ToString();
         }
 
 

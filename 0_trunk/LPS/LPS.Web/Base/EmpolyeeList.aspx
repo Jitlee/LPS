@@ -91,7 +91,7 @@
 							<asp:GridView ID="gvBaseEmpolyee" AutoGenerateColumns="false" runat="server">
 								<Columns>
 									<asp:TemplateField HeaderText="序号">
-										<ItemStyle BackColor="#bdeaff" Width="25" />
+										<ItemStyle BackColor="#bdeaff" Width="35" />
 										<ItemTemplate>
 											<%# Container.DataItemIndex+1 %>
 										</ItemTemplate>
@@ -114,21 +114,21 @@
 									<asp:BoundField DataField="EmpolyeeName" HeaderText="名称" />
 									<asp:BoundField DataField="EmpolyeePy" HeaderText="拼音缩写" />
 									<asp:BoundField DataField="EmpolyeeSex" HeaderText="性别" />
-									<asp:BoundField DataField="EmpolyeeBirth" HeaderText="出生日期" />
-									<asp:BoundField DataField="EmpolyeeEntryDate" HeaderText="入职日期" />
+									<asp:BoundField DataField="EmpolyeeBirth" DataFormatString="{0: yyyy-MM-dd}" HeaderText="出生日期" />
+									<asp:BoundField DataField="EmpolyeeEntryDate" DataFormatString="{0: yyyy-MM-dd}" HeaderText="入职日期" />
 									<asp:BoundField DataField="EmpolyeePhone" HeaderText="手机号" />
 									<asp:BoundField DataField="EmpolyeeEmail" HeaderText="电子邮箱" />
 									<asp:BoundField DataField="EmpolyeeAddress" HeaderText="联系地址" />
 									<asp:BoundField DataField="EmpolyeeHometown" HeaderText="籍贯" />
 									<asp:BoundField DataField="EmpolyeeCardId" HeaderText="身份证号" />
 									<asp:BoundField DataField="UserId" HeaderText="用户ID" />
-									<asp:BoundField DataField="EmpolyeeCreateDate" HeaderText="创建日期" />
+									<asp:BoundField DataField="EmpolyeeCreateDate" DataFormatString="{0: yyyy-MM-dd}" HeaderText="创建日期" />
 									<asp:BoundField DataField="EmpolyeeIsDeleted" HeaderText="删除 " />
-									<asp:BoundField DataField="EmpolyeeDeletedDate" HeaderText="删除日期" />
+									<asp:BoundField DataField="EmpolyeeDeletedDate" DataFormatString="{0: yyyy-MM-dd}" HeaderText="删除日期" />
 								</Columns>
 								<EmptyDataTemplate>
-									<table class="empty_gridview" cellspacing="0">
-										<tr>
+									<table class="gridview_skin" cellspacing="0" cellpadding="0" rules="all"  border="1"  style="border-collapse:collapse;">
+										<tr class="gridview_skin_header">
 											<th>
 												员工编号
 											</th>

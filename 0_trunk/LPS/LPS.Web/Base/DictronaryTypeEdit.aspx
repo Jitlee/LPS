@@ -54,6 +54,14 @@
 					<div id="page">
 						<div id="pageBody" style="padding: 15px;">
 							<table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
+                                <tr>
+									<td class="tdRight">
+										类型编码：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtDictType" CssClass="textbox_skin" />
+									</td>
+								</tr>
 								<tr>
 									<td class="tdRight">
 										类型名称：
@@ -90,7 +98,8 @@
 					<table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
-								<asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbtSave_Click">
+								<asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbtSave_Click"
+                                         OnClientClick="return $.yz.getErrorList()">
                                 <img src="../images/common/save.gif" alt="" />保存</asp:LinkButton>
 								<a class="linkbutton_skin" href="javascript:;" onclick="$.DialogClose();">
 									<img src="../images/common/delete.gif" alt="" />关闭</a>

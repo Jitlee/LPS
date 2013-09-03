@@ -26,7 +26,7 @@ LEFT JOIN T_SYS_ROLE ON T_SYS_ROLE.ROLE_ID=T_SYS_USER_ROLE.ROLE_ID WHERE USER_ID
         public bool AddUserRoles(List<UserRolesOR> listRolse)
         {
             if (listRolse.Count == 0) return false;
-            string sql = string.Format("delete T_SYS_USER_ROLE where USER_ID='{0}'", listRolse[0].UserGuid);
+            string sql = string.Format("DELETE FROM T_SYS_USER_ROLE where USER_ID='{0}'", listRolse[0].UserGuid);
             List<string> listCommand = new List<string>();
             listCommand.Add(sql);
             foreach (UserRolesOR ur in listRolse)

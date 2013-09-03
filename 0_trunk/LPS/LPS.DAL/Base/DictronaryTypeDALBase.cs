@@ -20,7 +20,7 @@ namespace LPS.DAL.Base
 		/// <returns>返回数据字典类型对象</returns>
 		public virtual DictronaryType Get(string dictType)
 		{
-			return db.ExecuteGet<DictronaryType>("SELECT DICT_TYPE, DICT_TYPE_NAME, DICT_TYPE_DESCFROM T_BASE_DICTRONARY_TYPE WHERE DICT_TYPE = @DICT_TYPE",
+			return db.ExecuteGet<DictronaryType>("SELECT DICT_TYPE, DICT_TYPE_NAME, DICT_TYPE_DESC FROM T_BASE_DICTRONARY_TYPE WHERE DICT_TYPE = @DICT_TYPE",
 				(dr) => { return new DictronaryType(dr); },
 				db.GetDataParameter("@DICT_TYPE", dictType));
 		}

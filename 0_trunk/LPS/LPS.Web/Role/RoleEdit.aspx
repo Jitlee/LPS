@@ -91,7 +91,8 @@
                     <table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
                         <tr>
                             <td>
-                                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbtSave_Click">
+                                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbtSave_Click"
+                                         OnClientClick="return $.yz.getErrorList()">
                                 <img src="../images/common/save.gif" alt="" />保存</asp:LinkButton>
                                 <a class="linkbutton_skin" href="javascript:;" onclick="$.DialogClose();">
                                     <img src="../images/common/delete.gif" alt="" />关闭</a>

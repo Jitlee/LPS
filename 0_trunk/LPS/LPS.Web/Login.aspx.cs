@@ -30,7 +30,7 @@ namespace LPS.Web
 			HttpCookie cookieGuid = new HttpCookie("CurrentUser");
 			cookieGuid.Expires = DateTime.Now.AddHours(9);
 
-			cookieGuid.Values.Add("UserID", user.UserId);
+			cookieGuid.Values.Add("UserID", user.EmpolyeeId);
 			cookieGuid.Values.Add("LoginName", user.EmpolyeeCode);
 			cookieGuid.Values.Add("UserName", user.EmpolyeeName);
 			cookieGuid.Values.Add("Password", user.UserPwd);

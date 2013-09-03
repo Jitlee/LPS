@@ -29,15 +29,13 @@ namespace LPS.Web.Base
 		{
 			try
 			{
-				EmpolyeeOR m_Base = new EmpolyeeOR();
-				if (Request.QueryString["id"] != null)
-					m_Base.EmpolyeeId = Request.QueryString["id"];
+                EmpolyeeOR m_Base = new EmpolyeeDA().selectARowDateByGuid(Request.QueryString["id"]);
 
 				txtEmpolyeeCode.Text = m_Base.EmpolyeeCode;//员工编号
 				txtEmpolyeeRfid.Text = m_Base.EmpolyeeRfid;//员工RFID
 				txtEmpolyeeName.Text = m_Base.EmpolyeeName;//员工名称
 				txtEmpolyeePy.Text = m_Base.EmpolyeePy;//员工拼音缩写
-				txtEmpolyeeSex.Text = m_Base.EmpolyeeSex;//员工性别
+                dpdEmpolyeeSex.Text = m_Base.EmpolyeeSex;//员工性别
 				txtEmpolyeeBirth.Text = m_Base.EmpolyeeBirth.ToString();//员工出生日期
 				txtEmpolyeeEntryDate.Text = m_Base.EmpolyeeEntryDate.ToString();//员工入职日期
 				txtEmpolyeePhone.Text = m_Base.EmpolyeePhone;//员工手机号
@@ -47,10 +45,6 @@ namespace LPS.Web.Base
 				txtEmpolyeeCardId.Text = m_Base.EmpolyeeCardId;//员工身份证号
 				txtUserId.Text = m_Base.UserId;//用户ID
 				txtUserPwd.Text = m_Base.UserPwd;//用户密码
-				txtEmpolyeeCreateDate.Text = m_Base.EmpolyeeCreateDate.ToString();//员工创建日期
-				txtEmpolyeeIsDeleted.Text = m_Base.EmpolyeeIsDeleted;//N 表示已删除 
-				txtEmpolyeeDeletedDate.Text = m_Base.EmpolyeeDeletedDate.ToString();//员工删除日期
-
 			}
 			catch (Exception e)
 			{
@@ -60,14 +54,21 @@ namespace LPS.Web.Base
 
 		private EmpolyeeOR SetValue()
 		{
+
 			EmpolyeeOR m_Base = new EmpolyeeOR();
 			m_Base.EmpolyeeCode = txtEmpolyeeCode.Text;//员工编号
 			m_Base.EmpolyeeRfid = txtEmpolyeeRfid.Text;//员工RFID
 			m_Base.EmpolyeeName = txtEmpolyeeName.Text;//员工名称
 			m_Base.EmpolyeePy = txtEmpolyeePy.Text;//员工拼音缩写
-			m_Base.EmpolyeeSex = txtEmpolyeeSex.Text;//员工性别
-			m_Base.EmpolyeeBirth = Convert.ToDateTime(txtEmpolyeeBirth.Text);//员工出生日期
-			m_Base.EmpolyeeEntryDate = Convert.ToDateTime(txtEmpolyeeEntryDate.Text);//员工入职日期
+            m_Base.EmpolyeeSex = dpdEmpolyeeSex.Text;//员工性别
+            if (!string.IsNullOrEmpty(txtEmpolyeeBirth.Text))
+            {
+                m_Base.EmpolyeeBirth = Convert.ToDateTime(txtEmpolyeeBirth.Text);//员工出生日期
+            }
+            if (!string.IsNullOrEmpty(txtEmpolyeeEntryDate.Text))
+            {
+                m_Base.EmpolyeeEntryDate = Convert.ToDateTime(txtEmpolyeeEntryDate.Text);//员工入职日期
+            }
 			m_Base.EmpolyeePhone = txtEmpolyeePhone.Text;//员工手机号
 			m_Base.EmpolyeeEmail = txtEmpolyeeEmail.Text;//员工电子邮箱
 			m_Base.EmpolyeeAddress = txtEmpolyeeAddress.Text;//员工联系地址
@@ -75,9 +76,6 @@ namespace LPS.Web.Base
 			m_Base.EmpolyeeCardId = txtEmpolyeeCardId.Text;//员工身份证号
 			m_Base.UserId = txtUserId.Text;//用户ID
 			m_Base.UserPwd = txtUserPwd.Text;//用户密码
-			m_Base.EmpolyeeCreateDate = Convert.ToDateTime(txtEmpolyeeCreateDate.Text);//员工创建日期
-			m_Base.EmpolyeeIsDeleted = txtEmpolyeeIsDeleted.Text;//N 表示已删除 
-			m_Base.EmpolyeeDeletedDate = Convert.ToDateTime(txtEmpolyeeDeletedDate.Text);//员工删除日期
 
 			return m_Base;
 		}

@@ -36,8 +36,8 @@ namespace LPS.Web.Role
             RolesDA rs = new RolesDA();
             int Count = 0;
             cblRoseList.DataSource = rs.selectAllDateByWhere(1, 50, out Count, ""); ;
-            cblRoseList.DataTextField = "ROLE_NAME";
-            cblRoseList.DataValueField = "GUID";
+            cblRoseList.DataTextField = "RoleName";
+            cblRoseList.DataValueField = "Guid";
             cblRoseList.DataBind();
         }
 

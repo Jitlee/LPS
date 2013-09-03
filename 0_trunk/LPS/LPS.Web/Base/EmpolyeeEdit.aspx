@@ -10,9 +10,14 @@
 	<script type="text/javascript" src="../Scripts/Dialog.js"></script>
 	<script type="text/javascript" src="../Scripts/main.js"></script>
 	<script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
+    <script type="text/javascript" src="../Scripts/My97DatePicker/WdatePicker.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
-
+		    $("#txtEmpolyeeCode").yz({ title: "登录名", type: "string", max: 20, isSave: true });
+		    $("#txtUserId").yz({ title: "用户ID", type: "string", max: 20, isSave: true });
+		    $("#txtUserPwd").yz({ title: "用户密码", type: "string", max: 20, isSave: true });
+		    $("#txtEmpolyeeRfid").yz({ title: "RFID", type: "string", max: 20, isSave: true });
+		    $("#txtEmpolyeeName").yz({ title: "姓名", type: "string", max: 20, isSave: true });
 		});
 	</script>
 </head>
@@ -55,103 +60,13 @@
 							<table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
 								<tr>
 									<td class="tdRight">
-										员工编号：
+										登录名：
 									</td>
 									<td class="tdLeft">
 										<asp:TextBox runat="server" ID="txtEmpolyeeCode" CssClass="textbox_skin" />
 									</td>
 								</tr>
-								<tr>
-									<td class="tdRight">
-										员工RFID：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeRfid" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工名称：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeName" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工拼音缩写：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeePy" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工性别：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeSex" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工出生日期：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox ID="txtEmpolyeeBirth" CssClass="textbox_skin" onfocus="WdatePicker();"
-											runat="server" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工入职日期：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox ID="txtEmpolyeeEntryDate" CssClass="textbox_skin" onfocus="WdatePicker();"
-											runat="server" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工手机号：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeePhone" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工电子邮箱：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeEmail" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工联系地址：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeAddress" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工籍贯：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeHometown" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										员工身份证号：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtEmpolyeeCardId" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
+                                <tr>
 									<td class="tdRight">
 										用户ID：
 									</td>
@@ -167,6 +82,101 @@
 										<asp:TextBox runat="server" TextMode="Password" ID="txtUserPwd" CssClass="textbox_skin" />
 									</td>
 								</tr>
+								<tr>
+									<td class="tdRight">
+										RFID：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeRfid" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										姓名：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeName" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										拼音缩写：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeePy" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										性别：
+									</td>
+									<td class="tdLeft">
+										<asp:DropDownList ID="dpdEmpolyeeSex" runat="server">
+                                            <asp:ListItem Text="男"></asp:ListItem>
+                                            <asp:ListItem Text="女"></asp:ListItem>
+                                        </asp:DropDownList>
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										出生日期：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox ID="txtEmpolyeeBirth" CssClass="textbox_skin" onfocus="WdatePicker();"
+											runat="server" />
+									</td>
+								</tr>
+                                <tr>
+									<td class="tdRight">
+										身份证号:
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeCardId" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										籍贯：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeHometown" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										入职日期：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox ID="txtEmpolyeeEntryDate" CssClass="textbox_skin" onfocus="WdatePicker();"
+											runat="server" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										手机号：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeePhone" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										电子邮箱：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeEmail" CssClass="textbox_skin" />
+									</td>
+								</tr>
+								<tr>
+									<td class="tdRight">
+										联系地址：
+									</td>
+									<td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtEmpolyeeAddress" CssClass="textbox_skin" />
+									</td>
+								</tr>
+                                
+								
 							</table>
 						</div>
 					</div>
@@ -187,7 +197,8 @@
 					<table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
 						<tr>
 							<td>
-								<asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbtSave_Click">
+								<asp:LinkButton ID="LinkButton1" runat="server" OnClick="lbtSave_Click"
+                                         OnClientClick="return $.yz.getErrorList()">
                                 <img src="../images/common/save.gif" alt="" />保存</asp:LinkButton>
 								<a class="linkbutton_skin" href="javascript:;" onclick="$.DialogClose();">
 									<img src="../images/common/delete.gif" alt="" />关闭</a>

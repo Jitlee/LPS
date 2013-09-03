@@ -37,7 +37,7 @@ namespace LPS.DAL.Sys
 
         public ObservableCollection<RolesOR> SelectRolesWithoutSelf(string rolename)
         {
-            string sql = string.Format("select * from T_SYS_ROLES where role_name != '" + rolename + "'");
+            string sql = string.Format("select * from T_SYS_ROLE where role_name != '" + rolename + "'");
             return db.ExecuteQuery<RolesOR>(sql, (dr) => { return new RolesOR(dr); });
         }
         #endregion
@@ -67,7 +67,7 @@ namespace LPS.DAL.Sys
         {
             string sql = "update T_SYS_ROLE set  ROLE_NAME = @ROLE_NAME,  ROLE_DESC = @ROLE_DESC where ROLE_ID= @ROLE_ID";
             return db.ExecuteNoQuery(sql,
-                db.GetDataParameter("@ROLE_ID", Guid.NewGuid().ToString()),
+                db.GetDataParameter("@ROLE_ID", roles.Guid),
                 db.GetDataParameter("@ROLE_NAME", roles.RoleName),
                 db.GetDataParameter("@ROLE_DESC", roles.RoleDesc)) > 0;
         }
