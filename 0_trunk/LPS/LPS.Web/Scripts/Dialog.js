@@ -67,7 +67,7 @@ Array.prototype.remove = function (s) {
         }
     }
 }
-if (window.HTMLElement) {//给FF添加IE专有的属性和方法
+if (window.HTMLElement && HTMLElement.prototype.__defineGetter__) {//给FF添加IE专有的属性和方法
     HTMLElement.prototype.__defineGetter__("parentElement", function () {
         if (this.parentNode == this.ownerDocument) return null;
         return this.parentNode;
@@ -802,8 +802,6 @@ if (isIE) {
         if (formCount > 0) {
             var obj = window.top.$.DialogLayers.pop();
             if (typeof obj.OK == "function" && va) {
-                //alert(formCount);
-                //alert("OK");
                 obj.OK(va);
             }
             obj.close();
@@ -811,7 +809,6 @@ if (isIE) {
     }
 
     $.DialogRefrsh = function () {
-        //window.opener.location.href = window.opener.location.href
         document.location = document.location.href;
     }
 

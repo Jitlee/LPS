@@ -10,25 +10,7 @@
 namespace LPS.Web.Base {
     
     
-    public partial class BaseDictronaryTypeEdit {
-        
-        /// <summary>
-        /// Head1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
-        
-        /// <summary>
-        /// form1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+    public partial class BaseEmpolyeeList {
         
         /// <summary>
         /// SiteMapPath1 control.
@@ -40,30 +22,30 @@ namespace LPS.Web.Base {
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
-        /// txtDictTypeName control.
+        /// aBtnAdd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDictTypeName;
+        protected global::System.Web.UI.HtmlControls.HtmlImage aBtnAdd;
         
         /// <summary>
-        /// txtDictTypeDesc control.
+        /// gvBaseEmpolyee control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDictTypeDesc;
+        protected global::System.Web.UI.WebControls.GridView gvBaseEmpolyee;
         
         /// <summary>
-        /// LinkButton1 control.
+        /// pg control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::LPS.Web.UI.pagenavigate pg;
     }
 }

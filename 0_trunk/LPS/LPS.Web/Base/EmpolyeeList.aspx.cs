@@ -25,7 +25,6 @@ namespace LPS.Web.Base
 
         private void InitPage()
         {
-            //btnAdd.Visible = base.HasPermission("Admin");
             aBtnAdd.Visible = gvBaseEmpolyee.Columns[1].Visible = base.HasPermission("Edit");
             gvBaseEmpolyee.Columns[2].Visible = base.HasPermission("Delete");
         }

@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <siteMap xmlns="http://schemas.microsoft.com/AspNet/SiteMap-File-1.0" >
 	<siteMapNode url="Main/Default.aspx"  title="主页"  description="烟草管理系统">
-		<siteMapNode url="SysAdmin/BankList.aspx?id=admin" title="系统管理"  description="系统管理">
-			<siteMapNode url="SysAdmin/EmpolyeeList.aspx" title="员工管理"  description="员工管理">
-				<siteMapNode url="SysAdmin/EmpolyeeEdit.aspx" title="编辑" description="编辑"  />
-				<siteMapNode url="SysAdmin/EmpolyeeList.aspx?Delete" title="删除" description="删除" isFunction="true" />
+		<siteMapNode url="Base/EmpolyeeList.aspx?id=admin" title="系统管理"  description="系统管理">
+			<siteMapNode url="Base/EmpolyeeList.aspx" title="员工管理"  description="员工管理">
+				<siteMapNode url="Base/EmpolyeeEdit.aspx" title="编辑" description="编辑"  />
+				<siteMapNode url="Base/EmpolyeeList.aspx?Delete" title="删除" description="删除" isFunction="true" />
 			</siteMapNode>
 			<siteMapNode url="Role/RoleList.aspx" title="角色列表" description="角色列表"  imagePath="group.gif">
 				<siteMapNode url="Role/RoleSet.aspx" title="权限设置" description="权限设置" />

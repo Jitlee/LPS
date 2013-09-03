@@ -8,24 +8,25 @@
     <link href="Styles/login.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="../Scripts/jquery-1.8.3.min.js"></script>
     <script type="text/javascript">
-        $(document).ready(function () {
-            $("#btn").click(function () {
-                var txtName = $("#tbxUserCode");
-                var txtPwd = $("#tbxPassword");
-                if (txtName.val() == "") {
-                    alert("用户名不能为空！");
-                    txtName.focus();
-                    return false;
-                }
+    	$(document).ready(function () {
+    		$("#tbxUserCode").focus();
+    		$("#btn").click(function () {
+    			var txtName = $("#tbxUserCode");
+    			var txtPwd = $("#tbxPassword");
+    			if (txtName.val() == "") {
+    				alert("用户名不能为空！");
+    				txtName.focus();
+    				return false;
+    			}
 
-                if (txtPwd.val() == "") {
-                    alert("密码不能为空！");
-                    txtPwd.focus();
-                    return false;
-                }
-            });
+    			if (txtPwd.val() == "") {
+    				alert("密码不能为空！");
+    				txtPwd.focus();
+    				return false;
+    			}
+    		});
 
-        });
+    	});
     </script>
 </head>
 <body>
@@ -38,7 +39,7 @@
                             用户名：
                         </td>
                         <td style="width:237;text-align:left;">
-                            <asp:TextBox ID="tbxUserCode" autocomplete="off" runat="server" Maxlength="16" CssClass="tbxSty" 
+                            <asp:TextBox ID="tbxUserCode" autocomplete="off" Text="xiaozhu" runat="server" Maxlength="16" CssClass="tbxSty" 
                                 meta:resourcekey="tbxUserCodeResource1"></asp:TextBox>                            
                         </td>
                     </tr>
@@ -48,22 +49,21 @@
                         </td>
                         <td style="text-align:left">
                             <asp:TextBox ID="tbxPassword" runat="server" maxlength="16" 
-                                TextMode="Password"  CssClass="tbxSty" 
+                                TextMode="Password"  CssClass="tbxSty"  Text="123456"
                                 meta:resourcekey="tbxPasswordResource1"></asp:TextBox>
                         </td>
                     </tr>
                     <tr>
                         <td>
                             &nbsp;</td>
-                        <td style="text-align:left"><asp:ImageButton ID="btn" runat="server" 
-                                ImageUrl="~/images/login/dl.gif" onclick="btn_Click" 
-                                meta:resourcekey="btnResource1" />
+                        <td style="text-align:left">
+							<asp:ImageButton ID="btn" runat="server" ImageUrl="~/images/login/dl.gif" onclick="btn_Click" meta:resourcekey="btnResource1" />
                             </td>
                     </tr>
                     <tr>
                         <td colspan="2" style="text-align:center">
-                            &nbsp;<asp:Label ID="labMessage" runat="server" 
-                                meta:resourcekey="labMessageResource1"></asp:Label></td>
+                            &nbsp;<asp:Label ID="labMessage" runat="server" meta:resourcekey="labMessageResource1"></asp:Label>
+						</td>
                     </tr>
                 </table>
             </div>

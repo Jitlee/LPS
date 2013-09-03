@@ -10,7 +10,7 @@
 namespace LPS.Web.Base {
     
     
-    public partial class BaseFarmerEdit {
+    public partial class BaseEmpolyeeEdit {
         
         /// <summary>
         /// Head1 control.
@@ -40,130 +40,130 @@ namespace LPS.Web.Base {
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
-        /// txtFarmarCode control.
+        /// txtEmpolyeeCode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmarCode;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeCode;
         
         /// <summary>
-        /// txtFarmerRfid control.
+        /// txtEmpolyeeRfid control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerRfid;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeRfid;
         
         /// <summary>
-        /// txtFarmerName control.
+        /// txtEmpolyeeName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerName;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeName;
         
         /// <summary>
-        /// txtFarmerPy control.
+        /// txtEmpolyeePy control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerPy;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeePy;
         
         /// <summary>
-        /// txtFarmerPhone control.
+        /// txtEmpolyeeSex control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerPhone;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeSex;
         
         /// <summary>
-        /// txtFarmerEmail control.
+        /// txtEmpolyeeBirth control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerEmail;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeBirth;
         
         /// <summary>
-        /// txtFarmerAddress control.
+        /// txtEmpolyeeEntryDate control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeEntryDate;
         
         /// <summary>
-        /// txtFarmerRmark control.
+        /// txtEmpolyeePhone control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerRmark;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeePhone;
         
         /// <summary>
-        /// txtFarmerSex control.
+        /// txtEmpolyeeEmail control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerSex;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeEmail;
         
         /// <summary>
-        /// txtFarmerBirth control.
+        /// txtEmpolyeeAddress control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerBirth;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeAddress;
         
         /// <summary>
-        /// txtFarmerCardId control.
+        /// txtEmpolyeeHometown control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerCardId;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeHometown;
         
         /// <summary>
-        /// txtFarmerCreateDate control.
+        /// txtEmpolyeeCardId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerCreateDate;
+        protected global::System.Web.UI.WebControls.TextBox txtEmpolyeeCardId;
         
         /// <summary>
-        /// txtFarmerIsDeleted control.
+        /// txtUserId control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerIsDeleted;
+        protected global::System.Web.UI.WebControls.TextBox txtUserId;
         
         /// <summary>
-        /// txtFarmerDeletedDate control.
+        /// txtUserPwd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerDeletedDate;
+        protected global::System.Web.UI.WebControls.TextBox txtUserPwd;
         
         /// <summary>
         /// LinkButton1 control.
