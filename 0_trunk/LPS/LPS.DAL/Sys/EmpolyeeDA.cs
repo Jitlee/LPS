@@ -83,7 +83,7 @@ where  EMPOLYEE_ID = @EMPOLYEE_ID";
 			{
 				strFilter = " where " + strFilter;
 			}
-			string sql = @"select * from t_base_empolyee order by USER_ID";
+			string sql = @"select * from t_Base_Empolyee where EMPOLYEE_IS_DELETED='N' order by USER_ID";
 			sql = string.Format(sql, strFilter);
 
 			return db.ExecuteQuery<EmpolyeeOR>(sql, (dr) => { return new EmpolyeeOR(dr); });

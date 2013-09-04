@@ -42,7 +42,7 @@ namespace LPS.Web.Base
 				txtFarmerSex.Text = m_Base.FarmerSex;//性别
 				txtFarmerBirth.Text = m_Base.FarmerBirth.ToString();//出生日期
 				txtFarmerCardId.Text = m_Base.FarmerCardId;//身份证       
-				txtFarmerIsDeleted.Text = m_Base.FarmerIsDeleted;//是否删除        
+				//txtFarmerIsDeleted.Text = m_Base.FarmerIsDeleted;//是否删除        
 
 			}
 			catch (Exception e)
@@ -65,9 +65,9 @@ namespace LPS.Web.Base
 			m_Base.FarmerSex = txtFarmerSex.Text;//性别
 			m_Base.FarmerBirth = Convert.ToDateTime(txtFarmerBirth.Text);//出生日期
 			m_Base.FarmerCardId = txtFarmerCardId.Text;//身份证
-			m_Base.FarmerCreateDate = Convert.ToDateTime(txtFarmerCreateDate.Text);//创建日期
-			m_Base.FarmerIsDeleted = txtFarmerIsDeleted.Text;//是否删除
-			m_Base.FarmerDeletedDate = Convert.ToDateTime(txtFarmerDeletedDate.Text);//删除日期
+			//m_Base.FarmerCreateDate = Convert.ToDateTime(txtFarmerCreateDate.Text);//创建日期
+			//m_Base.FarmerIsDeleted = txtFarmerIsDeleted.Text;//是否删除
+			//m_Base.FarmerDeletedDate = Convert.ToDateTime(txtFarmerDeletedDate.Text);//删除日期
 
 			return m_Base;
 		}

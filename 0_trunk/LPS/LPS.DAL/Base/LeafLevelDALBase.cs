@@ -10,6 +10,7 @@ namespace LPS.DAL.Base
 	/// <summary>
 	/// (t_base_leaf_level)实体类
 	/// 烟叶等级表
+	/// by zcs 120904: 应该去掉，LEAF_LEVEL_IS_DELETED,LEAF_LEVEL_DELETED_DATE 因类它采用的是Code 可以找到。
 	/// </summary>
 	public abstract class LeafLevelDALBase : DALBase
 	{
@@ -42,14 +43,16 @@ namespace LPS.DAL.Base
 		/// <returns>返回烟叶等级受影响的行数</returns>
 		public virtual int Add(LeafLevel leaflevel)
 		{
-			return db.ExecuteNoQuery("INSERT INTO T_BASE_LEAF_LEVEL (LEAF_LEVEL, LEAF_LEVEL_NAME, LEAF_LEVEL_DESC, LEAF_LEVEL_PRICE, LEAF_LEVEL_SORT, LEAF_LEVEL_IS_DELETED, LEAF_LEVEL_DELETED_DATE) VALUES (@LEAF_LEVEL, @LEAF_LEVEL_NAME, @LEAF_LEVEL_DESC, @LEAF_LEVEL_PRICE, @LEAF_LEVEL_SORT, @LEAF_LEVEL_IS_DELETED, @LEAF_LEVEL_DELETED_DATE)", 
+			return db.ExecuteNoQuery(@"INSERT INTO T_BASE_LEAF_LEVEL (LEAF_LEVEL, LEAF_LEVEL_NAME, LEAF_LEVEL_DESC, LEAF_LEVEL_PRICE, LEAF_LEVEL_SORT,LEAF_LEVEL_IS_DELETED) 
+VALUES (@LEAF_LEVEL, @LEAF_LEVEL_NAME, @LEAF_LEVEL_DESC, @LEAF_LEVEL_PRICE, @LEAF_LEVEL_SORT, 'N')", 
 				db.GetDataParameter("@LEAF_LEVEL", leaflevel.Level),
 				db.GetDataParameter("@LEAF_LEVEL_NAME", leaflevel.LeafLevelName),
 				db.GetDataParameter("@LEAF_LEVEL_DESC", leaflevel.LeafLevelDesc),
 				db.GetDataParameter("@LEAF_LEVEL_PRICE", leaflevel.LeafLevelPrice),
-				db.GetDataParameter("@LEAF_LEVEL_SORT", leaflevel.LeafLevelSort),
-				db.GetDataParameter("@LEAF_LEVEL_IS_DELETED", leaflevel.LeafLevelIsDeleted),
-				db.GetDataParameter("@LEAF_LEVEL_DELETED_DATE", leaflevel.LeafLevelDeletedDate));
+				db.GetDataParameter("@LEAF_LEVEL_SORT", leaflevel.LeafLevelSort)
+				//db.GetDataParameter("@LEAF_LEVEL_IS_DELETED", leaflevel.LeafLevelIsDeleted),
+				//db.GetDataParameter("@LEAF_LEVEL_DELETED_DATE", leaflevel.LeafLevelDeletedDate)
+				);
 		}
 		/// <summary>
 		/// 根据 Level 更新烟叶等级表记录
@@ -57,14 +60,16 @@ namespace LPS.DAL.Base
 		/// <returns>返回烟叶等级受影响的行数</returns>
 		public virtual int Update(LeafLevel leaflevel)
 		{
-			return db.ExecuteNoQuery("UPDATE T_BASE_LEAF_LEVEL SET LEAF_LEVEL_NAME = @LEAF_LEVEL_NAME, LEAF_LEVEL_DESC = @LEAF_LEVEL_DESC, LEAF_LEVEL_PRICE = @LEAF_LEVEL_PRICE, LEAF_LEVEL_SORT = @LEAF_LEVEL_SORT, LEAF_LEVEL_IS_DELETED = @LEAF_LEVEL_IS_DELETED, LEAF_LEVEL_DELETED_DATE = @LEAF_LEVEL_DELETED_DATE WHERE LEAF_LEVEL = @LEAF_LEVEL", 
+			return db.ExecuteNoQuery(@"UPDATE T_BASE_LEAF_LEVEL SET LEAF_LEVEL_NAME = @LEAF_LEVEL_NAME, LEAF_LEVEL_DESC = @LEAF_LEVEL_DESC, 
+LEAF_LEVEL_PRICE = @LEAF_LEVEL_PRICE, LEAF_LEVEL_SORT = @LEAF_LEVEL_SORT WHERE LEAF_LEVEL = @LEAF_LEVEL", 
 				db.GetDataParameter("@LEAF_LEVEL", leaflevel.Level),
 				db.GetDataParameter("@LEAF_LEVEL_NAME", leaflevel.LeafLevelName),
 				db.GetDataParameter("@LEAF_LEVEL_DESC", leaflevel.LeafLevelDesc),
 				db.GetDataParameter("@LEAF_LEVEL_PRICE", leaflevel.LeafLevelPrice),
-				db.GetDataParameter("@LEAF_LEVEL_SORT", leaflevel.LeafLevelSort),
-				db.GetDataParameter("@LEAF_LEVEL_IS_DELETED", leaflevel.LeafLevelIsDeleted),
-				db.GetDataParameter("@LEAF_LEVEL_DELETED_DATE", leaflevel.LeafLevelDeletedDate));
+				db.GetDataParameter("@LEAF_LEVEL_SORT", leaflevel.LeafLevelSort)
+				//db.GetDataParameter("@LEAF_LEVEL_IS_DELETED", leaflevel.LeafLevelIsDeleted),
+				//db.GetDataParameter("@LEAF_LEVEL_DELETED_DATE", leaflevel.LeafLevelDeletedDate)
+				);
 		}
 
 		/// <summary>

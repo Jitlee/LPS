@@ -42,7 +42,8 @@ namespace LPS.DAL.Base
 		/// <returns>返回烟农受影响的行数</returns>
 		public virtual int Add(Farmer farmer)
 		{
-			return db.ExecuteNoQuery("INSERT INTO T_BASE_FARMER (FARMER_ID, FARMAR_CODE, FARMER_RFID, FARMER_NAME, FARMER_PY, FARMER_PHONE, FARMER_EMAIL, FARMER_ADDRESS, FARMER_RMARK, FARMER_SEX, FARMER_BIRTH, FARMER_CARD_ID, FARMER_CREATE_DATE, FARMER_IS_DELETED, FARMER_DELETED_DATE) VALUES (@FARMER_ID, @FARMAR_CODE, @FARMER_RFID, @FARMER_NAME, @FARMER_PY, @FARMER_PHONE, @FARMER_EMAIL, @FARMER_ADDRESS, @FARMER_RMARK, @FARMER_SEX, @FARMER_BIRTH, @FARMER_CARD_ID, @FARMER_CREATE_DATE, @FARMER_IS_DELETED, @FARMER_DELETED_DATE)", 
+			return db.ExecuteNoQuery(@"INSERT INTO T_BASE_FARMER (FARMER_ID, FARMAR_CODE, FARMER_RFID, FARMER_NAME, FARMER_PY, FARMER_PHONE, FARMER_EMAIL, FARMER_ADDRESS, FARMER_RMARK, FARMER_SEX, FARMER_BIRTH, FARMER_CARD_ID, FARMER_CREATE_DATE) 
+VALUES (@FARMER_ID, @FARMAR_CODE, @FARMER_RFID, @FARMER_NAME, @FARMER_PY, @FARMER_PHONE, @FARMER_EMAIL, @FARMER_ADDRESS, @FARMER_RMARK, @FARMER_SEX, @FARMER_BIRTH, @FARMER_CARD_ID, now())", 
 				db.GetDataParameter("@FARMER_ID", farmer.FarmerId),
 				db.GetDataParameter("@FARMAR_CODE", farmer.FarmarCode),
 				db.GetDataParameter("@FARMER_RFID", farmer.FarmerRfid),
@@ -54,10 +55,11 @@ namespace LPS.DAL.Base
 				db.GetDataParameter("@FARMER_RMARK", farmer.FarmerRmark),
 				db.GetDataParameter("@FARMER_SEX", farmer.FarmerSex),
 				db.GetDataParameter("@FARMER_BIRTH", farmer.FarmerBirth),
-				db.GetDataParameter("@FARMER_CARD_ID", farmer.FarmerCardId),
-				db.GetDataParameter("@FARMER_CREATE_DATE", farmer.FarmerCreateDate),
-				db.GetDataParameter("@FARMER_IS_DELETED", farmer.FarmerIsDeleted),
-				db.GetDataParameter("@FARMER_DELETED_DATE", farmer.FarmerDeletedDate));
+				db.GetDataParameter("@FARMER_CARD_ID", farmer.FarmerCardId)
+				//db.GetDataParameter("@FARMER_CREATE_DATE", farmer.FarmerCreateDate),
+				//db.GetDataParameter("@FARMER_IS_DELETED", farmer.FarmerIsDeleted),
+				//db.GetDataParameter("@FARMER_DELETED_DATE", farmer.FarmerDeletedDate)
+				);
 		}
 		/// <summary>
 		/// 根据 FarmerId 更新烟农表记录
@@ -65,7 +67,9 @@ namespace LPS.DAL.Base
 		/// <returns>返回烟农受影响的行数</returns>
 		public virtual int Update(Farmer farmer)
 		{
-			return db.ExecuteNoQuery("UPDATE T_BASE_FARMER SET FARMAR_CODE = @FARMAR_CODE, FARMER_RFID = @FARMER_RFID, FARMER_NAME = @FARMER_NAME, FARMER_PY = @FARMER_PY, FARMER_PHONE = @FARMER_PHONE, FARMER_EMAIL = @FARMER_EMAIL, FARMER_ADDRESS = @FARMER_ADDRESS, FARMER_RMARK = @FARMER_RMARK, FARMER_SEX = @FARMER_SEX, FARMER_BIRTH = @FARMER_BIRTH, FARMER_CARD_ID = @FARMER_CARD_ID, FARMER_CREATE_DATE = @FARMER_CREATE_DATE, FARMER_IS_DELETED = @FARMER_IS_DELETED, FARMER_DELETED_DATE = @FARMER_DELETED_DATE WHERE FARMER_ID = @FARMER_ID", 
+			return db.ExecuteNoQuery(@"UPDATE T_BASE_FARMER SET FARMAR_CODE = @FARMAR_CODE, FARMER_RFID = @FARMER_RFID, FARMER_NAME = @FARMER_NAME, FARMER_PY = @FARMER_PY, 
+FARMER_PHONE = @FARMER_PHONE, FARMER_EMAIL = @FARMER_EMAIL, FARMER_ADDRESS = @FARMER_ADDRESS, FARMER_RMARK = @FARMER_RMARK, FARMER_SEX = @FARMER_SEX, FARMER_BIRTH = @FARMER_BIRTH, 
+FARMER_CARD_ID = @FARMER_CARD_ID WHERE FARMER_ID = @FARMER_ID", 
 				db.GetDataParameter("@FARMER_ID", farmer.FarmerId),
 				db.GetDataParameter("@FARMAR_CODE", farmer.FarmarCode),
 				db.GetDataParameter("@FARMER_RFID", farmer.FarmerRfid),
@@ -77,10 +81,11 @@ namespace LPS.DAL.Base
 				db.GetDataParameter("@FARMER_RMARK", farmer.FarmerRmark),
 				db.GetDataParameter("@FARMER_SEX", farmer.FarmerSex),
 				db.GetDataParameter("@FARMER_BIRTH", farmer.FarmerBirth),
-				db.GetDataParameter("@FARMER_CARD_ID", farmer.FarmerCardId),
-				db.GetDataParameter("@FARMER_CREATE_DATE", farmer.FarmerCreateDate),
-				db.GetDataParameter("@FARMER_IS_DELETED", farmer.FarmerIsDeleted),
-				db.GetDataParameter("@FARMER_DELETED_DATE", farmer.FarmerDeletedDate));
+				db.GetDataParameter("@FARMER_CARD_ID", farmer.FarmerCardId)
+				//db.GetDataParameter("@FARMER_CREATE_DATE", farmer.FarmerCreateDate),
+				//db.GetDataParameter("@FARMER_IS_DELETED", farmer.FarmerIsDeleted),
+				//db.GetDataParameter("@FARMER_DELETED_DATE", farmer.FarmerDeletedDate)
+				);
 		}
 
 		/// <summary>
@@ -88,10 +93,10 @@ namespace LPS.DAL.Base
 		/// </summary>
 		/// <param name="farmerId">烟农唯一标识</param>
 		/// <returns>返回烟农受影响的行数</returns>
-		public virtual int Delete(string farmerId)
+		public virtual bool Delete(string farmerId)
 		{
-			return db.ExecuteNoQuery("DELETE FROM T_BASE_FARMER WHERE FARMER_ID = @FARMER_ID", 
-				db.GetDataParameter("@FARMER_ID", farmerId));
+			string sql = @"UPDATE T_BASE_FARMER SET FARMER_IS_DELETED='Y',FARMER_DELETED_DATE=now() where  FARMER_ID = @FARMER_ID";
+			return db.ExecuteNoQuery(sql, db.GetDataParameter("@FARMER_ID", farmerId)) > 0;
 		}
 	}
 }

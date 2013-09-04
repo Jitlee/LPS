@@ -141,7 +141,7 @@
 										<asp:TextBox runat="server" ID="txtFarmerCardId" CssClass="textbox_skin" />
 									</td>
 								</tr>
-								<tr>
+								<%--<tr>
 									<td class="tdRight">
 										创建日期：
 									</td>
@@ -164,7 +164,7 @@
 									<td class="tdLeft">
 										<asp:TextBox runat="server" ID="txtFarmerDeletedDate" CssClass="textbox_skin" />
 									</td>
-								</tr>
+								</tr>--%>
 							</table>
 						</div>
 					</div>
