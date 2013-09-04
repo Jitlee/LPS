@@ -3,9 +3,76 @@
 
 <%@ Register Src="../UI/pagenavigate.ascx" TagName="pagenavigate" TagPrefix="uc2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+<style type="text/css">
+.first_level 
+{
+    background-color:#EAEAEA;
+    border:1px solid #cdced0;
+    height:27px;
+    line-height:27px;
+    color:#333333;
+    margin-top:5px;
+    width:100%;
+}
+.first_level a
+{
+    float:right;
+    margin-right:20px;
+}
+.second_level 
+{
+    background:#fafafc;
+	line-height:27px;
+    border-left:1px solid #cdced0;
+    border-right:1px solid #cdced0;
+    border-bottom:1px solid #cdced0;
+    width:100%;
+}
+.second_level span
+{
+    width:180px; float:left; padding:0px 0px 0px 10px;
+}
+a.data_dictionary:link
+{
+    color:#034af3;
+    text-decoration: none;
+}
+a.data_dictionary:visited
+{
+    color:#3366cc;
+    text-decoration: none;
+}
+a.data_dictionary:hover
+{
+    color: #ff6633;
+}
+</style>
 	<script type="text/javascript">
 
-		$(document).ready(function () {
+	    $(document).ready(function () {
+
+	        $("#<%= txtSub.ClientID %>").yz({ title: "子类", max: 15, isSave: true, canEmpty: true, type: "string" });
+	        $("#<%= txtMain.ClientID %>").yz({ title: "大类", max: 30, canEmpty: true, isSave: true, type: "string" });
+
+	        $(".headerBtnEdit").each(function (i, o) {
+	            $(o).click(function () {
+	                var murl = 'DictronaryEdit.aspx?val=' + $(this).attr("Value");
+	                diag = new Dialog("Edit");
+	                diag.URL = murl;
+	                diag.Title = "添加";
+	                diag.Width = 600;
+	                diag.Height = 500;
+	                diag.ShowButtonRow = false;
+	                diag.OK = function (va) {
+	                    $.DialogRefrsh();
+	                };
+	                diag.show();
+	                return false;
+	            });
+	        });
+
+
+
 			$(".headerBtnAdd").click(function () {
 				var murl = 'DictronaryEdit.aspx';
 				diag = new Dialog("Edit");
@@ -88,58 +155,60 @@
 				</td>
 				<td id="page_Middle_Middle">
 					<div id="page">
-						<div id="pageBody">
-							<asp:GridView ID="gvBaseDictronary" AutoGenerateColumns="false" runat="server">
-								<Columns>
-									<asp:TemplateField HeaderText="序号">
-										<ItemStyle BackColor="#bdeaff" Width="35" />
-										<ItemTemplate>
-											<%# Container.DataItemIndex+1 %>
-										</ItemTemplate>
-									</asp:TemplateField>
-									<asp:TemplateField HeaderText="编辑" HeaderStyle-Width="4%">
-										<ItemTemplate>
-											<a guid="<%# Eval("DictCode") %>" class="gvEdit">
-												<img src="../images/Common/edit.gif" style="border: 0px;" alt="编辑" /></a>
-										</ItemTemplate>
-									</asp:TemplateField>
-									<asp:TemplateField HeaderText="删除" HeaderStyle-Width="4%">
-										<ItemTemplate>
-											<asp:ImageButton ID="ibtn_delete" CssClass="deleteTS" CommandName="delete" OnCommand="GView_LinkButton_Click"
-												CommandArgument='<%#Eval("DictCode") %>' ImageUrl="~/images/Common/delete.gif"
-												runat="server" />
-										</ItemTemplate>
-									</asp:TemplateField>
-									<asp:BoundField DataField="DictType" HeaderText="类型" />
-									<asp:BoundField DataField="DictName" HeaderText="名称" />
-									<asp:BoundField DataField="DictValue" HeaderText="值" />
-									<asp:BoundField DataField="DictDesc" HeaderText="描述" />
-								</Columns>
-								<EmptyDataTemplate>
-									<table class="gridview_skin" cellspacing="0" cellpadding="0" rules="all"  border="1"  style="border-collapse:collapse;">
-										<tr class="gridview_skin_header">
-											<th>
-												类型
-											</th>
-											<th>
-												名称
-											</th>
-											<th>
-												值
-											</th>
-											<th>
-												描述
-											</th>
-										</tr>
-										<tr>
-											<td colspan="4">
-												没有数据
-											</td>
-										</tr>
-									</table>
-								</EmptyDataTemplate>
-							</asp:GridView>
-						</div>
+                        <div id="pageBody">
+                            <table  class="searchtable" cellspacing="0">
+                                <tr class="rows">
+                                    <th width="70">
+                                        查询大类：
+                                    </th>
+                                    <td width="160">
+                                        <asp:TextBox ID="txtMain" runat="server"></asp:TextBox>
+                                    </td>
+                                    <td style=" text-align:left;">
+                                        <asp:Button ID="btnSearch" runat="server" Text="查询" CssClass="btn_bg vertical_middle"
+                                            OnClick="btnSearch_Click" OnClientClick="return $.yz.getErrorList()" />
+                                    </td>
+                                    <th width="70">
+                                        添加子类：
+                                    </th>
+                                    <td style="border-right: none; width: 155px;">
+                                        <asp:DropDownList ID="dropMain"  Width="140px" runat="server" DataTextField="DictTypeName" DataValueField="DictType">
+                                        </asp:DropDownList>
+                                    </td>
+                                    <td width="170"  style=" text-align:left;">
+                                        <asp:TextBox ID="txtSub" runat="server" MaxLength="15"></asp:TextBox>
+                                        <font style="color: Red;">*</font>
+                                    </td>
+                                    <td  style=" text-align:left;">
+                                        <asp:Button ID="btnAdd" runat="server" Text="添加" CssClass="btn_bg vertical_middle"
+                                            OnClick="btnAdd_Click" OnClientClick="return $.yz.getErrorList()" />
+                                    </td>
+                                </tr>
+                            </table>
+                            <div style=" padding:0px; margin:0px; width:100%; overflow-x:hidden;">
+                                <asp:Repeater ID="rptDataDictionaryTitle" runat="server" OnItemDataBound="rptDataDictionaryTitle_ItemDataBound">
+                                    <ItemTemplate>
+                                        <div class="first_level">
+                                            <strong style="float: left; padding-left: 5px;">
+                                                <%# Eval("DictTypeName")%></strong>
+                                            <asp:LinkButton ID="lbtnEdit" runat="server" Text="[编辑]" CssClass="headerBtnEdit data_dictionary"
+                                                Value='<%#Eval("DictType")%>'></asp:LinkButton>
+                                            <asp:HiddenField ID="Hidden1" runat="server" Visible="false" Value='<%#Eval("DictType")%>' />
+                                        </div>
+                                        <div class="second_level">
+                                            <asp:Repeater ID="rptDataDictionarySub" runat="server">
+                                                <ItemTemplate>
+                                                    <span>
+                                                        <%# Eval("DictCode")%></span>
+                                                </ItemTemplate>
+                                            </asp:Repeater>
+                                            <div style="clear: both;">
+                                            </div>
+                                        </div>
+                                    </ItemTemplate>
+                                </asp:Repeater>
+                            </div>
+                        </div>
 					</div>
 				</td>
 				<td id="page_Middle_Right">
@@ -156,7 +225,8 @@
 				</td>
 				<td id="page_Bottom_Middle">
 					<div>
-						<uc2:pagenavigate ID="pg" PageSize="20" runat="server" />
+						<%--<uc2:pagenavigate ID="pg" PageSize="20" runat="server" />--%>
+                        &nbsp;
 					</div>
 				</td>
 				<td id="page_Bottom_Right">
