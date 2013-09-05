@@ -9,6 +9,7 @@ using System.Web.UI.HtmlControls;
 using System.Text;
 using LPS.Model.Base;
 using LPS.DAL.Base;
+using System.Collections.ObjectModel;
 
 
 namespace LPS.Web.Base
@@ -28,15 +29,15 @@ namespace LPS.Web.Base
             try
             {
                 this.lblAlert.Text = "";
-                this.txtMain.Visible = false;
-                this.lbtnUpdate.Visible = false;
-                this.lbtnCancel.Visible = false;
+                //this.txtMain.Visible = false;
+                //this.lbtnUpdate.Visible = false;
+                //this.lbtnCancel.Visible = false;
                 this.lblmain.Visible = true;
-                this.ibtnTitleEdit.Visible = true;
+                //this.ibtnTitleEdit.Visible = true;
                 string keyword = Request["val"].ToString();
                 DictronaryType dic = new DictronaryTypeDAL().Get(keyword);
                 this.lblmain.Text = dic.DictType;
-                this.txtMain.Text = dic.DictType;
+                //this.txtMain.Text = dic.DictType;
                 
                 gridSubName.DataSource = new DictronaryDAL().QueryByType(keyword);
                 gridSubName.DataBind();
@@ -47,24 +48,24 @@ namespace LPS.Web.Base
             }
         }
 
-        protected void ibtnTitleEdit_Click(object sender, ImageClickEventArgs e)
-        {
-            this.lblmain.Visible = false;
-            this.ibtnTitleEdit.Visible = false;
-            this.txtMain.Visible = true;
-            this.lbtnUpdate.Visible = true;
-            this.lbtnCancel.Visible = true;
-        }
+        //protected void ibtnTitleEdit_Click(object sender, ImageClickEventArgs e)
+        //{
+        //    this.lblmain.Visible = false;
+        //    this.ibtnTitleEdit.Visible = false;
+        //    this.txtMain.Visible = true;
+        //    this.lbtnUpdate.Visible = true;
+        //    this.lbtnCancel.Visible = true;
+        //}
 
-        protected void lbtnCancel_Click(object sender, EventArgs e)
-        {
-            this.lblmain.Visible = true;
-            this.ibtnTitleEdit.Visible = true;
-            this.txtMain.Visible = false;
-            this.lbtnCancel.Visible = false;
-            this.lbtnUpdate.Visible = false;
-            InitPage();
-        }
+        //protected void lbtnCancel_Click(object sender, EventArgs e)
+        //{
+        //    this.lblmain.Visible = true;
+        //    this.ibtnTitleEdit.Visible = true;
+        //    this.txtMain.Visible = false;
+        //    this.lbtnCancel.Visible = false;
+        //    this.lbtnUpdate.Visible = false;
+        //    InitPage();
+        //}
 
         protected void lbtnUpdate_Click(object sender, EventArgs e)
         {
@@ -110,45 +111,13 @@ namespace LPS.Web.Base
         #region 子类添加
         protected void btnAddSub_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    if (!CheckString(txtAddSub.Text))
-            //    {
-            //        Alert("请勿输入特殊字符！");
-            //        txtAddSub.Text = "";
-            //        return;
-            //    }
-            //    string keyword = Request["val"].ToString();
-            //    DataTable dtsub = new DataDictDA().SelectSubData(this.txtAddSub.Text, keyword);
-            //    if (dtsub.Rows.Count > 0)
-            //    {
-            //        this.lblAlert.Text = "您已提交过该名称了！";
-            //        return;
-            //    }
-            //    else
-            //    {
-            //        if (this.txtAddSub.Text.Trim().Length > 0)
-            //        {
-            //            DataDictOR subAdd = new DataDictOR();
-            //            subAdd.KEY_WORD = keyword;
-            //            subAdd.NAME = this.txtAddSub.Text;
-            //            subAdd.PARENT_CODE = Guid.NewGuid().ToString();
-            //            new DataDictDA().AddDataDict(subAdd);
-
-            //            this.txtAddSub.Text = "";
-            //            InitPage();
-            //        }
-            //        else
-            //        {
-            //            this.lblAlert.Text = "子类不能为空！";
-            //            return;
-            //        }
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    Alert(ex);
-            //}
+            Dictronary subupdating = new Dictronary();
+            subupdating.DictCode = txtDictCode.Text;
+            subupdating.DictType = Request.QueryString["val"];
+            subupdating.DictName = txtDictName.Text;
+            subupdating.DictDesc = txtDictDesc.Text;
+            new DictronaryDAL().Add(subupdating);
+            InitPage();
         }
         #endregion
 
@@ -163,46 +132,49 @@ namespace LPS.Web.Base
         #region  子类更新
         protected void gridSubName_RowUpdating(object sender, GridViewUpdateEventArgs e)
         {
-            //if (((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtsubName")).Text.Trim().Length > 0)
-            //{
-            //    try
-            //    {
-            //        if (!CheckString(((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtsubName")).Text.Trim()))
-            //        {
-            //            Alert("请勿输入特殊字符！");
-            //            return;
-            //        }
-            //        string oldSub = ((HiddenField)gridSubName.Rows[e.RowIndex].FindControl("hideSub")).Value;
-            //        if (Request["val"].ToString() != "")
-            //        {
-            //            DataTable dt = new DataDictDA().SelectSubWithoutSelf(Request["val"].ToString(), oldSub);
-            //            for (int i = 0; i < dt.Rows.Count; i++)
-            //            {
-            //                if (dt.Rows[i]["name"].ToString().Trim() == ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtsubName")).Text.Trim())
-            //                {
-            //                    Alert("您已提交过该名称了！");
-            //                    return;
-            //                }
-            //            }
-            //        }
-            //        DataDictOR subupdating = new DataDictOR();
-            //        subupdating.ID = gridSubName.DataKeys[e.RowIndex].Value.ToString();
-            //        subupdating.KEY_WORD = Request["val"].ToString();
-            //        subupdating.NAME = ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtsubName")).Text;
-            //        new DataDictDA().UpdateDataDict(subupdating);
+            string strCode=((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtDictCode")).Text.Trim();
+            if (strCode.Length > 0)
+            {
+                try
+                {
+                    if (!CheckString(strCode))
+                    {
+                        Alert("请勿输入特殊字符！");
+                        return;
+                    }
+                    string oldSub = ((HiddenField)gridSubName.Rows[e.RowIndex].FindControl("txtOldSubName")).Value;
+                    if (Request["val"].ToString() != "")
+                    {
+                        ObservableCollection<Dictronary> List = new DictronaryDAL().SelectSubWithoutSelf(Request["val"], oldSub);
+                        foreach (Dictronary obj in List)
+                        {
+                            if (obj.DictCode == strCode)
+                            {
+                                Alert("您已提交过该名称了！");
+                                return;
+                            }
+                        }
+                    }
+                    Dictronary subupdating = new Dictronary();
 
-            //        gridSubName.EditIndex = -1;
-            //        InitPage();
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        Alert(ex);
-            //    }
-            //}
-            //else
-            //{
-            //    Alert("子类名称不能为空！"); return;
-            //}
+                    subupdating.DictCode = strCode;
+                    subupdating.DictType = Request.QueryString["val"];
+                    subupdating.DictName = ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtDictName")).Text;
+                    subupdating.DictDesc = ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtDictDesc")).Text;
+                    new DictronaryDAL().Update(subupdating);
+
+                    gridSubName.EditIndex = -1;
+                    InitPage();
+                }
+                catch (Exception ex)
+                {
+                    Alert(ex);
+                }
+            }
+            else
+            {
+                Alert("子类名称不能为空！"); return;
+            }
         }
         #endregion
 

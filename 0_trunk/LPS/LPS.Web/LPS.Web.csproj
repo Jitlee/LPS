@@ -186,6 +186,7 @@
     <Content Include="images\unselected80.gif" />
     <Content Include="Login.aspx" />
     <Content Include="Main\Default.aspx" />
+    <Content Include="Main\OutoffTime.aspx" />
     <Content Include="Map.aspx" />
     <Content Include="Role\RoleEdit.aspx" />
     <Content Include="Role\RoleList.aspx" />
@@ -317,6 +318,13 @@
     </Compile>
     <Compile Include="Main\MasterPage.master.designer.cs">
       <DependentUpon>MasterPage.master</DependentUpon>
+    </Compile>
+    <Compile Include="Main\OutoffTime.aspx.cs">
+      <DependentUpon>OutoffTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Main\OutoffTime.aspx.designer.cs">
+      <DependentUpon>OutoffTime.aspx</DependentUpon>
     </Compile>
     <Compile Include="Map.aspx.cs">
       <DependentUpon>Map.aspx</DependentUpon>
