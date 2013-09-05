@@ -21,7 +21,7 @@ namespace LPS.DAL.Base
 		/// <returns>返回烟叶等级对象</returns>
 		public virtual LeafLevel Get(string leafLevel)
 		{
-			return db.ExecuteGet<LeafLevel>("SELECT LEAF_LEVEL, LEAF_LEVEL_NAME, LEAF_LEVEL_DESC, LEAF_LEVEL_PRICE, LEAF_LEVEL_SORT, LEAF_LEVEL_IS_DELETED, LEAF_LEVEL_DELETED_DATEFROM T_BASE_LEAF_LEVEL WHERE LEAF_LEVEL = @LEAF_LEVEL",
+			return db.ExecuteGet<LeafLevel>("SELECT LEAF_LEVEL, LEAF_LEVEL_NAME, LEAF_LEVEL_DESC, LEAF_LEVEL_PRICE, LEAF_LEVEL_SORT, LEAF_LEVEL_IS_DELETED, LEAF_LEVEL_DELETED_DATE FROM T_BASE_LEAF_LEVEL WHERE LEAF_LEVEL = @LEAF_LEVEL",
 				(dr) => { return new LeafLevel(dr); },
 				db.GetDataParameter("@LEAF_LEVEL", leafLevel));
 		}

@@ -76,6 +76,33 @@ namespace LPS.Web.Base {
         protected global::System.Web.UI.WebControls.TextBox txtFarmerPy;
         
         /// <summary>
+        /// dpdFarmerSex control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dpdFarmerSex;
+        
+        /// <summary>
+        /// txtFarmerBirth control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFarmerBirth;
+        
+        /// <summary>
+        /// txtFarmerCardId control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtFarmerCardId;
+        
+        /// <summary>
         /// txtFarmerPhone control.
         /// </summary>
         /// <remarks>
@@ -110,33 +137,6 @@ namespace LPS.Web.Base {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtFarmerRmark;
-        
-        /// <summary>
-        /// txtFarmerSex control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerSex;
-        
-        /// <summary>
-        /// txtFarmerBirth control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerBirth;
-        
-        /// <summary>
-        /// txtFarmerCardId control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtFarmerCardId;
         
         /// <summary>
         /// LinkButton1 control.

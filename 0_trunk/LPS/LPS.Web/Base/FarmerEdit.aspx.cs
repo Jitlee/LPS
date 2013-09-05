@@ -39,7 +39,7 @@ namespace LPS.Web.Base
 				txtFarmerEmail.Text = m_Base.FarmerEmail;//烟农电子邮箱
 				txtFarmerAddress.Text = m_Base.FarmerAddress;//烟农地址
 				txtFarmerRmark.Text = m_Base.FarmerRmark;//备注
-				txtFarmerSex.Text = m_Base.FarmerSex;//性别
+				dpdFarmerSex.Text = m_Base.FarmerSex;//性别
 				txtFarmerBirth.Text = m_Base.FarmerBirth.ToString();//出生日期
 				txtFarmerCardId.Text = m_Base.FarmerCardId;//身份证       
 				//txtFarmerIsDeleted.Text = m_Base.FarmerIsDeleted;//是否删除        
@@ -62,8 +62,11 @@ namespace LPS.Web.Base
 			m_Base.FarmerEmail = txtFarmerEmail.Text;//烟农电子邮箱
 			m_Base.FarmerAddress = txtFarmerAddress.Text;//烟农地址
 			m_Base.FarmerRmark = txtFarmerRmark.Text;//备注
-			m_Base.FarmerSex = txtFarmerSex.Text;//性别
-			m_Base.FarmerBirth = Convert.ToDateTime(txtFarmerBirth.Text);//出生日期
+			m_Base.FarmerSex = dpdFarmerSex.Text;//性别
+			if (!string.IsNullOrEmpty(txtFarmerBirth.Text))
+			{
+				m_Base.FarmerBirth = Convert.ToDateTime(txtFarmerBirth.Text);//出生日期
+			}
 			m_Base.FarmerCardId = txtFarmerCardId.Text;//身份证
 			//m_Base.FarmerCreateDate = Convert.ToDateTime(txtFarmerCreateDate.Text);//创建日期
 			//m_Base.FarmerIsDeleted = txtFarmerIsDeleted.Text;//是否删除

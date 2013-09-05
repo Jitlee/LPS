@@ -122,8 +122,7 @@
 										出生日期：
 									</td>
 									<td class="tdLeft">
-										<asp:TextBox ID="txtEmpolyeeBirth" CssClass="textbox_skin" onfocus="WdatePicker();"
-											runat="server" />
+										<asp:TextBox ID="txtEmpolyeeBirth" CssClass="textbox_skin" onfocus="WdatePicker();" runat="server" />
 									</td>
 								</tr>
                                 <tr>

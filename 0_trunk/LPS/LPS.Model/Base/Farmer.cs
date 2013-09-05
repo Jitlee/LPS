@@ -318,6 +318,7 @@ namespace LPS.Model.Base
 		/// </summary>
 		public Farmer()
 		{
+			FarmerId = Guid.NewGuid().ToString();
 		}
 
 		/// <summary>

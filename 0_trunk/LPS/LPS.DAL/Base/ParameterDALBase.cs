@@ -20,7 +20,7 @@ namespace LPS.DAL.Base
 		/// <returns>返回系统参数对象</returns>
 		public virtual Parameter Get(string paramCode)
 		{
-			return db.ExecuteGet<Parameter>("SELECT PARAM_CODE, PARAM_NAME, PARAM_VALUE, PARAM_DESCFROM T_BASE_PARAMETER WHERE PARAM_CODE = @PARAM_CODE",
+			return db.ExecuteGet<Parameter>("SELECT PARAM_CODE, PARAM_NAME, PARAM_VALUE, PARAM_DESC FROM T_BASE_PARAMETER WHERE PARAM_CODE = @PARAM_CODE",
 				(dr) => { return new Parameter(dr); },
 				db.GetDataParameter("@PARAM_CODE", paramCode));
 		}
