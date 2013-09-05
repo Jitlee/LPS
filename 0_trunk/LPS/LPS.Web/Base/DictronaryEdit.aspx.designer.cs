@@ -46,7 +46,7 @@ namespace LPS.Web.Base {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDictType;
+        protected global::System.Web.UI.WebControls.TextBox txtAddSub;
         
         /// <summary>
         /// txtDictName control.
@@ -55,7 +55,7 @@ namespace LPS.Web.Base {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDictName;
+        protected global::System.Web.UI.WebControls.Button btnAddSub;
         
         /// <summary>
         /// txtDictValue control.
@@ -64,24 +64,58 @@ namespace LPS.Web.Base {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDictValue;
+        protected global::System.Web.UI.WebControls.Label lblAlert;
         
         /// <summary>
-        /// txtDictDesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDictDesc;
+        protected global::System.Web.UI.WebControls.Label lblmain;
         
         /// <summary>
-        /// LinkButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LinkButton1;
+        protected global::System.Web.UI.WebControls.TextBox txtMain;
+        
+        /// <summary>
+        /// ibtnTitleEdit 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ibtnTitleEdit;
+        
+        /// <summary>
+        /// lbtnUpdate 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnUpdate;
+        
+        /// <summary>
+        /// lbtnCancel 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lbtnCancel;
+        
+        /// <summary>
+        /// gridSubName 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gridSubName;
     }
 }
