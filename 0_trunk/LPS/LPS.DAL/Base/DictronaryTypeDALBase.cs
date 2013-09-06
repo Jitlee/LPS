@@ -35,6 +35,13 @@ namespace LPS.DAL.Base
 				(dr) => { return new DictronaryType(dr); });
 		}
 
+        public virtual ObservableCollection<DictronaryType> Query(string strCode)
+        {
+            string sql = string.Format("SELECT DICT_TYPE, DICT_TYPE_NAME, DICT_TYPE_DESC FROM T_BASE_DICTRONARY_TYPE where DICT_TYPE='{0}' ", strCode);
+            return db.ExecuteQuery<DictronaryType>(sql,
+                (dr) => { return new DictronaryType(dr); });
+        }
+
 		/// <summary>
 		/// 新增一条数据字典类型记录
 		/// </summary>

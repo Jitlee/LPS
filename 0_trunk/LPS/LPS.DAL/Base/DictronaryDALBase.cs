@@ -53,14 +53,17 @@ namespace LPS.DAL.Base
 		/// 根据 DictCode 更新数据字典表记录
 		/// </summary>
 		/// <returns>返回数据字典受影响的行数</returns>
-		public virtual int Update(Dictronary dictronary)
+		public virtual int Update(Dictronary dictronary,string oldCode)
 		{
-			return db.ExecuteNoQuery("UPDATE T_BASE_DICTRONARY SET DICT_TYPE = @DICT_TYPE, DICT_NAME = @DICT_NAME, DICT_VALUE = @DICT_VALUE, DICT_DESC = @DICT_DESC WHERE DICT_CODE = @DICT_CODE", 
-				db.GetDataParameter("@DICT_TYPE", dictronary.DictType),
+            return db.ExecuteNoQuery("UPDATE T_BASE_DICTRONARY SET DICT_CODE = @DICT_CODE, DICT_NAME = @DICT_NAME, DICT_VALUE = @DICT_VALUE, DICT_DESC = @DICT_DESC WHERE DICT_CODE = @oldCode",
+
+                //db.GetDataParameter("@DICT_CODE", oldCode),
 				db.GetDataParameter("@DICT_CODE", dictronary.DictCode),
 				db.GetDataParameter("@DICT_NAME", dictronary.DictName),
 				db.GetDataParameter("@DICT_VALUE", dictronary.DictValue),
-				db.GetDataParameter("@DICT_DESC", dictronary.DictDesc));
+				db.GetDataParameter("@DICT_DESC", dictronary.DictDesc),
+                db.GetDataParameter("@oldCode", oldCode)
+                );
 		}
 
 		/// <summary>

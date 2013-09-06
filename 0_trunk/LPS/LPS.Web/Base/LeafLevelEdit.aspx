@@ -13,7 +13,11 @@
 	<script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
+		    $("#txtLEAF_LEVEL").yz({ title: "等级编号", type: "string", max: 20, canEmpty: false, isSave: true });
+		    $("#txtLeafLevelName").yz({ title: "等级名称", type: "string", max: 20, canEmpty: false, isSave: true });
 
+		    $("#txtLeafLevelPrice").yz({ title: "烟叶等级价格", type: "float",   canEmpty: false, isSave: true });
+		    $("#txtLeafLevelSort").yz({ title: "排序", type: "int", canEmpty: false, isSave: true });
 		});
 	</script>
 </head>
@@ -54,6 +58,12 @@
 					<div id="page">
 						<div id="pageBody" style="padding: 15px;">
 							<table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
+                                <tr>
+                                    <td  class="tdRight">等级编号：</td>
+                                    <td class="tdLeft">
+										<asp:TextBox runat="server" ID="txtLEAF_LEVEL" CssClass="textbox_skin" />
+									</td>
+                                </tr>
 								<tr>
 									<td class="tdRight">
 										等级名称：
@@ -84,22 +94,6 @@
 									</td>
 									<td class="tdLeft">
 										<asp:TextBox runat="server" ID="txtLeafLevelSort" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										是否删除：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtLeafLevelIsDeleted" CssClass="textbox_skin" />
-									</td>
-								</tr>
-								<tr>
-									<td class="tdRight">
-										删除日期：
-									</td>
-									<td class="tdLeft">
-										<asp:TextBox runat="server" ID="txtLeafLevelDeletedDate" CssClass="textbox_skin" />
 									</td>
 								</tr>
 							</table>

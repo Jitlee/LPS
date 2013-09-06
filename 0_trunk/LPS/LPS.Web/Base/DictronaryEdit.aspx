@@ -1,65 +1,68 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="DictronaryEdit.aspx.cs"
-	Inherits="LPS.Web.Base.BaseDictronaryEdit" %>
+    Inherits="LPS.Web.Base.BaseDictronaryEdit" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-	<title>信息</title>
-	<link href="../styles/main.css" rel="stylesheet" type="text/css" />
-	<link href="../styles/page.css" rel="stylesheet" type="text/css" />
-    
-	<script type="text/javascript" src="../Scripts/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="../Scripts/Dialog.js"></script>
-	<script type="text/javascript" src="../Scripts/main.js"></script>
-	<script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
-	<script type="text/javascript">
-		$(document).ready(function () {
-		    $("#txtDictCode").yz({ title: "编码", type: "string", max: 20, canEmpty: false, isSave: true });
-		    $("#txtDictName").yz({ title: "名称", type: "string", max: 20, canEmpty: false, isSave: true });
-		    $("#txtDictDesc").yz({ title: "描述", type: "string", max: 40, isSave: true });
-		});
-	</script>
+    <title>信息</title>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/page.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Dialog.js"></script>
+    <script type="text/javascript" src="../Scripts/main.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#txtDictCode").yz({ title: "编码", type: "string", max: 20, canEmpty: false, isSave: true });
+            $("#txtDictName").yz({ title: "名称", type: "string", max: 20, canEmpty: false, isSave: true });
+        });
+    </script>
     <style type="text/css">
-       
+        *{ padding:0px; margin:0px;}
     </style>
 </head>
 <body>
-	<form id="form1" runat="server">
-	<div id="page_Top">
-		<table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
-			<tr>
-				<td id="page_Top_Left">
-					&nbsp;
-				</td>
-				<td id="page_Top_Middle">
-					<table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
-						<tr>
-							<td>
-								<div id="nav1">
-									<span class="STYLE3">你当前的位置</span>：[<asp:SiteMapPath ID="SiteMapPath1" runat="server"
-										PathSeparator="]-[">
-									</asp:SiteMapPath>
-									]</div>
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td id="page_Top_Right">
-					&nbsp;
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div id="page_Middle">
-		<table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
-			<tr>
-				<td id="page_Middle_Left">
-					&nbsp;
-				</td>
-				<td id="page_Middle_Middle">
-					<div id="page">
-                        <div id="pageBody" style="padding: 15px;">
+    <form id="form1" runat="server">
+    <div id="page_Top">
+        <table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td id="page_Top_Left">
+                    &nbsp;
+                </td>
+                <td id="page_Top_Middle">
+                    <table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <div id="nav1">
+                                    <span class="STYLE3">你当前的位置</span>：[<asp:SiteMapPath ID="SiteMapPath1" runat="server"
+                                        PathSeparator="]-[">
+                                    </asp:SiteMapPath>
+                                    ]</div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="page_Top_Right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="page_Middle">
+        <table style="width: 100%;" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td id="page_Middle_Left">
+                    &nbsp;
+                </td>
+                <td id="page_Middle_Middle">
+                    <div id="page">
+                        <div id="pageBody" style="padding: 5px;">
                              <table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
+                                <tr>
+                                    <td colspan="4" style=" text-align:left; font-size:12px; padding-left:5px;">
+                                            添加子类：
+                                    </td>
+                                </tr>
                                  <tr>
 									<td class="tdRight">
 										编码：
@@ -87,59 +90,50 @@
                                     </td>
                                 </tr>
                              </table>
-                            <table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
+
+                             <table class="tableOneline" border="0" cellpadding="0" cellspacing="1">
                                 <tr>
-                                    <td class="tdLeft">
-                                        <div class="data_dictionary_div">
-                                            添加子类：
-                                            <asp:TextBox ID="txtAddSub" runat="server" MaxLength="15" CssClass="vertical_middle"></asp:TextBox>
-                                            <font style="color: Red;">*</font>
-                                            
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注：子类最多只能输入15字。
-                                            <br />
-                                            <asp:Label ID="lblAlert" runat="server" ForeColor="Red"></asp:Label>
-                                        </div>
+                                    <td style=" text-align:left; font-size:12px; padding-left:5px;">
+                                         数据字典类型：
+                                         <span   style="font-weight:bold;">
+                                            <asp:Label ID="lblmain" runat="server"></asp:Label>
+                                        </span>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="2" style=" text-align:left;  padding-left:12px;">
-                                        <asp:Label ID="lblmain" runat="server"></asp:Label>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td align="right">
+                                    <td  align="right">
                                             <asp:GridView ID="gridSubName" runat="server" AutoGenerateColumns="false" CssClass="data_dictionary_gridview"
-                                                SkinID="ewrewq" ShowHeader="false" GridLines="None" DataKeyNames="ID" OnRowCancelingEdit="gridSubName_RowCancelingEdit"
+                                                   GridLines="None" DataKeyNames="DictCode" OnRowCancelingEdit="gridSubName_RowCancelingEdit"
                                                 OnRowDeleting="gridSubName_RowDeleting" OnRowEditing="gridSubName_RowEditing"
                                                 OnRowUpdating="gridSubName_RowUpdating">
                                                 <Columns>
                                                     <asp:TemplateField HeaderText="编码">
                                                         <EditItemTemplate>
-                                                            <asp:TextBox ID="txtDictCode" runat="server" Text='<%#Bind("DictCode")%>' CssClass="txtsubName"></asp:TextBox>
+                                                            <asp:TextBox ID="txtDictCode" Width="90px"  runat="server" Text='<%#Bind("DictCode")%>' CssClass="textbox_skin"></asp:TextBox>
                                                             <asp:TextBox ID="txtOldSubName" runat="server" Text='<%#Bind("DictCode")%>'  CssClass="NoShow"></asp:TextBox>
                                                         </EditItemTemplate>
                                                         <ItemTemplate>
-                                                            <asp:Label   runat="server" Text='<%#Eval("DictCode")%>'></asp:Label>
+                                                            <asp:Label ID="Label1"   runat="server" Text='<%#Eval("DictCode")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="名称">
                                                         <EditItemTemplate>
-                                                            <asp:TextBox ID="txtDictName" runat="server" Text='<%#Bind("DictName")%>' CssClass="txtsubName"></asp:TextBox>
+                                                            <asp:TextBox ID="txtDictName" Width="90px"  runat="server" Text='<%#Bind("DictName")%>' CssClass="textbox_skin"></asp:TextBox>
                                                         </EditItemTemplate>
                                                         <ItemTemplate>
-                                                            <asp:Label  runat="server" Text='<%#Eval("DictName")%>'></asp:Label>
+                                                            <asp:Label ID="Label2"  runat="server" Text='<%#Eval("DictName")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="描述">
                                                         <EditItemTemplate>
-                                                            <asp:TextBox ID="txtDictDesc" runat="server" Text='<%#Bind("DictDesc")%>' CssClass="txtsubName"></asp:TextBox>
+                                                            <asp:TextBox ID="txtDictDesc" Width="90px" runat="server" Text='<%#Bind("DictDesc")%>' CssClass="textbox_skin"></asp:TextBox>
                                                         </EditItemTemplate>
                                                         <ItemTemplate>
-                                                            <asp:Label  runat="server" Text='<%#Eval("DictDesc")%>'></asp:Label>
+                                                            <asp:Label ID="Label3"  runat="server" Text='<%#Eval("DictDesc")%>'></asp:Label>
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
                                                     <asp:TemplateField HeaderText="操作">
-                                                        <ItemStyle Width="60" />
+                                                        <ItemStyle Width="80" />
                                                         <EditItemTemplate>
                                                             <asp:LinkButton ID="lbtnUpdate" runat="server" CausesValidation="True" CommandName="Update"
                                                                 Text="保存" CssClass="ibtnwindow"></asp:LinkButton>
@@ -151,7 +145,7 @@
                                                                 ToolTip="编辑" />
                                                         </ItemTemplate>
                                                     </asp:TemplateField>
-                                                    <asp:TemplateField>
+                                                    <asp:TemplateField  HeaderText="删除">
                                                         <ItemStyle Width="60" />
                                                         <ItemTemplate>
                                                             <asp:ImageButton ID="ibtnDelete" runat="server" CommandName="Delete" ImageUrl="~/images/Common/delete.gif"
@@ -173,37 +167,36 @@
                                     </td>
                                 </tr>
                             </table>
-                                                
-						</div>
-					</div>
-				</td>
-				<td id="page_Middle_Right">
-					&nbsp;
-				</td>
-			</tr>
-		</table>
-	</div>
-	<div id="page_Bottom">
-		<table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
-			<tr>
-				<td id="page_Bottom_Left">
-					&nbsp;
-				</td>
-				<td id="page_Bottom_Middle">
-					<table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
-						<tr>
-							<td>
-                               &nbsp;
-							</td>
-						</tr>
-					</table>
-				</td>
-				<td id="page_Bottom_Right">
-					&nbsp;
-				</td>
-			</tr>
-		</table>
-	</div>
-	</form>
+                        </div>
+                    </div>
+                </td>
+                <td id="page_Middle_Right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div id="page_Bottom">
+        <table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td id="page_Bottom_Left">
+                    &nbsp;
+                </td>
+                <td id="page_Bottom_Middle">
+                    <table style="width: 100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                &nbsp;
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="page_Bottom_Right">
+                    &nbsp;
+                </td>
+            </tr>
+        </table>
+    </div>
+    </form>
 </body>
 </html>

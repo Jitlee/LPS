@@ -30,13 +30,11 @@ namespace LPS.Web.Base
 			try
 			{
 				LeafLevel m_Base = new LeafLevelDAL().Get(Request.QueryString["id"]);
+                txtLEAF_LEVEL.Text = m_Base.Level;
 				txtLeafLevelName.Text = m_Base.LeafLevelName;//等级名称
 				txtLeafLevelDesc.Text = m_Base.LeafLevelDesc;//等级描述
 				txtLeafLevelPrice.Text = m_Base.LeafLevelPrice.ToString();//烟叶等级价格
 				txtLeafLevelSort.Text = m_Base.LeafLevelSort.ToString();//排序
-				txtLeafLevelIsDeleted.Text = m_Base.LeafLevelIsDeleted;//是否删除
-
-
 			}
 			catch (Exception e)
 			{
@@ -47,13 +45,11 @@ namespace LPS.Web.Base
 		private LeafLevel SetValue()
 		{
 			LeafLevel m_Base = new LeafLevel();
+            m_Base.Level = txtLEAF_LEVEL.Text;
 			m_Base.LeafLevelName = txtLeafLevelName.Text;//等级名称
 			m_Base.LeafLevelDesc = txtLeafLevelDesc.Text;//等级描述
 			m_Base.LeafLevelPrice = Convert.ToDouble(txtLeafLevelPrice.Text);//烟叶等级价格
 			m_Base.LeafLevelSort = Convert.ToInt32(txtLeafLevelSort.Text);//排序
-
-
-
 			return m_Base;
 		}
 

@@ -10,9 +10,9 @@
 				var murl = 'LeafLevelEdit.aspx';
 				diag = new Dialog("Edit");
 				diag.URL = murl;
-				diag.Title = "添加";
-				diag.Width = 600;
-				diag.Height = 500;
+				diag.Title = "添加烟叶等级";
+				diag.Width = 450;
+				diag.Height = 350;
 				diag.ShowButtonRow = false;
 				diag.OK = function (va) {
 					$.DialogRefrsh();
@@ -27,9 +27,9 @@
 					var murl = 'LeafLevelEdit.aspx?opType=alert&id=' + obj.attr("Guid");
 					diag = new Dialog("Edit");
 					diag.URL = murl;
-					diag.Title = "修改";
-					diag.Width = 600;
-					diag.Height = 500;
+					diag.Title = "修改烟叶等级";
+					diag.Width = 450;
+					diag.Height = 350;
 					diag.ShowButtonRow = false;
 					diag.OK = function (va) {
 						$.DialogRefrsh();
@@ -98,27 +98,27 @@
 									</asp:TemplateField>
 									<asp:TemplateField HeaderText="编辑" HeaderStyle-Width="4%">
 										<ItemTemplate>
-											<a guid="<%# Eval("LeafLevel") %>" class="gvEdit">
+											<a guid="<%# Eval("Level") %>" class="gvEdit">
 												<img src="../images/Common/edit.gif" style="border: 0px;" alt="编辑" /></a>
 										</ItemTemplate>
 									</asp:TemplateField>
 									<asp:TemplateField HeaderText="删除" HeaderStyle-Width="4%">
 										<ItemTemplate>
 											<asp:ImageButton ID="ibtn_delete" CssClass="deleteTS" CommandName="delete" OnCommand="GView_LinkButton_Click"
-												CommandArgument='<%#Eval("LeafLevel") %>' ImageUrl="~/images/Common/delete.gif"
+												CommandArgument='<%#Eval("Level") %>' ImageUrl="~/images/Common/delete.gif"
 												runat="server" />
 										</ItemTemplate>
 									</asp:TemplateField>
+                                    <asp:BoundField DataField="Level" HeaderText="等级编号" />
 									<asp:BoundField DataField="LeafLevelName" HeaderText="等级名称" />
 									<asp:BoundField DataField="LeafLevelDesc" HeaderText="等级描述" />
 									<asp:BoundField DataField="LeafLevelPrice" HeaderText="烟叶等级价格" />
 									<asp:BoundField DataField="LeafLevelSort" HeaderText="排序" />
-									<asp:BoundField DataField="LeafLevelIsDeleted" HeaderText="是否删除" />
-									<asp:BoundField DataField="LeafLevelDeletedDate" HeaderText="删除日期" />
 								</Columns>
 								<EmptyDataTemplate>
 									<table class="gridview_skin" cellspacing="0" cellpadding="0" rules="all"  border="1"  style="border-collapse:collapse;">
 										<tr class="gridview_skin_header">
+                                            <th>等级编号</th>
 											<th>
 												等级名称
 											</th>
@@ -131,15 +131,9 @@
 											<th>
 												排序
 											</th>
-											<th>
-												是否删除
-											</th>
-											<th>
-												删除日期
-											</th>
 										</tr>
 										<tr>
-											<td colspan="6">
+											<td colspan="5">
 												没有数据
 											</td>
 										</tr>

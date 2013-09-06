@@ -22,15 +22,6 @@ namespace LPS.Web.Base {
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
-        /// aBtnAdd 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlImage aBtnAdd;
-        
-        /// <summary>
         /// txtMain 控件。
         /// </summary>
         /// <remarks>
@@ -47,33 +38,6 @@ namespace LPS.Web.Base {
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSearch;
-        
-        /// <summary>
-        /// dropMain 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList dropMain;
-        
-        /// <summary>
-        /// txtSub 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSub;
-        
-        /// <summary>
-        /// btnAdd 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
         
         /// <summary>
         /// rptDataDictionaryTitle 控件。

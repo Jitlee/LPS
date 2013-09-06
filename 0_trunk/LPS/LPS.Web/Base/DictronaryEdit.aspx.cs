@@ -28,83 +28,19 @@ namespace LPS.Web.Base
         {
             try
             {
-                this.lblAlert.Text = "";
-                //this.txtMain.Visible = false;
-                //this.lbtnUpdate.Visible = false;
-                //this.lbtnCancel.Visible = false;
                 this.lblmain.Visible = true;
-                //this.ibtnTitleEdit.Visible = true;
+               
                 string keyword = Request["val"].ToString();
                 DictronaryType dic = new DictronaryTypeDAL().Get(keyword);
                 this.lblmain.Text = dic.DictType;
-                //this.txtMain.Text = dic.DictType;
-                
+                              
                 gridSubName.DataSource = new DictronaryDAL().QueryByType(keyword);
                 gridSubName.DataBind();
+                gridSubName.EditIndex = -1;
             }
             catch (Exception e)
             {
                 Alert(e);
-            }
-        }
-
-        //protected void ibtnTitleEdit_Click(object sender, ImageClickEventArgs e)
-        //{
-        //    this.lblmain.Visible = false;
-        //    this.ibtnTitleEdit.Visible = false;
-        //    this.txtMain.Visible = true;
-        //    this.lbtnUpdate.Visible = true;
-        //    this.lbtnCancel.Visible = true;
-        //}
-
-        //protected void lbtnCancel_Click(object sender, EventArgs e)
-        //{
-        //    this.lblmain.Visible = true;
-        //    this.ibtnTitleEdit.Visible = true;
-        //    this.txtMain.Visible = false;
-        //    this.lbtnCancel.Visible = false;
-        //    this.lbtnUpdate.Visible = false;
-        //    InitPage();
-        //}
-
-        protected void lbtnUpdate_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //if (!string.IsNullOrEmpty(txtMain.Text.Trim()))
-                //{
-                //    string keyword = Request["val"].ToString();
-                //    DataDictOR dic = new DataDictDA().GetDataDicct(keyword);
-                //    DataDictOR mainupdate = new DataDictOR();
-                //    DataTable dt = new DataDictDA().SelectTitleWithoutSelf(dic.NAME.Trim());
-                //    for (int i = 0; i < dt.Rows.Count; i++)
-                //    {
-                //        if (dt.Rows[i]["name"].ToString().Trim() == txtMain.Text.Trim())
-                //        {
-                //            Alert("您已提交过该名称了！");
-                //            return;
-                //        }
-                //    }
-                //    mainupdate.ID = dic.ID;
-                //    mainupdate.KEY_WORD = dic.KEY_WORD;
-                //    mainupdate.NAME = this.txtMain.Text;
-                //    new DataDictDA().UpdateDataDict(mainupdate);
-
-                //    this.lblmain.Visible = true;
-                //    this.ibtnTitleEdit.Visible = true;
-                //    this.txtMain.Visible = false;
-                //    this.lbtnCancel.Visible = false;
-                //    this.lbtnUpdate.Visible = false;
-                //    InitPage();
-                //}
-                //else
-                //{
-                //    Alert("大类名称不能为空！"); return;
-                //}
-            }
-            catch (Exception ex)
-            {
-                Alert(ex);
             }
         }
 
@@ -116,8 +52,22 @@ namespace LPS.Web.Base
             subupdating.DictType = Request.QueryString["val"];
             subupdating.DictName = txtDictName.Text;
             subupdating.DictDesc = txtDictDesc.Text;
+            ObservableCollection<Dictronary> List = new DictronaryDAL().QueryByType(Request["val"]);
+            foreach (Dictronary obj in List)
+            {
+                if (obj.DictCode == subupdating.DictCode)
+                {
+                    Alert("您已提交过该编号了！");
+                    return;
+                }
+            }
+
             new DictronaryDAL().Add(subupdating);
+            txtDictCode.Text = "";
+            txtDictName.Text = "";
+            txtDictDesc.Text = "";
             InitPage();
+
         }
         #endregion
 
@@ -142,7 +92,7 @@ namespace LPS.Web.Base
                         Alert("请勿输入特殊字符！");
                         return;
                     }
-                    string oldSub = ((HiddenField)gridSubName.Rows[e.RowIndex].FindControl("txtOldSubName")).Value;
+                    string oldSub = ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtOldSubName")).Text;
                     if (Request["val"].ToString() != "")
                     {
                         ObservableCollection<Dictronary> List = new DictronaryDAL().SelectSubWithoutSelf(Request["val"], oldSub);
@@ -161,7 +111,8 @@ namespace LPS.Web.Base
                     subupdating.DictType = Request.QueryString["val"];
                     subupdating.DictName = ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtDictName")).Text;
                     subupdating.DictDesc = ((TextBox)gridSubName.Rows[e.RowIndex].FindControl("txtDictDesc")).Text;
-                    new DictronaryDAL().Update(subupdating);
+
+                    new DictronaryDAL().Update(subupdating,oldSub);
 
                     gridSubName.EditIndex = -1;
                     InitPage();
@@ -193,15 +144,13 @@ namespace LPS.Web.Base
             try
             {
                 string subId = gridSubName.DataKeys[e.RowIndex].Value.ToString();
-                //new DataDictDA().DelDataDict(subId);
-
+                new DictronaryDAL().Delete(subId);
                 InitPage();
             }
             catch (Exception ex)
             {
                 Alert(ex);
             }
-
         }
         #endregion
 

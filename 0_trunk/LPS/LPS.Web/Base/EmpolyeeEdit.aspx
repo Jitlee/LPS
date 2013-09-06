@@ -3,14 +3,13 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head id="Head1" runat="server">
-	<title><#ClassTitle>信息</title>
-	<link href="../styles/main.css" rel="stylesheet" type="text/css" />
-	<link href="../styles/page.css" rel="stylesheet" type="text/css" />
-	<script type="text/javascript" src="../Scripts/jquery-1.8.3.min.js"></script>
-	<script type="text/javascript" src="../Scripts/Dialog.js"></script>
-	<script type="text/javascript" src="../Scripts/main.js"></script>
-	<script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
-    <script type="text/javascript" src="../Scripts/My97DatePicker/WdatePicker.js"></script>
+	<title>信息</title>
+    <link href="../styles/main.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/page.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="../Scripts/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="../Scripts/Dialog.js"></script>
+    <script type="text/javascript" src="../Scripts/main.js"></script>
+    <script type="text/javascript" src="../Scripts/jquery.validator.js"></script>
 	<script type="text/javascript">
 		$(document).ready(function () {
 		    $("#txtEmpolyeeCode").yz({ title: "登录名", type: "string", max: 20, isSave: true });

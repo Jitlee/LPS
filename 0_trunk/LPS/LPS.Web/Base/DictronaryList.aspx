@@ -50,16 +50,12 @@ a.data_dictionary:hover
 	<script type="text/javascript">
 
 	    $(document).ready(function () {
-
-	        $("#<%= txtSub.ClientID %>").yz({ title: "子类", max: 15, isSave: true, canEmpty: true, type: "string" });
-	        $("#<%= txtMain.ClientID %>").yz({ title: "大类", max: 30, canEmpty: true, isSave: true, type: "string" });
-
 	        $(".headerBtnEdit").each(function (i, o) {
 	            $(o).click(function () {
 	                var murl = 'DictronaryEdit.aspx?val=' + $(this).attr("Value");
 	                diag = new Dialog("Edit");
 	                diag.URL = murl;
-	                diag.Title = "添加";
+	                diag.Title = "数据字典管理";
 	                diag.Width = 600;
 	                diag.Height = 500;
 	                diag.ShowButtonRow = false;
@@ -69,50 +65,7 @@ a.data_dictionary:hover
 	                diag.show();
 	                return false;
 	            });
-	        });
-
-
-
-			$(".headerBtnAdd").click(function () {
-				var murl = 'DictronaryEdit.aspx';
-				diag = new Dialog("Edit");
-				diag.URL = murl;
-				diag.Title = "添加";
-				diag.Width = 600;
-				diag.Height = 500;
-				diag.ShowButtonRow = false;
-				diag.OK = function (va) {
-					$.DialogRefrsh();
-				};
-				diag.show();
-
-			});
-
-			var editArr = $(".gvEdit");
-			editArr.each(function (i, o) {
-				var obj = $(o);
-				obj.click(function () {
-					var murl = 'DictronaryEdit.aspx?opType=alert&id=' + obj.attr("Guid");
-					diag = new Dialog("Edit");
-					diag.URL = murl;
-					diag.Title = "修改";
-					diag.Width = 600;
-					diag.Height = 500;
-					diag.ShowButtonRow = false;
-					diag.OK = function (va) {
-						$.DialogRefrsh();
-					};
-					diag.show();
-				});
-			});
-
-			var editArr = $(".deleteTS");
-			editArr.each(function (i, o) {
-				var obj = $(o);
-				obj.click(function () {
-					return confirm("你确定要删除此数据吗？");
-				});
-			});
+	        });  
 
 		});
 	</script>
@@ -133,10 +86,6 @@ a.data_dictionary:hover
 										PathSeparator="]-[">
 									</asp:SiteMapPath>
 									]</div>
-							</td>
-							<td style="text-align: right;">
-								<img class="linkbutton_skin headerBtnAdd" id="aBtnAdd" runat="server" src="../images/common/add_btn.gif"
-									alt="" />
 							</td>
 						</tr>
 					</table>
@@ -167,21 +116,6 @@ a.data_dictionary:hover
                                     <td style=" text-align:left;">
                                         <asp:Button ID="btnSearch" runat="server" Text="查询" CssClass="btn_bg vertical_middle"
                                             OnClick="btnSearch_Click" OnClientClick="return $.yz.getErrorList()" />
-                                    </td>
-                                    <th width="70">
-                                        添加子类：
-                                    </th>
-                                    <td style="border-right: none; width: 155px;">
-                                        <asp:DropDownList ID="dropMain"  Width="140px" runat="server" DataTextField="DictTypeName" DataValueField="DictType">
-                                        </asp:DropDownList>
-                                    </td>
-                                    <td width="170"  style=" text-align:left;">
-                                        <asp:TextBox ID="txtSub" runat="server" MaxLength="15"></asp:TextBox>
-                                        <font style="color: Red;">*</font>
-                                    </td>
-                                    <td  style=" text-align:left;">
-                                        <asp:Button ID="btnAdd" runat="server" Text="添加" CssClass="btn_bg vertical_middle"
-                                            OnClick="btnAdd_Click" OnClientClick="return $.yz.getErrorList()" />
                                     </td>
                                 </tr>
                             </table>
