@@ -36,8 +36,8 @@ namespace LPS.Web.Base
 				txtEmpolyeeName.Text = m_Base.EmpolyeeName;//员工名称
 				txtEmpolyeePy.Text = m_Base.EmpolyeePy;//员工拼音缩写
                 dpdEmpolyeeSex.Text = m_Base.EmpolyeeSex;//员工性别
-				txtEmpolyeeBirth.Text = m_Base.EmpolyeeBirth.ToString();//员工出生日期
-				txtEmpolyeeEntryDate.Text = m_Base.EmpolyeeEntryDate.ToString();//员工入职日期
+				txtEmpolyeeBirth.Text = m_Base.EmpolyeeBirth.HasValue ? m_Base.EmpolyeeBirth.Value.ToString("yyyy-MM-dd") : "";//员工出生日期
+				txtEmpolyeeEntryDate.Text = m_Base.EmpolyeeEntryDate.HasValue ? m_Base.EmpolyeeEntryDate.Value.ToString("yyyy-MM-dd") : "";//员工入职日期
 				txtEmpolyeePhone.Text = m_Base.EmpolyeePhone;//员工手机号
 				txtEmpolyeeEmail.Text = m_Base.EmpolyeeEmail;//员工电子邮箱
 				txtEmpolyeeAddress.Text = m_Base.EmpolyeeAddress;//员工联系地址

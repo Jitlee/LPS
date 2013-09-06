@@ -40,7 +40,7 @@ namespace LPS.Web.Base
 				txtFarmerAddress.Text = m_Base.FarmerAddress;//烟农地址
 				txtFarmerRmark.Text = m_Base.FarmerRmark;//备注
 				dpdFarmerSex.Text = m_Base.FarmerSex;//性别
-				txtFarmerBirth.Text = m_Base.FarmerBirth.ToString();//出生日期
+				txtFarmerBirth.Text = m_Base.FarmerBirth.HasValue ? m_Base.FarmerBirth.Value.ToString("yyyy-MM-dd") : "";//出生日期
 				txtFarmerCardId.Text = m_Base.FarmerCardId;//身份证       
 				//txtFarmerIsDeleted.Text = m_Base.FarmerIsDeleted;//是否删除        
 

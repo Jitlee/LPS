@@ -113,7 +113,7 @@
 									<asp:BoundField DataField="FarmerName" HeaderText="姓名" />
 									<asp:BoundField DataField="FarmerPy" HeaderText="拼音缩写" />
 									<asp:BoundField DataField="FarmerSex" HeaderText="性别" />
-									<asp:BoundField DataField="FarmerBirth" HeaderText="出生日期" />
+									<asp:BoundField DataField="FarmerBirth" DataFormatString="{0: yyyy-MM-dd}" HeaderText="出生日期" />
 									<asp:BoundField DataField="FarmerCardId" HeaderText="身份证" />
 									<asp:BoundField DataField="FarmerPhone" HeaderText="电话" />
 									<asp:BoundField DataField="FarmerEmail" HeaderText="电子邮箱" />

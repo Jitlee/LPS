@@ -11,8 +11,8 @@
 				diag = new Dialog("Edit");
 				diag.URL = murl;
 				diag.Title = "添加";
-				diag.Width = 600;
-				diag.Height = 500;
+				diag.Width = 450;
+				diag.Height = 300;
 				diag.ShowButtonRow = false;
 				diag.OK = function (va) {
 					$.DialogRefrsh();
@@ -28,8 +28,8 @@
 					diag = new Dialog("Edit");
 					diag.URL = murl;
 					diag.Title = "修改";
-					diag.Width = 600;
-					diag.Height = 500;
+					diag.Width = 450;
+					diag.Height = 300;
 					diag.ShowButtonRow = false;
 					diag.OK = function (va) {
 						$.DialogRefrsh();
