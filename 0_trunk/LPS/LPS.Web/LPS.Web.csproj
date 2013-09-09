@@ -60,6 +60,8 @@
     <Content Include="Base\FarmerList.aspx" />
     <Content Include="Base\LeafLevelEdit.aspx" />
     <Content Include="Base\LeafLevelList.aspx" />
+    <Content Include="Base\ParameterEdit.aspx" />
+    <Content Include="Base\ParameterList.aspx" />
     <Content Include="Global.asax" />
     <Content Include="images\ajax-loader.gif" />
     <Content Include="images\bg2.gif" />
@@ -291,6 +293,20 @@
     </Compile>
     <Compile Include="Base\LeafLevelList.aspx.designer.cs">
       <DependentUpon>LeafLevelList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ParameterEdit.aspx.cs">
+      <DependentUpon>ParameterEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\ParameterEdit.aspx.designer.cs">
+      <DependentUpon>ParameterEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Base\ParameterList.aspx.cs">
+      <DependentUpon>ParameterList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Base\ParameterList.aspx.designer.cs">
+      <DependentUpon>ParameterList.aspx</DependentUpon>
     </Compile>
     <Compile Include="Common\PageBase.cs">
       <SubType>ASPXCodeBehind</SubType>

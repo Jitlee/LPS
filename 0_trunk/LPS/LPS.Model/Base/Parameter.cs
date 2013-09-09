@@ -8,7 +8,7 @@ namespace LPS.Model.Base
 	/// (t_base_parameter)实体类
 	/// 系统参数表
 	/// </summary>
-	public class Parameter : EntityObject
+	public class ParameterOR : EntityObject
 	{
 
 		// 保存参数编码
@@ -91,12 +91,27 @@ namespace LPS.Model.Base
 			}
 		}
 
+        //PARAM_TYPE
+        public int _ParamType;
+        public int ParamType
+        {
+            get
+            {
+                return _ParamType;
+            }
+            set
+            {
+                _ParamType = value;
+                RaisePropertyChanged("ParamType");
+            }
+        }
+
 		#region 构造函数
 
 		/// <summary>
 		/// 系统参数表构造函数
 		/// </summary>
-		public Parameter()
+		public ParameterOR()
 		{
 		}
 
@@ -104,7 +119,7 @@ namespace LPS.Model.Base
 		/// 系统参数表构造函数
 		/// </summary>
 		/// <param name="dr">数据行</param>
-		public Parameter(IDataReader dr)
+        public ParameterOR(IDataReader dr)
 		{
 			if (DBNull.Value != dr["PARAM_CODE"])
 			{
@@ -122,6 +137,10 @@ namespace LPS.Model.Base
 			{
 				_paramDesc = dr["PARAM_DESC"].ToString();
 			}
+            if (DBNull.Value != dr["PARAM_TYPE"])
+            {
+                _ParamType = Convert.ToInt32(dr["PARAM_TYPE"]);
+            }
 		}
 
 		#endregion 构造函数

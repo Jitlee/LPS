@@ -30,6 +30,9 @@
 				<siteMapNode url="Base/LeafLevelEdit.aspx" title="编辑" description="编辑"/>
 				<siteMapNode url="Base/LeafLevelList.aspx?Delete" title="删除" description="删除" />
 			</siteMapNode>
+			<siteMapNode url="Base/ParameterList.aspx" title="参数设置" description="参数设置"  imagePath="group.gif">
+				<siteMapNode url="Base/ParameterEdit.aspx" title="编辑" description="编辑"/>
+			</siteMapNode>
 		</siteMapNode>
 	</siteMapNode>
 </siteMap>
