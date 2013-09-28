@@ -196,15 +196,27 @@ namespace LPS.Model.Sys
         public EmpolyeeOR()
         {
             EmpolyeeId = Guid.NewGuid().ToString();
+            Result = 0;
         }
 
+        /// <summary>
+        /// 结果  0:登录成功  else 错误
+        /// </summary>
+        public int Result { get; set; }
 
+        /// <summary>
+        /// 登录结果信息
+        /// </summary>
+        public string ResultMsg { get; set; }
+         
+        
         /// <summary>
         /// baseempolyee构造函数
         /// </summary>
         public EmpolyeeOR(IDataReader row)
         {
-            // 
+            Result = 0;
+ 
             _EmpolyeeId = row["EMPOLYEE_ID"].ToString().Trim();
             // 员工编号
             _EmpolyeeCode = row["EMPOLYEE_CODE"].ToString().Trim();

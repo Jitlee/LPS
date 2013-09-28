@@ -112,7 +112,9 @@ where  EMPOLYEE_ID = @EMPOLYEE_ID";
 				//if (user != null)
 				//    throw new Exception("密码错误！");
 				//else
-				throw new Exception("用户名或密码错误！");
+                m_User = new EmpolyeeOR();
+                m_User.Result = 1;
+                m_User.ResultMsg="用户名或密码错误！";
 			}
 			return m_User;
 		}

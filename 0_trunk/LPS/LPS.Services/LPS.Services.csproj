@@ -56,6 +56,14 @@
       <Project>{7dc817c0-6fd2-40e5-a0eb-aa6377dda0a2}</Project>
       <Name>LPS.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\LPS.DAL\LPS.DAL.csproj">
+      <Project>{2F8E05FA-2794-4D29-83F9-06E37CCB0505}</Project>
+      <Name>LPS.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LPS.Model\LPS.Model.csproj">
+      <Project>{1804F31F-521A-4E3A-A7F1-80FF7E21690D}</Project>
+      <Name>LPS.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions>

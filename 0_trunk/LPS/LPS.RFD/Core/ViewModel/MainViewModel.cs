@@ -26,16 +26,31 @@ namespace LPS.RfidOn.Core.ViewModel
         /// <summary>
         /// 主页，用于切换
         /// </summary>
-        public MainWindow MianPage { set { _Page = value; } }        
+        public MainWindow MianPage { set { _Page = value; } }
+
+        /// <summary>
+        /// 登录名
+        /// </summary>
+        public string LoginName { get; set; }
         #endregion
 
         #region 构造函数
         private MainViewModel()
         {
-
+            _command = new DelegateCommand<string>(Excute);
+            LoginName = GlobalData.UserName;
         }
         #endregion
-       
+        #region 事件处理
+        private void Excute(string parameter)
+        {
+            if (parameter == "Setting")
+            {
+
+            }
+        }
+        #endregion
+
         private int GetTimeLen(DateTime Start, DateTime EndTime)
         {
             int TimeLen = 0;

@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using LPS.DAL.Sys;
+using LPS.Model.Sys;
 
 namespace LPS.Services
 {
@@ -26,6 +28,18 @@ namespace LPS.Services
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public EmpolyeeOR Login(string UserCode, string userPWD)
+        {
+            try
+            {
+                return new EmpolyeeDA().sp_UserLogin(UserCode, userPWD);
+            }
+            catch (Exception ex)
+            {
+                return new EmpolyeeOR() { ResultMsg=ex.Message, Result=1 };
+            }
         }
     }
 }

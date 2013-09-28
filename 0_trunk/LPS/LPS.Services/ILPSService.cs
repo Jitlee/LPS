@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using LPS.Model.Sys;
 
 namespace LPS.Services
 {
@@ -17,6 +18,8 @@ namespace LPS.Services
         [OperationContract]
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
+        [OperationContract]
+        EmpolyeeOR Login(string UserCode, string userPWD);
         // TODO: 在此添加您的服务操作
     }
 

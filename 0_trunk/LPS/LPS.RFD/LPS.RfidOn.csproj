@@ -8,8 +8,8 @@
     <ProjectGuid>{91AA7B78-422D-423D-8ECC-232AE2EF6457}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>QSoft</RootNamespace>
-    <AssemblyName>QSoft</AssemblyName>
+    <RootNamespace>LPS.RfidOn</RootNamespace>
+    <AssemblyName>LPS.RfidOn</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -104,6 +104,15 @@
     <Compile Include="Core\ViewModel\LoginViewModel.cs" />
     <Compile Include="Core\ViewModel\MainViewModel.cs" />
     <Compile Include="GlobalData.cs" />
+    <Page Include="Resources\Style\WindowTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Service References\LPSSer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -158,6 +167,25 @@
     </Compile>
     <None Include="app.config" />
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\LPSSer\LPS.Model.Sys.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\LPS.RfidOn.LPSSer.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LPSSer\LPS.RfidOn.LPSSer.EmpolyeeOR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LPSSer\LPS.Services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\service.wsdl" />
+    <None Include="Service References\LPSSer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Core\Graph\" />
@@ -208,6 +236,24 @@
     <Resource Include="Resources\Images\maximize.png" />
     <Resource Include="Resources\Images\minimize.jpg" />
     <Resource Include="Resources\Images\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LPSSer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LPSSer\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LPSSer\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\LPSSer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

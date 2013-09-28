@@ -139,6 +139,8 @@
             </Setter>
         </Style>
 
+        
+        
         <Style x:Key="ChromeWindowStyle" TargetType="Window">
             <Setter Property="shell:WindowChrome.WindowChrome">
                 <Setter.Value>
@@ -213,5 +215,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        
+        <!--界面样式-->
+        <Style TargetType="TextBlock"  x:Key="lblStyle">
+            <Setter Property="FontSize" Value="12"/>
+        </Style>
+        <Style TargetType="TextBlock"  x:Key="lblTitleStyle">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+        
     </Application.Resources>
 </Application>

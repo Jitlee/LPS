@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPS.Web", "LPS\LPS.Web\LPS.Web.csproj", "{0EF2B362-B07F-41DB-ACBF-D3EA4CB500F9}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPS.RfidOn", "LPS\LPS.RFD\LPS.RfidOn.csproj", "{91AA7B78-422D-423D-8ECC-232AE2EF6457}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:my="clr-namespace:LPS.RfidOn.Controls"
     mc:Ignorable="d" x:Class="LPS.RfidOn.MainWindow" 
-    Title="客户端" Height="600" Width="800"
+    Title="RFID卡发放" Height="600" Width="800"
     WindowStartupLocation="CenterScreen"
     Style="{StaticResource ChromeWindowStyle}" Closed="Window_Closed">
     <shell:WindowChrome.WindowChrome>
@@ -116,31 +116,44 @@
         <ImageBrush ImageSource="Resources/Images/background.jpg"/>
     </Window.Background>
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="120"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <!-- 最顶上Logo区域 -->
-        <Border
-            x:Name="TopImageBorder"
-            Grid.Row="0"
-            Grid.ColumnSpan="2"
-            Height="20">
-            <Image
-                x:Name="TopImage"
-                HorizontalAlignment="Left"/>
-        </Border>
 
-      
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
 
-       
-        
+            <TextBlock Text="员工信息" Style="{StaticResource lblTitleStyle}" Grid.ColumnSpan="3"></TextBlock>
+            
+            <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource lblStyle}"  Text="员工姓名："></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource lblStyle}"  Text="{Binding Path=LoginName}"   Name="lblName"></TextBlock>
+
+
+            <Button Grid.Row="2" Command="{Binding Command}" CommandParameter="Setting" Style="{StaticResource ImageButtonStyle}" >
+                <StackPanel>
+                    <Image Source="Resources/Images/next.png" Style="{StaticResource ImageButtonImageStyle}"/>
+                    <TextBlock Text="开始" Style="{StaticResource ImageButtonTextBlockStyle}"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
+
+
+
     </Grid>
 
 </Window>
