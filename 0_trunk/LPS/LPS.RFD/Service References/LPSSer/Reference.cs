@@ -439,6 +439,75 @@ namespace LPS.RfidOn.LPSSer {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="FarmerRfidOR", Namespace="http://schemas.datacontract.org/2004/07/LPS.Model.Pur")]
+    [System.SerializableAttribute()]
+    public partial class FarmerRfidOR : LPS.RfidOn.LPSSer.EntityObject {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FarmerIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RfidField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FarmerId {
+            get {
+                return this.FarmerIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FarmerIdField, value) != true)) {
+                    this.FarmerIdField = value;
+                    this.RaisePropertyChanged("FarmerId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Rfid {
+            get {
+                return this.RfidField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RfidField, value) != true)) {
+                    this.RfidField = value;
+                    this.RaisePropertyChanged("Rfid");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="EntityObject", Namespace="http://schemas.datacontract.org/2004/07/LPS.Model")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(LPS.RfidOn.LPSSer.FarmerRfidOR))]
+    public partial class EntityObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="LPSSer.ILPSService")]
     public interface ILPSService {
@@ -451,6 +520,9 @@ namespace LPS.RfidOn.LPSSer {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILPSService/Login", ReplyAction="http://tempuri.org/ILPSService/LoginResponse")]
         LPS.RfidOn.LPSSer.EmpolyeeOR Login(string UserCode, string userPWD);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ILPSService/SaveFarmerRfid", ReplyAction="http://tempuri.org/ILPSService/SaveFarmerRfidResponse")]
+        string SaveFarmerRfid(LPS.RfidOn.LPSSer.FarmerRfidOR[] ListOR);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -490,6 +562,10 @@ namespace LPS.RfidOn.LPSSer {
         
         public LPS.RfidOn.LPSSer.EmpolyeeOR Login(string UserCode, string userPWD) {
             return base.Channel.Login(UserCode, userPWD);
+        }
+        
+        public string SaveFarmerRfid(LPS.RfidOn.LPSSer.FarmerRfidOR[] ListOR) {
+            return base.Channel.SaveFarmerRfid(ListOR);
         }
     }
 }

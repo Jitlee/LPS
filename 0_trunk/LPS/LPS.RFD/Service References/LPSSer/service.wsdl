@@ -6,6 +6,8 @@
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/LPS.Services" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/LPS.Model.Sys" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LPS.Model.Pur" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/LPS.Model" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="ILPSService_GetData_InputMessage">
@@ -26,6 +28,12 @@
   <wsdl:message name="ILPSService_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="ILPSService_SaveFarmerRfid_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFarmerRfid" />
+  </wsdl:message>
+  <wsdl:message name="ILPSService_SaveFarmerRfid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFarmerRfidResponse" />
+  </wsdl:message>
   <wsdl:portType name="ILPSService">
     <wsdl:operation name="GetData">
       <wsdl:input wsaw:Action="http://tempuri.org/ILPSService/GetData" message="tns:ILPSService_GetData_InputMessage" />
@@ -38,6 +46,10 @@
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/ILPSService/Login" message="tns:ILPSService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ILPSService/LoginResponse" message="tns:ILPSService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFarmerRfid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILPSService/SaveFarmerRfid" message="tns:ILPSService_SaveFarmerRfid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ILPSService/SaveFarmerRfidResponse" message="tns:ILPSService_SaveFarmerRfid_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ILPSService" type="tns:ILPSService">
@@ -62,6 +74,15 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/ILPSService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFarmerRfid">
+      <soap:operation soapAction="http://tempuri.org/ILPSService/SaveFarmerRfid" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

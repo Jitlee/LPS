@@ -26,6 +26,8 @@
     <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="e76dbb94-445a-4f2f-8960-c71d854134d5" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
     <MetadataFile FileName="LPS.Services.xsd" MetadataType="Schema" ID="62b03fe5-2b7e-44f1-b6e1-8348dccb5669" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
     <MetadataFile FileName="LPS.Model.Sys.xsd" MetadataType="Schema" ID="2d2079b2-ffeb-441a-8ddb-1fbd6c6b3a12" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="LPS.Model.Pur.xsd" MetadataType="Schema" ID="1bbd3332-7661-4495-a8c9-51ab28ec9839" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="LPS.Model.xsd" MetadataType="Schema" ID="07c9b76d-0466-411f-a208-174bebab60b9" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

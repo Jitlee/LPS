@@ -3,7 +3,6 @@ using System.Configuration;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using LPS.RfidOn.Core.Model;
 using LPS.RfidOn.Core.Uitl;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;

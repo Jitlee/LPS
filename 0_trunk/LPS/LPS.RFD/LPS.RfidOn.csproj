@@ -99,11 +99,14 @@
     <Compile Include="Controls\ScottLogic\Util\Utils.cs" />
     <Compile Include="Controls\WindowIcon.cs" />
     <Compile Include="Core\Converter\BooleanToVisibilityConverter.cs" />
-    <Compile Include="Core\Model\Custom.cs" />
     <Compile Include="Core\Uitl\HotKey.cs" />
     <Compile Include="Core\ViewModel\LoginViewModel.cs" />
     <Compile Include="Core\ViewModel\MainViewModel.cs" />
     <Compile Include="GlobalData.cs" />
+    <Page Include="Resources\Style\Buttom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Resources\Style\WindowTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -140,7 +143,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Core\Model\Base\DelegateCommandBase.cs" />
-    <Compile Include="Core\Model\Base\EntityObject.cs" />
     <Compile Include="Core\Uitl\Common.cs" />
     <Compile Include="Core\Uitl\Converter.cs" />
     <Compile Include="Core\Uitl\Logger\ILogger.cs" />
@@ -167,7 +169,13 @@
     </Compile>
     <None Include="app.config" />
     <AppDesigner Include="Properties\" />
+    <None Include="Service References\LPSSer\LPS.Model.Pur.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\LPSSer\LPS.Model.Sys.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\LPS.Model.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\LPSSer\LPS.RfidOn.LPSSer.CompositeType.datasource">

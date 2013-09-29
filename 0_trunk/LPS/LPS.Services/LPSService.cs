@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using LPS.DAL.Sys;
 using LPS.Model.Sys;
+using LPS.Model.Pur;
 
 namespace LPS.Services
 {
@@ -28,6 +29,11 @@ namespace LPS.Services
                 composite.StringValue += "Suffix";
             }
             return composite;
+        }
+
+        public string SaveFarmerRfid(List<FarmerRfidOR> ListOR)
+        {
+            return "0";
         }
 
         public EmpolyeeOR Login(string UserCode, string userPWD)

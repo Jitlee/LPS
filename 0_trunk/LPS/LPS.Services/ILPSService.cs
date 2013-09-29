@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using LPS.Model.Sys;
+using LPS.Model.Pur;
 
 namespace LPS.Services
 {
@@ -20,7 +21,9 @@ namespace LPS.Services
 
         [OperationContract]
         EmpolyeeOR Login(string UserCode, string userPWD);
-        // TODO: 在此添加您的服务操作
+
+        [OperationContract]
+        string SaveFarmerRfid(List<FarmerRfidOR> ListOR);
     }
 
     // 使用下面示例中说明的数据约定将复合类型添加到服务操作。

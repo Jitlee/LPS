@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Media;
 
-namespace QClinet.Core.Util
+namespace LPS.RfidOn.Core.Util
 {
     /// <summary>
     /// 常用对象转换帮助类

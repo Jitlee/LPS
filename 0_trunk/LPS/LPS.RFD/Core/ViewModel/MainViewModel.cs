@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using LPS.RfidOn.Core.Model;
 using System.Windows;
 using System.Windows.Media.Imaging;
 using LPS.RfidOn.View;
 using System.Collections.ObjectModel;
 using System.Windows.Threading;
+using System.ComponentModel;
+using LPS.RfidOn.LPSSer;
 
 namespace LPS.RfidOn.Core.ViewModel
 {
@@ -28,40 +29,80 @@ namespace LPS.RfidOn.Core.ViewModel
         /// </summary>
         public MainWindow MianPage { set { _Page = value; } }
 
+        ObservableCollection<FarmerRfidOR> _FarmRfidListOR = null;
+        /// <summary>
+        ///  RFID列表。
+        /// </summary>
+        public ObservableCollection<FarmerRfidOR> FarmRfidListOR
+        {
+            get { return _FarmRfidListOR; }
+        }
         /// <summary>
         /// 登录名
         /// </summary>
         public string LoginName { get; set; }
 		public string EmpolyeeNo { get; set; }
 
-		public string BtnStart_StopRedRfidText { get; set; }
-		public const string BtnStart_StopRedRfidText_Start = "开始读RFID";
+        /// <summary>
+        /// 烟农姓名
+        /// </summary>
+        public string FarmerName { get; set; }
+
+        /// <summary>
+        /// 烟农卡号
+        /// </summary>
+        public string FarmerCard { get; set; }
+
+        private string _BtnStart_StopRedRfidText;
+        /// <summary>
+        /// 
+        /// </summary>
+        public string BtnStart_StopRedRfidText { 
+            get { return _BtnStart_StopRedRfidText; } 
+            set { _BtnStart_StopRedRfidText = value; RaisePropertyChanged("BtnStart_StopRedRfidText"); }
+        }
+
+		public const string BtnStart_StopRedRfidText_Start = "开始读取RFID";
 		public const string BtnStart_StopRedRfidText_Stop = "保存RFID";
+
+
+        private bool _SaveIsEnable;
+        /// <summary>
+        /// 是否可以保存
+        /// </summary>
+        public bool SaveIsEnable
+        {
+            get { return _SaveIsEnable; }
+            set { _SaveIsEnable = value; RaisePropertyChanged("SaveIsEnable"); }
+        }
+        
         #endregion
 
         #region 构造函数
         private MainViewModel()
         {
             _command = new DelegateCommand<string>(Excute);
-			LoginName = GlobalData.CurrentUser.EmpolyeeName;
-			EmpolyeeNo = GlobalData.CurrentUser.UserId;
-
+            if (GlobalData.CurrentUser != null)
+            {
+                LoginName = GlobalData.CurrentUser.EmpolyeeName;
+                EmpolyeeNo = GlobalData.CurrentUser.UserId;
+            }
 			BtnStart_StopRedRfidText = BtnStart_StopRedRfidText_Start;
+
+            SaveIsEnable = false;
+
+            _FarmRfidListOR = new ObservableCollection<FarmerRfidOR>();
+             
+//            RaisePropertyChanged("FarmRfidListOR");
         }
+        
         #endregion
         #region 事件处理
         private void Excute(string parameter)
         {
 			if (parameter == "BtnStart_StopRedRfid")
             {
-				if (BtnStart_StopRedRfidText == BtnStart_StopRedRfidText_Start)
-				{
-					BtnStart_StopRedRfidText = BtnStart_StopRedRfidText_Stop;
-				}
-				else
-				{
-					BtnStart_StopRedRfidText = BtnStart_StopRedRfidText_Start;
-				}
+                    SaveIsEnable = true;				 
             }
         }
         #endregion
@@ -73,6 +114,8 @@ namespace LPS.RfidOn.Core.ViewModel
             TimeLen = (t.Hours * 60 * 60) + t.Minutes * 60 + t.Seconds;
             return TimeLen;
         }
+
+         
     }
 
     /// <summary>

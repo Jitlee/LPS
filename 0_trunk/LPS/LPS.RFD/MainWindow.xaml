@@ -10,7 +10,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:my="clr-namespace:LPS.RfidOn.Controls"
     mc:Ignorable="d" x:Class="LPS.RfidOn.MainWindow" 
-    Title="RFID卡发放" Height="600" Width="800"
+    Title="RFID 烟农关联客户端" Height="600" Width="800"
     WindowStartupLocation="CenterScreen"
     Style="{StaticResource ChromeWindowStyle}" Closed="Window_Closed">
     <shell:WindowChrome.WindowChrome>
@@ -21,76 +21,53 @@
             GlassFrameThickness="0">
         </shell:WindowChrome>
     </shell:WindowChrome.WindowChrome>
-    <Window.Resources>
-        <Style x:Key="ImageButtonImageStyle" TargetType="{x:Type Image}">
-            <Setter Property="Height" Value="36"/>
-            <Setter Property="Width" Value="36"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-        </Style>
-        <Style x:Key="ImageButtonTextBlockStyle" TargetType="{x:Type TextBlock}">
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Foreground" Value="#FF333333"/>
-            <Setter Property="Width"  Value="50"/>
-            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
-            <Setter Property="TextAlignment" Value="Center"/>
-        </Style>
-        <Style x:Key="ImageButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="Margin" Value="3"/>
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border
-    						Background="{TemplateBinding Background}"
-    						BorderBrush="{TemplateBinding BorderBrush}"
-    						BorderThickness="1"
-    						CornerRadius="3">
-                            <ContentPresenter Margin="5"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#95F5357C"/>
-                                <Setter Property="BorderBrush" Value="#FCFFDD9E"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="True">
-                                <Setter Property="RenderTransform">
-                                    <Setter.Value>
-                                        <TranslateTransform X="1" Y="1"/>
-                                    </Setter.Value>
-                                </Setter>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-       
-      
-
-       
-    </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="Resources/Images/background.jpg"/>
     </Window.Background>
+    <Window.Resources>
+        <ResourceDictionary x:Key="ButtomKey">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary  Source="Resources/Style/Buttom.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+   
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="120"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-
-        <Grid Grid.Row="0" Grid.Column="0">
+        <!--<Border x:Name="LeftBorder" Grid.Row="0" Grid.Column="0" VerticalAlignment="Top"   
+            BorderThickness="1"  CornerRadius="5" RenderTransformOrigin="0.5,0.5">
+            <Border.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Border.RenderTransform>
+            <Border.Background>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FF99CCFF" Offset="0"/>
+                    <GradientStop Color="#FF3366CC" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Border.BorderBrush>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="#FFCCCCFF" Offset="0"/>
+                    <GradientStop Color="#FF669999" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>-->
+                 <Grid  Margin="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="150"/>
 				<ColumnDefinition Width="80"/>
-				<ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="150"/>
 				<ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
@@ -99,6 +76,7 @@
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+                <RowDefinition Height="30"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
@@ -112,9 +90,23 @@
 
 			<TextBlock Grid.Row="2" Grid.Column="0" Text="烟农信息" Style="{StaticResource lblTitleStyle}" Grid.ColumnSpan="3"></TextBlock>
 
-			<Button Grid.Row="5" Command="{Binding Command}" CommandParameter="BtnStart_StopRedRfid" Width="60" Height="30"  Content="{Binding Path=BtnStart_StopRedRfidText}"></Button>
+            <TextBlock Grid.Row="3" Grid.Column="0" Style="{StaticResource lblStyle}"  Text="烟农姓名："></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource lblStyle}"  Text="{Binding Path=FarmerName}"></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="2" Style="{StaticResource lblStyle}"  Text="卡号："></TextBlock>
+            <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource lblStyle}"  Text="{Binding Path=FarmerCard}"></TextBlock>
+            
+            <StackPanel HorizontalAlignment="Left"  Grid.Row="5" Grid.Column="1"  Grid.ColumnSpan="3" Orientation="Horizontal"  Margin="0,2,0,2">
+                <Button Command="{Binding Command}" Width="80" Height="35" Style="{StaticResource buttomNumber}" CommandParameter="BtnStart_StopRedRfid" Content="{Binding Path=BtnStart_StopRedRfidText}" ></Button>
+                <Button Command="{Binding Command}" Width="40" Height="35" Style="{StaticResource buttomNumber}" CommandParameter="Save"  IsEnabled="{Binding Path=SaveIsEnable}"   Content="保存"  Margin="3,0,0,0" ></Button>
+            </StackPanel>
         </Grid>
-
+            <!--</Border>-->
+        <DataGrid Name="dg"  Grid.Row="1"  Style="{StaticResource ListDataGridStyle}"  ItemsSource="{Binding FarmRfidListOR}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Rfid" Width="60*" Binding="{Binding Path=Rfid}"/>
+                <DataGridTextColumn   Width="80*"  />
+            </DataGrid.Columns>
+        </DataGrid>
 
 
 
