@@ -32,21 +32,36 @@ namespace LPS.RfidOn.Core.ViewModel
         /// 登录名
         /// </summary>
         public string LoginName { get; set; }
+		public string EmpolyeeNo { get; set; }
+
+		public string BtnStart_StopRedRfidText { get; set; }
+		public const string BtnStart_StopRedRfidText_Start = "开始读RFID";
+		public const string BtnStart_StopRedRfidText_Stop = "保存RFID";
         #endregion
 
         #region 构造函数
         private MainViewModel()
         {
             _command = new DelegateCommand<string>(Excute);
-            LoginName = GlobalData.UserName;
+			LoginName = GlobalData.CurrentUser.EmpolyeeName;
+			EmpolyeeNo = GlobalData.CurrentUser.UserId;
+
+			BtnStart_StopRedRfidText = BtnStart_StopRedRfidText_Start;
         }
         #endregion
         #region 事件处理
         private void Excute(string parameter)
         {
-            if (parameter == "Setting")
+			if (parameter == "BtnStart_StopRedRfid")
             {
-
+				if (BtnStart_StopRedRfidText == BtnStart_StopRedRfidText_Start)
+				{
+					BtnStart_StopRedRfidText = BtnStart_StopRedRfidText_Stop;
+				}
+				else
+				{
+					BtnStart_StopRedRfidText = BtnStart_StopRedRfidText_Start;
+				}
             }
         }
         #endregion

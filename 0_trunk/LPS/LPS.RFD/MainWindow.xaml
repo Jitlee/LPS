@@ -68,49 +68,10 @@
                 </Setter.Value>
             </Setter>
         </Style>
-        <Storyboard x:Key="CollapseStoryboard">
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ToolsGrid">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
-            </ObjectAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="VerticalToolsTitleBorder">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
-            </ObjectAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ToolsTitleBorder">
-                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Hidden}"/>
-            </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="LeftBorder">
-                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-206"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
-        <Storyboard x:Key="ExplandStoryboard">
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ToolsGrid">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
-            </ObjectAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="VerticalToolsTitleBorder">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Collapsed}"/>
-            </ObjectAnimationUsingKeyFrames>
-            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="ToolsTitleBorder">
-                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
-            </ObjectAnimationUsingKeyFrames>
-            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="LeftBorder">
-                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0"/>
-            </DoubleAnimationUsingKeyFrames>
-        </Storyboard>
+       
+      
 
-        <!--队列-->
-        <Style TargetType="ListBox">
-            <Setter Property="Background" Value="LightBlue" />
-            <Setter Property="BorderThickness" Value="0"/>
-        </Style>
-        <Style TargetType="{x:Type ListBoxItem}">
-            <Style.Resources>
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="LightBlue"/>
-                <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="LightBlue"/>
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black"/>
-                <SolidColorBrush x:Key="{x:Static SystemColors.ControlTextBrushKey}" Color="Black"/>
-            </Style.Resources>
-            <Setter Property="Margin" Value="0.5" />
-        </Style>
+       
     </Window.Resources>
     <Window.Background>
         <ImageBrush ImageSource="Resources/Images/background.jpg"/>
@@ -127,12 +88,16 @@
         <Grid Grid.Row="0" Grid.Column="0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="100"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+				<ColumnDefinition Width="80"/>
+				<ColumnDefinition Width="100"/>
+				<ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
+				<RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
@@ -140,15 +105,14 @@
             <TextBlock Text="员工信息" Style="{StaticResource lblTitleStyle}" Grid.ColumnSpan="3"></TextBlock>
             
             <TextBlock Grid.Row="1" Grid.Column="0" Style="{StaticResource lblStyle}"  Text="员工姓名："></TextBlock>
-            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource lblStyle}"  Text="{Binding Path=LoginName}"   Name="lblName"></TextBlock>
+            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource lblStyle}"  Text="{Binding Path=LoginName}"></TextBlock>
+			
+			<TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource lblStyle}"  Text="编号："></TextBlock>
+			<TextBlock Grid.Row="1" Grid.Column="3" Style="{StaticResource lblStyle}"  Text="{Binding Path=EmpolyeeNo}"></TextBlock>
 
+			<TextBlock Grid.Row="2" Grid.Column="0" Text="烟农信息" Style="{StaticResource lblTitleStyle}" Grid.ColumnSpan="3"></TextBlock>
 
-            <Button Grid.Row="2" Command="{Binding Command}" CommandParameter="Setting" Style="{StaticResource ImageButtonStyle}" >
-                <StackPanel>
-                    <Image Source="Resources/Images/next.png" Style="{StaticResource ImageButtonImageStyle}"/>
-                    <TextBlock Text="开始" Style="{StaticResource ImageButtonTextBlockStyle}"/>
-                </StackPanel>
-            </Button>
+			<Button Grid.Row="5" Command="{Binding Command}" CommandParameter="BtnStart_StopRedRfid" Width="60" Height="30"  Content="{Binding Path=BtnStart_StopRedRfidText}"></Button>
         </Grid>
 
 

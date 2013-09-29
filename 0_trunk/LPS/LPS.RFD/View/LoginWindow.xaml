@@ -3,7 +3,7 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:chorme="clr-namespace:CustomChromeLibrary;assembly=CustomChromeLibrary"
     xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
-    Title="登陆" Height="240" Width="350"
+    Title="RFID 烟农关联客户端 登陆" Height="240" Width="350"
     ShowInTaskbar="True" 
     WindowStartupLocation="CenterScreen"
     ResizeMode="NoResize"
@@ -15,7 +15,7 @@
         <TextBlock
         Margin="0,15,0,10" FontFamily="KaiTi"
         FontSize="22"
-        Text="柜员叫号客户端"
+        Text="RFID 烟农关联客户端"
         VerticalAlignment="Top"
         HorizontalAlignment="Center" Foreground="#FF3F00BB"></TextBlock>
         <Grid

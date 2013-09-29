@@ -38,9 +38,8 @@ namespace LPS.RfidOn.Core.ViewModel
                     errorMsg = "登录失败！";
                     return false;
                 }
-
-                GlobalData.UserID = userid.Trim();
-                GlobalData.UserName = EmpObj.EmpolyeeName;
+				
+				GlobalData.CurrentUser = EmpObj;
             }
             return true;
         }
