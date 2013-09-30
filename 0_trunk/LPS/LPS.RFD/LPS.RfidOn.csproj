@@ -76,24 +76,10 @@
     </ApplicationDefinition>
     <Compile Include="Controls\CaptionButton.cs" />
     <Compile Include="Controls\CloseButton.cs" />
-    <Compile Include="Controls\ColorPicker.cs" />
     <Compile Include="Controls\HelpButton.cs" />
     <Compile Include="Controls\MaximizeButton.cs" />
     <Compile Include="Controls\MinimizeButton.cs" />
     <Compile Include="Controls\ScottLogic\BaseWPFHelpers.cs" />
-    <Compile Include="Controls\ScottLogic\PieChart\ColourConverter.cs" />
-    <Compile Include="Controls\ScottLogic\PieChart\IColorSelector.cs" />
-    <Compile Include="Controls\ScottLogic\PieChart\IndexedColourSelector.cs" />
-    <Compile Include="Controls\ScottLogic\PieChart\Legend.xaml.cs">
-      <DependentUpon>Legend.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ScottLogic\PieChart\LegendConverter.cs" />
-    <Compile Include="Controls\ScottLogic\PieChart\PieChartLayout.xaml.cs">
-      <DependentUpon>PieChartLayout.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Controls\ScottLogic\PieChart\PiePlotter.xaml.cs">
-      <DependentUpon>PiePlotter.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Controls\ScottLogic\Shapes\PiePiece.cs" />
     <Compile Include="Controls\ScottLogic\Util\FormattingConverter.cs" />
     <Compile Include="Controls\ScottLogic\Util\Utils.cs" />
@@ -122,18 +108,6 @@
     <Compile Include="View\SysSetWindow.xaml.cs">
       <DependentUpon>SysSetWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="Controls\ScottLogic\PieChart\Legend.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\ScottLogic\PieChart\PieChartLayout.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Controls\ScottLogic\PieChart\PiePlotter.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

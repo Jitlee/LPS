@@ -92,8 +92,11 @@ namespace LPS.RfidOn.Core.ViewModel
             SaveIsEnable = false;
 
             _FarmRfidListOR = new ObservableCollection<FarmerRfidOR>();
-             
-//            RaisePropertyChanged("FarmRfidListOR");
+			_FarmRfidListOR.Add(new FarmerRfidOR() { Rfid="ABBBPPPP1230998" });
+			_FarmRfidListOR.Add(new FarmerRfidOR() { Rfid = "ABBBPPPP1230999" });
+			_FarmRfidListOR.Add(new FarmerRfidOR() { Rfid = "ABBBPPPP1231000" });
+			_FarmRfidListOR.Add(new FarmerRfidOR() { Rfid = "ABBBPPPP1231001" });
+            RaisePropertyChanged("FarmRfidListOR");
         }
         
         #endregion

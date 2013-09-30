@@ -234,7 +234,9 @@
             <Setter Property="AutoGenerateColumns" Value="False"></Setter>
             <Setter Property="Background" Value="{x:Null}"/>
             <Setter Property="RowBackground" Value="{x:Null}"/>
-         </Style>
+			<Setter Property="VerticalGridLinesBrush" Value="{x:Null}"/>
+			<Setter Property="HorizontalGridLinesBrush" Value="CadetBlue"/>
+		</Style>
 
     </Application.Resources>
 </Application>

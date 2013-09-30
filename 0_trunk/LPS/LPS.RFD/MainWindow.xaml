@@ -76,7 +76,7 @@
 				<RowDefinition Height="Auto"/>
 				<RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="36"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
 
@@ -96,8 +96,8 @@
             <TextBlock Grid.Row="3" Grid.Column="3" Style="{StaticResource lblStyle}"  Text="{Binding Path=FarmerCard}"></TextBlock>
             
             <StackPanel HorizontalAlignment="Left"  Grid.Row="5" Grid.Column="1"  Grid.ColumnSpan="3" Orientation="Horizontal"  Margin="0,2,0,2">
-                <Button Command="{Binding Command}" Width="80" Height="35" Style="{StaticResource buttomNumber}" CommandParameter="BtnStart_StopRedRfid" Content="{Binding Path=BtnStart_StopRedRfidText}" ></Button>
-                <Button Command="{Binding Command}" Width="40" Height="35" Style="{StaticResource buttomNumber}" CommandParameter="Save"  IsEnabled="{Binding Path=SaveIsEnable}"   Content="保存"  Margin="3,0,0,0" ></Button>
+				<Button Command="{Binding Command}" Width="85" Height="32"  CommandParameter="BtnStart_StopRedRfid" Content="{Binding Path=BtnStart_StopRedRfidText}" Margin="5,2,5,2"></Button>
+				<Button Command="{Binding Command}" Width="40" Height="32"  CommandParameter="Save"  IsEnabled="{Binding Path=SaveIsEnable}"   Content="保存" Margin="5,2,5,2"></Button>
             </StackPanel>
         </Grid>
             <!--</Border>-->

@@ -25,19 +25,19 @@ namespace LPS.RfidOn
 
         public MainWindow()
         {
-            var loginWindow = new LoginWindow();
-            if (loginWindow.ShowDialog() == true)
-            {
-                InitializeComponent();
-                ViewModel = MainViewModel.Instance;
-                ViewModel.MianPage = this;
-                this.DataContext = ViewModel;
-                this.Loaded += new RoutedEventHandler(MetroWindow_Loaded);                
-            }
-            else
-            {
-                Application.Current.Shutdown();
-            }
+			var loginWindow = new LoginWindow();
+			if (loginWindow.ShowDialog() == true)
+			{
+				InitializeComponent();
+				ViewModel = MainViewModel.Instance;
+				ViewModel.MianPage = this;
+				this.DataContext = ViewModel;
+				this.Loaded += new RoutedEventHandler(MetroWindow_Loaded);
+			}
+			else
+			{
+				Application.Current.Shutdown();
+			}
         }
         
         private void lbItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)

@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPS.RfidOn", "LPS\LPS.RFD\L
 		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPS.LeafWeigh", "LPS\LPS.LeafWeigh\LPS.LeafWeigh.csproj", "{4BE59918-9A5F-43AD-AA5B-918694C189FD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -98,6 +100,16 @@ Global
 		{91AA7B78-422D-423D-8ECC-232AE2EF6457}.Release|Mixed Platforms.Build.0 = Release|x86
 		{91AA7B78-422D-423D-8ECC-232AE2EF6457}.Release|x86.ActiveCfg = Release|x86
 		{91AA7B78-422D-423D-8ECC-232AE2EF6457}.Release|x86.Build.0 = Release|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Debug|Mixed Platforms.Build.0 = Debug|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Debug|x86.ActiveCfg = Debug|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Debug|x86.Build.0 = Debug|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Release|Any CPU.ActiveCfg = Release|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Release|Mixed Platforms.ActiveCfg = Release|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Release|Mixed Platforms.Build.0 = Release|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Release|x86.ActiveCfg = Release|x86
+		{4BE59918-9A5F-43AD-AA5B-918694C189FD}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
