@@ -218,10 +218,18 @@
 
 		<!--界面样式-->
 		<Style TargetType="TextBlock"  x:Key="lblStyle">
-			<Setter Property="FontSize" Value="12"/>
-		</Style>
-		<Style TargetType="TextBlock"  x:Key="lblTitleStyle">
 			<Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="0,3,2,3"/>
+		</Style>
+        <Style TargetType="TextBlock"  x:Key="lblStyleContent">
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="Margin" Value="3,2,2,3"/>
+            <Setter Property="Background" Value="#FFE2E8E2"/>
+            <Setter Property="Opacity"  Value="0.7"/>
+        </Style>
+        
+		<Style TargetType="TextBlock"  x:Key="lblTitleStyle">
+			<Setter Property="FontSize" Value="18"/>
 			<Setter Property="FontWeight" Value="Bold"/>
 			<Setter Property="Margin" Value="0,10,5,5"/>
 		</Style>

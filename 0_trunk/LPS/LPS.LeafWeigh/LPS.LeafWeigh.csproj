@@ -49,7 +49,11 @@
       <HintPath>Ref\Microsoft.Windows.Shell.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -67,6 +71,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Core\ViewModel\WinWeighViewModel.cs" />
+    <Compile Include="GlobalData.cs" />
+    <Compile Include="View\WinWeighView.xaml.cs">
+      <DependentUpon>WinWeighView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\LPSSer\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SysSetWindow.xaml.cs">
+      <DependentUpon>SysSetWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,10 +105,42 @@
     <Compile Include="Controls\ScottLogic\Util\FormattingConverter.cs" />
     <Compile Include="Controls\ScottLogic\Util\Utils.cs" />
     <Compile Include="Controls\WindowIcon.cs" />
+    <Compile Include="Core\Converter\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Core\Model\Base\DelegateCommandBase.cs" />
+    <Compile Include="Core\Uitl\Common.cs" />
+    <Compile Include="Core\Uitl\Converter.cs" />
+    <Compile Include="Core\Uitl\HotKey.cs" />
+    <Compile Include="Core\Uitl\Logger\ILogger.cs" />
+    <Compile Include="Core\Uitl\Logger\Logger.cs" />
+    <Compile Include="Core\Uitl\Logger\LoggerFactory.cs" />
+    <Compile Include="Core\Uitl\Logger\LoggerLevel.cs" />
+    <Compile Include="Core\Uitl\Logger\WriteFileLogger.cs" />
+    <Compile Include="Core\ViewModel\LoginViewModel.cs" />
+    <Compile Include="Core\ViewModel\MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Resources\Style\Buttom.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\Style\WindowTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\WinWeighView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\SysSetWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -108,17 +160,81 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <AppDesigner Include="Properties\" />
     <None Include="Ref\Ref.rar" />
+    <None Include="Resources\Images\Thumbs.db" />
+    <None Include="Service References\LPSSer\LPS.LeafWeigh.LPSSer.CompositeType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LPSSer\LPS.LeafWeigh.LPSSer.EmpolyeeOR.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\LPSSer\LPS.Model.Pur.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\LPS.Model.Sys.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\LPS.Model.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\LPS.Services.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\service.wsdl" />
+    <None Include="Service References\LPSSer\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\LPSSer\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Ref\CustomChromeLibrary.dll" />
     <Content Include="Ref\MahApps.Metro.dll" />
     <Content Include="Ref\Microsoft.Windows.Shell.dll" />
+    <None Include="Service References\LPSSer\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\LPSSer\configuration.svcinfo" />
+    <None Include="Service References\LPSSer\configuration91.svcinfo" />
+    <Resource Include="Resources\Images\arrow.png" />
+    <Resource Include="Resources\Images\background.jpg" />
+    <Resource Include="Resources\Images\call.png" />
+    <Resource Include="Resources\Images\close.png" />
+    <Resource Include="Resources\Images\collapsed.jpg" />
+    <Resource Include="Resources\Images\evaluation.png" />
+    <Resource Include="Resources\Images\expanded.jpg" />
+    <Resource Include="Resources\Images\lock.png" />
+    <Resource Include="Resources\Images\maximize.png" />
+    <Resource Include="Resources\Images\minimize.jpg" />
+    <Resource Include="Resources\Images\next.png" />
+    <Resource Include="Resources\Images\pause.png" />
+    <Resource Include="Resources\Images\person.png" />
+    <Resource Include="Resources\Images\recall.png" />
+    <Resource Include="Resources\Images\restore.png" />
+    <Resource Include="Resources\Images\resume.png" />
+    <Resource Include="Resources\Images\setting.png" />
+    <Resource Include="Resources\Images\special.png" />
+    <Resource Include="Resources\Images\stop.png" />
+    <Resource Include="Resources\Images\transfer.png" />
+    <Resource Include="Resources\Images\wait.png" />
+    <Resource Include="Resources\Images\welcome.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Core\Graph\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\LPSSer\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d2306904-99d7-4421-bb3b-f2392448995f" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:5555/LPS.Services/LPS/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="d6cf45f4-90ba-4062-a970-629362e11848" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="e06b6d79-8334-4d4b-aa42-2c613c07e8b3" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="d995fc7e-07a4-46ba-aca5-e9df8e1f22b6" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="LPS.Services.xsd" MetadataType="Schema" ID="9a1ff1d6-a06c-4180-8b4c-fef204cce879" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="LPS.Model.Sys.xsd" MetadataType="Schema" ID="e7cff13b-719c-4eec-8421-22f66082d563" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="LPS.Model.Pur.xsd" MetadataType="Schema" ID="7f7810f7-f777-4dc7-8a91-b35d7b8f845b" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+    <MetadataFile FileName="LPS.Model.xsd" MetadataType="Schema" ID="82286cf3-864a-48c1-89af-2f1f725ae963" SourceId="1" SourceUrl="http://localhost:5555/LPS.Services/LPS/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

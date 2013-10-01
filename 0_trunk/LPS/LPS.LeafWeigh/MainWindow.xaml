@@ -1,8 +1,139 @@
-﻿<Window x:Class="LPS.LeafWeigh.MainWindow"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
+﻿<Window x:Class="LPS.LeafWeigh.MainWindow" 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:shell="http://schemas.microsoft.com/winfx/2006/xaml/presentation/shell"
+    xmlns:converter="clr-namespace:LPS.LeafWeigh.Core.Converter"
+    xmlns:vm="clr-namespace:LPS.LeafWeigh.Core.ViewModel"
+    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:my="clr-namespace:LPS.LeafWeigh.Controls"
+    mc:Ignorable="d" 
+    Title="烟叶称重客户端" Height="446" Width="567"
+    WindowStartupLocation="CenterScreen"
+    Style="{StaticResource ChromeWindowStyle}" Closed="Window_Closed">
+    <shell:WindowChrome.WindowChrome>
+        <shell:WindowChrome
+            ResizeBorderThickness="6"
+            CaptionHeight="20"
+            CornerRadius="5"
+            GlassFrameThickness="0">
+        </shell:WindowChrome>
+    </shell:WindowChrome.WindowChrome>
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/Images/background.jpg"/>
+    </Window.Background>
+    <Window.Resources>
         
+        
+        <Style x:Key="ImageButtonImageStyle" TargetType="{x:Type Image}">
+            <Setter Property="Height" Value="45"/>
+            <Setter Property="Width" Value="45"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+        
+        <Style x:Key="ImageButtonTextBlockStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#FF333333"/>
+            <Setter Property="Width"  Value="70"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="ImageButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border
+    						Background="{TemplateBinding Background}"
+    						BorderBrush="{TemplateBinding BorderBrush}"
+    						BorderThickness="1"
+    						CornerRadius="3">
+                            <ContentPresenter Margin="5"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#95F5357C"/>
+                                <Setter Property="BorderBrush" Value="#FCFFDD9E"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="RenderTransform">
+                                    <Setter.Value>
+                                        <TranslateTransform X="1" Y="1"/>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            
+            
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+<StackPanel HorizontalAlignment="Left"  Grid.Row="0" Grid.Column="0"  Grid.RowSpan="3">
+        <Button Grid.Row="1" Grid.Column="1"
+            Command="{Binding Command}" CommandParameter="Weigh" Style="{StaticResource ImageButtonStyle}">
+            <StackPanel>
+                <Image Source="Resources/Images/resume.png"
+        			    Style="{StaticResource ImageButtonImageStyle}"/>
+                <TextBlock Text="称重" Style="{StaticResource ImageButtonTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+
+        <Button Grid.Row="1" Grid.Column="2"
+            Command="{Binding Command}" CommandParameter="Setting" Style="{StaticResource ImageButtonStyle}">
+            <StackPanel>
+                <Image Source="Resources/Images/wait.png"
+        			    Style="{StaticResource ImageButtonImageStyle}"/>
+                <TextBlock Text="查询统计" Style="{StaticResource ImageButtonTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="3"
+            Command="{Binding Command}" CommandParameter="Setting" Style="{StaticResource ImageButtonStyle}">
+            <StackPanel>
+                <Image Source="Resources/Images/setting.png"
+        			    Style="{StaticResource ImageButtonImageStyle}"/>
+                <TextBlock Text="参数设置" Style="{StaticResource ImageButtonTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+        <Button Grid.Row="1" Grid.Column="4"
+            Command="{Binding Command}" CommandParameter="Setting" Style="{StaticResource ImageButtonStyle}">
+            <StackPanel>
+                <Image Source="Resources/Images/next.png"
+        			    Style="{StaticResource ImageButtonImageStyle}"/>
+                <TextBlock Text="打印设置" Style="{StaticResource ImageButtonTextBlockStyle}"/>
+            </StackPanel>
+        </Button>
+</StackPanel>
+        <!--<StackPanel HorizontalAlignment="Left"  Grid.Row="2" Grid.Column="1"  Grid.ColumnSpan="3" Orientation="Horizontal"  Margin="100,2,0,2">
+            <Button Command="{Binding Command}" Width="50" Height="32"  CommandParameter="Weigh"  
+                        Content="称重" Margin="5,2,5,2"></Button>
+        </StackPanel>-->
     </Grid>
+
 </Window>

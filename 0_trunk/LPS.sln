@@ -19,6 +19,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPS.RfidOn", "LPS\LPS.RFD\L
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LPS.LeafWeigh", "LPS\LPS.LeafWeigh\LPS.LeafWeigh.csproj", "{4BE59918-9A5F-43AD-AA5B-918694C189FD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{15B3E0D2-6217-493A-A690-158C497F5318} = {15B3E0D2-6217-493A-A690-158C497F5318}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
